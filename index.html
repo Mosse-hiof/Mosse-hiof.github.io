@@ -8,6 +8,12 @@
   <meta property="og:title" content="Mustafa Sahin // Fullstack Developer" />
   <meta property="og:description" content="I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://mosse-hiof.github.io/image2.jpg" />
+  <meta property="og:url" content="https://mosse-hiof.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23050505'/><text x='50' y='68' font-size='55' font-weight='bold' text-anchor='middle' fill='%23CCFF00' font-family='sans-serif'>M</text></svg>" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -315,9 +321,14 @@
     <a href="#" onclick="navigate('home-view'); return false;" class="font-clash font-bold text-xl tracking-tight cursor-none hoverable">
       MUSTAFA<span class="text-concrete">.</span>
     </a>
+    <span class="hidden md:inline-flex items-center gap-2 text-xs tracking-widest uppercase text-lime border border-lime/30 px-3 py-1 rounded-full ml-4" data-i18n="open_for_work">
+      <span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span>
+      Open for Work
+    </span>
     <div class="flex items-center gap-8">
       <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
       <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-nav="about" data-i18n="nav_about">About Me</a>
+      <a href="CV_Mustafa.pdf" target="_blank" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-i18n="nav_cv">CV</a>
       <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none border border-phantom/30 px-5 py-2 hover:bg-lime hover:text-void hover:border-lime transition-all duration-300" data-i18n="nav_contact">Contact</a>
       <button onclick="toggleLang()" class="hoverable cursor-none text-xs font-medium tracking-widest uppercase text-concrete hover:text-lime transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
     </div>
@@ -459,6 +470,9 @@
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">DigitalOcean</span>
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Docker</span>
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">PostgreSQL</span>
+                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Agile</span>
+                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">CI/CD</span>
+                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Testing</span>
                   </div>
                 </div>
                 <div class="w-full md:w-80 h-48 overflow-hidden rounded-sm">
@@ -482,7 +496,7 @@
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">TensorFlow</span>
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">PyTorch</span>
                     <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">MuJoCo</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Claude Code</span>
+                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">RL Agents</span>
                   </div>
                 </div>
                 <div class="w-full md:w-80 h-48 overflow-hidden rounded-sm">
@@ -507,64 +521,72 @@
           <!-- Project 1 -->
           <div class="project-card reveal group">
             <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Agent Training" class="project-img w-full h-full object-cover" />
+              <img src="lms1.png" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" />
             </div>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj1_title">AI Agent Training Platform</h3>
-                <p class="text-concrete text-sm tracking-wider uppercase" data-i18n="proj1_tech">Python / MuJoCo / Reinforcement Learning</p>
-              </div>
-              <a href="#" class="magnetic-btn hoverable w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-lime group-hover:border-lime transition-all duration-300">
-                <span class="project-arrow text-lg group-hover:text-void">↗</span>
-              </a>
+            <div>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj1_title">E-Learning Platform — Jetski</h3>
+              <p class="text-concrete text-sm tracking-wider uppercase">PHP / Laravel / Forge / DigitalOcean / WordPress API</p>
             </div>
           </div>
 
           <!-- Project 2 (offset) -->
           <div class="project-card reveal group md:mt-24">
             <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&q=80" alt="LMS Platform" class="project-img w-full h-full object-cover" />
+              <img src="lms2.png" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" />
             </div>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj2_title">E-Learning Platforms (Live)</h3>
-                <p class="text-concrete text-sm tracking-wider uppercase">PHP / Laravel / Forge / DigitalOcean / WordPress API</p>
-              </div>
-              <a href="#" class="magnetic-btn hoverable w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-lime group-hover:border-lime transition-all duration-300">
-                <span class="project-arrow text-lg group-hover:text-void">↗</span>
-              </a>
+            <div>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj2_title">E-Learning Platform — MGB Truck</h3>
+              <p class="text-concrete text-sm tracking-wider uppercase">PHP / Laravel / Certificate Generation / REST API</p>
             </div>
           </div>
 
           <!-- Project 3 -->
           <div class="project-card reveal group">
             <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps" class="project-img w-full h-full object-cover" />
+              <img src="lms3.png" alt="LMS Platform Overview" class="project-img w-full h-full object-cover" />
             </div>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj3_title">Cross-Platform Mobile Apps</h3>
-                <p class="text-concrete text-sm tracking-wider uppercase">Flutter / Kotlin / Android & iOS</p>
-              </div>
-              <a href="#" class="magnetic-btn hoverable w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-lime group-hover:border-lime transition-all duration-300">
-                <span class="project-arrow text-lg group-hover:text-void">↗</span>
-              </a>
+            <div>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj3_title">AI Agent Training Platform</h3>
+              <p class="text-concrete text-sm tracking-wider uppercase" data-i18n="proj3_tech">Python / MuJoCo / Reinforcement Learning</p>
             </div>
           </div>
 
           <!-- Project 4 -->
           <div class="project-card reveal group md:mt-24">
             <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Web Applications" class="project-img w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps" class="project-img w-full h-full object-cover" />
             </div>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj4_title">WordPress & API Integrations</h3>
-                <p class="text-concrete text-sm tracking-wider uppercase">WordPress / REST APIs / Docker / CI/CD</p>
-              </div>
-              <a href="#" class="magnetic-btn hoverable w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group-hover:bg-lime group-hover:border-lime transition-all duration-300">
-                <span class="project-arrow text-lg group-hover:text-void">↗</span>
-              </a>
+            <div>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj4_title">Cross-Platform Mobile Apps</h3>
+              <p class="text-concrete text-sm tracking-wider uppercase">Flutter / Kotlin / Android & iOS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ── -->
+    <section class="px-6 md:px-12 py-24 border-t border-white/5">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-baseline justify-between mb-20 reveal">
+          <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="testimonials_title">Client Feedback</h2>
+          <span class="text-concrete text-sm tracking-widest uppercase hidden md:block" data-i18n="testimonials_sub">03 // Testimonials</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="reveal border border-white/10 p-8 md:p-10 relative">
+            <span class="text-lime text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
+            <p class="text-concrete text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial1_text">The site works wonderfully and our customers are quite happy. No one has complained. The integration and transfer was fast and painless.</p>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-lime rounded-full"></div>
+              <span class="font-clash font-semibold text-sm" data-i18n="testimonial1_client">Jetski LMS — Client</span>
+            </div>
+          </div>
+          <div class="reveal border border-white/10 p-8 md:p-10 relative">
+            <span class="text-lime text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
+            <p class="text-concrete text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial2_text">I was surprised how fast the site was delivered. I especially appreciated being involved throughout the process. Every system, even the complicated certificate generation, was well done and working perfectly.</p>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-lime rounded-full"></div>
+              <span class="font-clash font-semibold text-sm" data-i18n="testimonial2_client">MGB Truck LMS — Client</span>
             </div>
           </div>
         </div>
@@ -931,11 +953,19 @@
         card3_desc: 'Custom AI algorithms, reinforcement learning agents trained in simulated environments (MuJoCo), and real-time human-AI interaction. Experience with TensorFlow, PyTorch, and GPU-accelerated training pipelines.',
         work_title: 'Selected Work',
         work_sub: '02 // Projects',
-        proj1_title: 'AI Agent Training Platform',
-        proj1_tech: 'Python / MuJoCo / Reinforcement Learning',
-        proj2_title: 'E-Learning Platforms (Live)',
-        proj3_title: 'Cross-Platform Mobile Apps',
-        proj4_title: 'WordPress & API Integrations',
+        proj1_title: 'E-Learning Platform — Jetski',
+        proj2_title: 'E-Learning Platform — MGB Truck',
+        proj3_title: 'AI Agent Training Platform',
+        proj3_tech: 'Python / MuJoCo / Reinforcement Learning',
+        proj4_title: 'Cross-Platform Mobile Apps',
+        testimonials_title: 'Client Feedback',
+        testimonials_sub: '03 // Testimonials',
+        testimonial1_text: 'The site works wonderfully and our customers are quite happy. No one has complained. The integration and transfer was fast and painless.',
+        testimonial1_client: 'Jetski LMS — Client',
+        testimonial2_text: 'I was surprised how fast the site was delivered. I especially appreciated being involved throughout the process. Every system, even the complicated certificate generation, was well done and working perfectly.',
+        testimonial2_client: 'MGB Truck LMS — Client',
+        open_for_work: '<span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span> Open for Work',
+        nav_cv: 'CV',
         cta_label: '/// The Next Step',
         start_a_project: 'Start a Project',
         footer_copy: '&copy; 2025 Mustafa Sahin. Bergen, Norway.',
@@ -1009,11 +1039,19 @@
         card3_desc: 'Egenutviklede AI-algoritmer, forsterkende læringsagenter trent i simulerte miljøer (MuJoCo), og sanntids menneske-AI-interaksjon. Erfaring med TensorFlow, PyTorch og GPU-akselererte treningspipelines.',
         work_title: 'Utvalgte Prosjekter',
         work_sub: '02 // Prosjekter',
-        proj1_title: 'AI Agent Treningsplattform',
-        proj1_tech: 'Python / MuJoCo / Forsterkende Læring',
-        proj2_title: 'E-læringsplattformer (Live)',
-        proj3_title: 'Kryssplattform Mobilapper',
-        proj4_title: 'WordPress & API-integrasjoner',
+        proj1_title: 'E-læringsplattform — Jetski',
+        proj2_title: 'E-læringsplattform — MGB Truck',
+        proj3_title: 'AI Agent Treningsplattform',
+        proj3_tech: 'Python / MuJoCo / Forsterkende Læring',
+        proj4_title: 'Kryssplattform Mobilapper',
+        testimonials_title: 'Tilbakemeldinger',
+        testimonials_sub: '03 // Kundeomtaler',
+        testimonial1_text: 'Nettsiden fungerer utmerket og kundene er veldig fornøyde. Ingen har klaget. Integrasjonen og overføringen var rask og smertefri.',
+        testimonial1_client: 'Jetski LMS — Kunde',
+        testimonial2_text: 'Jeg ble overrasket over hvor raskt nettsiden ble levert. Jeg satte spesielt pris på å bli involvert gjennom hele prosessen. Hvert system, selv den kompliserte sertifikatgenereringen, var godt gjennomført og fungerte perfekt.',
+        testimonial2_client: 'MGB Truck LMS — Kunde',
+        open_for_work: '<span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span> Ledig for Oppdrag',
+        nav_cv: 'CV',
         cta_label: '/// Neste Steg',
         start_a_project: 'Start et Prosjekt',
         footer_copy: '&copy; 2025 Mustafa Sahin. Bergen, Norge.',
