@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mustafa Sahin // Fullstack Developer</title>
-  <meta name="description" content="Mustafa Sahin — Fullstack Developer from Bergen, Norway. Web, mobile & AI solutions with Laravel, React, Flutter, Python and more." />
-  <meta property="og:title" content="Mustafa Sahin // Fullstack Developer" />
-  <meta property="og:description" content="I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions." />
+  <title>Sahin Digital — Websites, Web Apps & Software, Crafted in Bergen</title>
+  <meta name="description" content="Sahin Digital is a boutique development studio in Bergen, Norway. I build websites, web apps, mobile apps, and custom software — with maintenance, support, and consulting along the way." />
+  <meta property="og:title" content="Sahin Digital — Development Studio in Bergen" />
+  <meta property="og:description" content="Websites, web apps, mobile apps, AI solutions, and ongoing support — built by a Norwegian developer who cares." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://mosse-hiof.github.io/image2.jpg" />
   <meta property="og:url" content="https://mosse-hiof.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23050505'/><text x='50' y='68' font-size='55' font-weight='bold' text-anchor='middle' fill='%23CCFF00' font-family='sans-serif'>M</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E07A5F'/><text x='50' y='66' font-size='42' font-weight='700' text-anchor='middle' fill='%23FFFAF5' font-family='sans-serif' letter-spacing='-2'>SD</text></svg>" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,10 +26,14 @@
       theme: {
         extend: {
           colors: {
-            void: '#050505',
-            phantom: '#F3F3F3',
-            concrete: '#888888',
-            lime: '#CCFF00',
+            cream: '#FFFAF5',
+            sand: '#F5EDE4',
+            peach: '#FBD8C4',
+            apricot: '#F5C5AF',
+            ink: '#2A2520',
+            stone: '#8A8178',
+            coral: '#E07A5F',
+            'coral-dark': '#C4654D',
           },
           fontFamily: {
             clash: ['"Clash Display"', 'sans-serif'],
@@ -46,61 +50,38 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: #050505;
-      color: #F3F3F3;
+      background: #FFFAF5;
+      color: #2A2520;
       font-family: 'General Sans', sans-serif;
-      cursor: none;
       overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
+    /* Accessible focus ring for keyboard users */
+    *:focus-visible {
+      outline: 2px solid #E07A5F;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    a, button { -webkit-tap-highlight-color: transparent; }
+
     ::selection {
-      background: #CCFF00;
-      color: #050505;
+      background: #E07A5F;
+      color: #FFFAF5;
     }
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #050505; }
-    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #CCFF00; }
-
-    /* ── Custom Cursor ── */
-    .cursor-dot {
-      width: 6px; height: 6px;
-      background: #F3F3F3;
-      border-radius: 50%;
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s ease;
-    }
-
-    .cursor-outline {
-      width: 40px; height: 40px;
-      border: 1.5px solid rgba(243,243,243,0.4);
-      border-radius: 50%;
-      position: fixed;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 9998;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .cursor-outline.hovering {
-      transform: translate(-50%, -50%) scale(3);
-      border-color: #CCFF00;
-      background: rgba(204,255,0,0.05);
-    }
-
-    .cursor-dot.hovering {
-      transform: translate(-50%, -50%) scale(0);
-    }
+    ::-webkit-scrollbar-track { background: #FFFAF5; }
+    ::-webkit-scrollbar-thumb { background: #D4CBC2; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #E07A5F; }
 
     /* ── Scroll Reveal ── */
     .reveal {
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -109,22 +90,51 @@
       transform: translateY(0);
     }
 
-    /* ── Hero Slider ── */
-    .hero-slide {
+    /* ── Hero Gradient Mesh ── */
+    .hero-mesh {
       position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 2s ease;
-      animation: kenBurns 20s ease infinite alternate;
+      inset: -10%;
+      background:
+        radial-gradient(ellipse 55% 45% at 18% 28%, rgba(224,122,95,0.32), transparent 65%),
+        radial-gradient(ellipse 45% 40% at 82% 22%, rgba(251,216,196,0.55), transparent 65%),
+        radial-gradient(ellipse 65% 55% at 75% 82%, rgba(224,122,95,0.20), transparent 65%),
+        radial-gradient(ellipse 50% 50% at 22% 88%, rgba(245,197,175,0.45), transparent 65%),
+        #FFFAF5;
+      animation: meshDrift 22s ease-in-out infinite alternate;
+      filter: blur(20px);
     }
 
-    .hero-slide.active { opacity: 1; }
+    @keyframes meshDrift {
+      0%   { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(-2%, 1.5%) scale(1.04); }
+      100% { transform: translate(2%, -1.5%) scale(1.02); }
+    }
 
-    @keyframes kenBurns {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.1); }
+    /* Subtle grain texture over the mesh for depth */
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.14 0 0 0 0 0.12 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    }
+
+    /* Soft floating orbs for extra life */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.55;
+      animation: orbFloat 14s ease-in-out infinite alternate;
+    }
+    .hero-orb.orb-1 { width: 420px; height: 420px; background: #E07A5F; top: -8%; left: -6%; }
+    .hero-orb.orb-2 { width: 360px; height: 360px; background: #FBD8C4; top: 40%; right: -8%; animation-delay: -4s; animation-duration: 18s; }
+    .hero-orb.orb-3 { width: 300px; height: 300px; background: #F5C5AF; bottom: -6%; left: 35%; animation-delay: -8s; animation-duration: 20s; }
+
+    @keyframes orbFloat {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, -30px) scale(1.08); }
     }
 
     /* ── Marquee ── */
@@ -165,42 +175,39 @@
 
     /* ── Project Card Hover ── */
     .project-img {
-      filter: grayscale(100%);
-      transition: filter 0.6s ease, transform 0.6s ease;
+      transition: transform 0.6s ease;
     }
 
     .project-card:hover .project-img {
-      filter: grayscale(0%);
       transform: scale(1.03);
     }
 
     .project-card:hover .project-arrow {
       transform: rotate(-45deg);
-      color: #CCFF00;
+      color: #E07A5F;
     }
 
     .project-arrow {
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    /* ── Sticky Cards ── */
-    .sticky-card {
-      transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    /* ── Warm Cards ── */
+    .warm-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(42,37,32,0.06);
+      border-radius: 16px;
+      box-shadow: 0 2px 20px rgba(42,37,32,0.04);
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
     }
 
-    .sticky-card:hover {
-      box-shadow: 0 0 40px rgba(204,255,0,0.07);
-      border-color: #CCFF00;
-    }
-
-    /* ── Nav blend ── */
-    nav {
-      mix-blend-mode: difference;
+    .warm-card:hover {
+      box-shadow: 0 8px 40px rgba(224,122,95,0.10);
+      transform: translateY(-2px);
     }
 
     /* ── About Image ── */
     .about-portrait {
-      filter: grayscale(30%) brightness(0.85);
+      filter: brightness(0.95) saturate(1.05);
     }
 
     /* ── Contact Form ── */
@@ -226,22 +233,23 @@
 
     .form-input {
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: #F3F3F3;
+      border: 1px solid rgba(42,37,32,0.12);
+      color: #2A2520;
       padding: 14px 18px;
       font-family: 'General Sans', sans-serif;
       font-size: 15px;
       width: 100%;
+      border-radius: 10px;
       transition: border-color 0.3s ease;
       outline: none;
     }
 
     .form-input:focus {
-      border-color: #CCFF00;
+      border-color: #E07A5F;
     }
 
     .form-input::placeholder {
-      color: #555;
+      color: #B5AEA6;
     }
 
     /* ── Timeline ── */
@@ -257,7 +265,7 @@
       top: 8px;
       width: 8px;
       height: 8px;
-      background: #CCFF00;
+      background: #E07A5F;
       border-radius: 50%;
     }
 
@@ -268,69 +276,72 @@
       top: 20px;
       width: 1px;
       height: calc(100% - 8px);
-      background: rgba(255,255,255,0.08);
+      background: rgba(42,37,32,0.08);
     }
 
     .timeline-item:last-child::after {
       display: none;
     }
+
+    /* ── Nav ── */
+    nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
   </style>
 </head>
 
-<body class="bg-void text-phantom font-sans antialiased">
-
-  <!-- Custom Cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
+<body class="bg-cream text-ink font-sans antialiased">
 
   <!-- ═══════════════════════════════ CONTACT OVERLAY ═══════════════════════════════ -->
-  <div id="contact-overlay" class="contact-overlay fixed inset-0 z-[60] bg-void/[0.97] flex items-center justify-center px-6">
-    <div class="contact-panel w-full max-w-lg bg-[#0a0a0a] border border-white/10 rounded-sm p-8 md:p-12">
+  <div id="contact-overlay" class="contact-overlay fixed inset-0 z-[60] bg-cream/[0.97] flex items-center justify-center px-6">
+    <div class="contact-panel w-full max-w-lg bg-white border border-ink/5 rounded-2xl p-8 md:p-12 shadow-xl">
       <div class="flex items-center justify-between mb-10">
         <h2 class="font-clash font-bold text-3xl md:text-4xl" data-i18n="contact_title">Start a Project</h2>
-        <button onclick="closeContact()" class="hoverable text-concrete hover:text-lime transition-colors text-2xl leading-none">&times;</button>
+        <button onclick="closeContact()" class="text-stone hover:text-coral transition-colors text-2xl leading-none">&times;</button>
       </div>
       <form id="contact-form" class="space-y-5" onsubmit="handleSubmit(event)">
         <div>
-          <label class="text-xs tracking-widest uppercase text-concrete block mb-2" data-i18n="form_name">Your Name</label>
+          <label class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_name">Your Name</label>
           <input type="text" name="name" required class="form-input" placeholder="John Doe" data-i18n-placeholder="ph_name" />
         </div>
         <div>
-          <label class="text-xs tracking-widest uppercase text-concrete block mb-2" data-i18n="form_email">Email Address</label>
+          <label class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_email">Email Address</label>
           <input type="email" name="email" required class="form-input" placeholder="you@company.com" data-i18n-placeholder="ph_email" />
         </div>
         <div>
-          <label class="text-xs tracking-widest uppercase text-concrete block mb-2" data-i18n="form_message">Tell me about your project</label>
+          <label class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_message">Tell me about your project</label>
           <textarea name="message" rows="5" required class="form-input resize-none" placeholder="I need help with..." data-i18n-placeholder="ph_message"></textarea>
         </div>
-        <button type="submit" class="magnetic-btn hoverable w-full py-4 bg-lime text-void font-clash font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-phantom">
+        <button type="submit" class="magnetic-btn w-full py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg">
           <span data-i18n="form_send">Send Message</span>
         </button>
-        <p class="text-concrete text-xs text-center mt-4" data-i18n="form_reply">I'll get back to you within 24 hours.</p>
+        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">I'll get back to you within 24 hours.</p>
       </form>
       <div id="form-success" class="hidden text-center py-12">
-        <span class="text-lime text-5xl block mb-4">&#10003;</span>
+        <span class="text-coral text-5xl block mb-4">&#10003;</span>
         <h3 class="font-clash font-bold text-2xl mb-2" data-i18n="form_success_title">Message Sent!</h3>
-        <p class="text-concrete" data-i18n="form_success_desc">I'll get back to you as soon as possible.</p>
+        <p class="text-stone" data-i18n="form_success_desc">I'll get back to you as soon as possible.</p>
       </div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════ NAVIGATION ═══════════════════════════════ -->
-  <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between">
-    <a href="#" onclick="navigate('home-view'); return false;" class="font-clash font-bold text-xl tracking-tight cursor-none hoverable">
-      MUSTAFA<span class="text-concrete">.</span>
+  <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between bg-cream/80">
+    <a href="#" onclick="navigate('home-view'); return false;" class="font-clash font-bold text-xl tracking-tight flex items-center gap-2">
+      <span class="inline-flex items-center justify-center w-8 h-8 bg-coral text-white rounded-lg text-xs font-bold tracking-tight">SD</span>
+      SAHIN DIGITAL<span class="text-coral">.</span>
     </a>
-    <span class="hidden md:inline-flex items-center gap-2 text-xs tracking-widest uppercase text-lime border border-lime/30 px-3 py-1 rounded-full ml-4" data-i18n="open_for_work">
-      <span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span>
-      Open for Work
+    <span class="hidden md:inline-flex items-center gap-2 text-xs tracking-widest uppercase text-coral border border-coral/30 px-3 py-1 rounded-full ml-4" data-i18n="open_for_work">
+      <span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span>
+      Accepting New Projects
     </span>
     <div class="flex items-center gap-8">
-      <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
-      <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-nav="about" data-i18n="nav_about">About Me</a>
-      <a href="CV_Mustafa.pdf" target="_blank" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none hover:text-lime transition-colors duration-300" data-i18n="nav_cv">CV</a>
-      <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase hoverable cursor-none border border-phantom/30 px-5 py-2 hover:bg-lime hover:text-void hover:border-lime transition-all duration-300" data-i18n="nav_contact">Contact</a>
-      <button onclick="toggleLang()" class="hoverable cursor-none text-xs font-medium tracking-widest uppercase text-concrete hover:text-lime transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
+      <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
+      <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="about" data-i18n="nav_about">About Me</a>
+      <a href="CV_Mustafa.pdf" target="_blank" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-i18n="nav_cv">CV</a>
+      <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all duration-300" data-i18n="nav_contact">Contact</a>
+      <button onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
     </div>
   </nav>
 
@@ -339,12 +350,13 @@
 
     <!-- ── Hero Section ── -->
     <section class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center pb-20">
-      <!-- Background Slider -->
-      <div class="absolute inset-0 z-0">
-        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1920&q=80'); background-position: center;"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1920&q=80'); background-position: center;"></div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1920&q=80'); background-position: center;"></div>
-        <div class="absolute inset-0 bg-void/70 z-10"></div>
+      <!-- Animated Gradient Mesh Background -->
+      <div class="absolute inset-0 z-0 overflow-hidden">
+        <div class="hero-mesh"></div>
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="hero-grain"></div>
       </div>
 
       <!-- Hero Content -->
@@ -354,21 +366,21 @@
           <span class="reveal block">
             <span class="scroller-mask">
               <span class="scroller-inner block" id="textScroller">
-                <span class="block text-lime">WEB APP</span>
-                <span class="block text-[#818cf8]">MOBILE APP</span>
-                <span class="block text-[#c084fc]">DESKTOP APP</span>
-                <span class="block text-lime">WEB APP</span>
+                <span class="block text-coral">WEB APP</span>
+                <span class="block text-[#7C6EAF]">MOBILE APP</span>
+                <span class="block text-[#5B9A8B]">DESKTOP APP</span>
+                <span class="block text-coral">WEB APP</span>
               </span>
             </span>
           </span>
           <span class="reveal block" data-i18n="hero_vision">VISION COME ALIVE</span>
         </h1>
         <div class="md:translate-x-6">
-          <p class="reveal max-w-xl mx-auto mt-6 text-concrete text-base md:text-lg leading-relaxed" data-i18n="hero_sub">
+          <p class="reveal max-w-xl mx-auto mt-6 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">
             Fullstack developer from Bergen, Norway. I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.
           </p>
           <div class="reveal mt-8">
-            <a href="#" onclick="openContact(); return false;" class="magnetic-btn hoverable inline-block px-8 py-4 bg-lime text-void font-clash font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-phantom" data-i18n="start_project">
+            <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">
               Start Project
             </a>
           </div>
@@ -377,130 +389,151 @@
 
       <!-- Scroll Indicator -->
       <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 reveal">
-        <span class="text-[10px] tracking-[0.35em] uppercase text-concrete" data-i18n="scroll">Scroll</span>
-        <div class="w-px h-6 bg-concrete/40 relative overflow-hidden">
-          <div class="w-full h-1/2 bg-lime animate-bounce"></div>
+        <span class="text-[10px] tracking-[0.35em] uppercase text-stone" data-i18n="scroll">Scroll</span>
+        <div class="w-px h-6 bg-stone/40 relative overflow-hidden">
+          <div class="w-full h-1/2 bg-coral animate-bounce"></div>
         </div>
       </div>
     </section>
 
     <!-- ── Marquee Section ── -->
-    <section class="bg-lime py-4 overflow-hidden relative">
+    <section class="bg-coral py-4 overflow-hidden relative rounded-none">
       <div class="marquee-track flex whitespace-nowrap">
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
-        <span class="text-void/60 mx-4">✦</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
         <!-- Duplicate for seamless loop -->
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
-        <span class="text-void/60 mx-4">✦</span>
-        <span class="text-void font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
-        <span class="text-void/60 mx-4">✦</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
+        <span class="text-white/50 mx-4">&#9670;</span>
       </div>
     </section>
 
-    <!-- ── Sticky Cards Section (The Arsenal) ── -->
+    <!-- ── Sticky Cards Section (Expertise) ── -->
     <section class="px-6 md:px-12 py-24">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
-          <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="expertise_title">Expertise</h2>
-          <span class="text-concrete text-sm tracking-widest uppercase hidden md:block" data-i18n="expertise_sub">01 // What I Do</span>
+          <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="expertise_title">Services</h2>
+          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="expertise_sub">01 // What I Offer</span>
         </div>
 
-        <div class="relative" style="height: 140vh;">
-          <!-- Card 01 -->
+        <div class="relative" style="height: 200vh;">
+          <!-- Card 01 — Websites & Web Applications -->
           <div class="sticky top-[80px] z-10">
-            <div class="sticky-card reveal bg-[#0f0f0f] border border-white/10 rounded-sm p-8 md:p-12 mb-6 max-w-7xl mx-auto">
+            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
               <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-white/10 block mb-4">01</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card1_title">Frontend & Mobile</h3>
-                  <p class="text-concrete leading-relaxed max-w-lg" data-i18n="card1_desc">
-                    Responsive web applications with React, .NET and modern CSS. Native mobile experiences in Flutter and Kotlin for Android & iOS. From design to deployment.
+                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">01</span>
+                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card1_title">Websites & Web Applications</h3>
+                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card1_desc">
+                    Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems I run in production. Built with Laravel, React, .NET, and WordPress when it fits.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">React</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">.NET</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Flutter</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Kotlin</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Tailwind</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Laravel</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">React</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">.NET</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">WordPress</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Tailwind</span>
                   </div>
                 </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-sm">
-                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt="Frontend" class="w-full h-full object-cover project-img" />
+                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
+                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80" alt="Web development" class="w-full h-full object-cover project-img" />
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 02 -->
+          <!-- Card 02 — Mobile & Software -->
           <div class="sticky top-[100px] z-20">
-            <div class="sticky-card reveal bg-[#0f0f0f] border border-white/10 rounded-sm p-8 md:p-12 mb-6 max-w-7xl mx-auto">
+            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
               <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-white/10 block mb-4">02</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card2_title">Backend & Infrastructure</h3>
-                  <p class="text-concrete leading-relaxed max-w-lg" data-i18n="card2_desc">
-                    Scalable server architectures with Python, Java, PHP/Laravel, and .NET. Production deployments via Laravel Forge and DigitalOcean. Docker, API integrations, and automated pipelines that cut manual work by 40%.
+                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">02</span>
+                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card2_title">Mobile Apps & Custom Software</h3>
+                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card2_desc">
+                    Cross-platform mobile apps with Flutter and native Android with Kotlin. Desktop tools and internal software built with Python, Java, and .NET — shaped around how your team actually works.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Laravel</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Python</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Forge</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">DigitalOcean</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Docker</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">PostgreSQL</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Agile</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">CI/CD</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">Testing</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Flutter</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Kotlin</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Python</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Java</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">.NET</span>
                   </div>
                 </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-sm">
-                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Backend" class="w-full h-full object-cover project-img" />
+                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
+                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile & software" class="w-full h-full object-cover project-img" />
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 03 -->
+          <!-- Card 03 — AI & Automation -->
           <div class="sticky top-[120px] z-30">
-            <div class="sticky-card reveal bg-[#0f0f0f] border border-white/10 rounded-sm p-8 md:p-12 max-w-7xl mx-auto">
+            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
               <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-white/10 block mb-4">03</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card3_title">AI & Machine Learning</h3>
-                  <p class="text-concrete leading-relaxed max-w-lg" data-i18n="card3_desc">
-                    Custom AI algorithms, reinforcement learning agents trained in simulated environments (MuJoCo), and real-time human-AI interaction. Experience with TensorFlow, PyTorch, and GPU-accelerated training pipelines.
+                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">03</span>
+                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card3_title">AI Solutions & Automation</h3>
+                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card3_desc">
+                    Smart automation, AI integrations, and custom ML models. I've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">TensorFlow</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">PyTorch</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">MuJoCo</span>
-                    <span class="text-xs tracking-wider uppercase border border-white/10 px-4 py-2 text-concrete">RL Agents</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">TensorFlow</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">PyTorch</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">OpenAI API</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Automation</span>
                   </div>
                 </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-sm">
-                  <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80" alt="AI" class="w-full h-full object-cover project-img" />
+                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="AI & automation" class="w-full h-full object-cover project-img" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 04 — Support & Consulting -->
+          <div class="sticky top-[140px] z-40">
+            <div class="warm-card reveal p-8 md:p-12 max-w-7xl mx-auto">
+              <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
+                <div class="flex-1">
+                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">04</span>
+                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card4_title">Maintenance, Support & Consulting</h3>
+                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card4_desc">
+                    Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — I'm here for the long run.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mt-6">
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Maintenance</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Support</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Consulting</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Hosting</span>
+                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">DevOps</span>
+                  </div>
+                </div>
+                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
+                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Support & consulting" class="w-full h-full object-cover project-img" />
                 </div>
               </div>
             </div>
@@ -514,51 +547,51 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
           <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="work_title">Selected Work</h2>
-          <span class="text-concrete text-sm tracking-widest uppercase hidden md:block" data-i18n="work_sub">02 // Projects</span>
+          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="work_sub">02 // Projects</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <!-- Project 1 -->
           <div class="project-card reveal group">
-            <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
               <img src="lms1.png" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj1_title">E-Learning Platform — Jetski</h3>
-              <p class="text-concrete text-sm tracking-wider uppercase">PHP / Laravel / Forge / DigitalOcean / WordPress API</p>
+              <p class="text-stone text-sm tracking-wider uppercase">PHP / Laravel / Forge / DigitalOcean / WordPress API</p>
             </div>
           </div>
 
           <!-- Project 2 (offset) -->
           <div class="project-card reveal group md:mt-24">
-            <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
               <img src="lms2.png" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj2_title">E-Learning Platform — MGB Truck</h3>
-              <p class="text-concrete text-sm tracking-wider uppercase">PHP / Laravel / Certificate Generation / REST API</p>
+              <p class="text-stone text-sm tracking-wider uppercase">PHP / Laravel / Certificate Generation / REST API</p>
             </div>
           </div>
 
           <!-- Project 3 -->
           <div class="project-card reveal group">
-            <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
               <img src="lms3.png" alt="LMS Platform Overview" class="project-img w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj3_title">AI Agent Training Platform</h3>
-              <p class="text-concrete text-sm tracking-wider uppercase" data-i18n="proj3_tech">Python / MuJoCo / Reinforcement Learning</p>
+              <p class="text-stone text-sm tracking-wider uppercase" data-i18n="proj3_tech">Python / MuJoCo / Reinforcement Learning</p>
             </div>
           </div>
 
           <!-- Project 4 -->
           <div class="project-card reveal group md:mt-24">
-            <div class="overflow-hidden rounded-sm mb-6 aspect-[4/3]">
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
               <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps" class="project-img w-full h-full object-cover" />
             </div>
             <div>
               <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj4_title">Cross-Platform Mobile Apps</h3>
-              <p class="text-concrete text-sm tracking-wider uppercase">Flutter / Kotlin / Android & iOS</p>
+              <p class="text-stone text-sm tracking-wider uppercase">Flutter / Kotlin / Android & iOS</p>
             </div>
           </div>
         </div>
@@ -566,26 +599,26 @@
     </section>
 
     <!-- ── Testimonials ── -->
-    <section class="px-6 md:px-12 py-24 border-t border-white/5">
+    <section class="px-6 md:px-12 py-24">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
           <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="testimonials_title">Client Feedback</h2>
-          <span class="text-concrete text-sm tracking-widest uppercase hidden md:block" data-i18n="testimonials_sub">03 // Testimonials</span>
+          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="testimonials_sub">03 // Testimonials</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="reveal border border-white/10 p-8 md:p-10 relative">
-            <span class="text-lime text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
-            <p class="text-concrete text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial1_text">The site works wonderfully and our customers are quite happy. No one has complained. The integration and transfer was fast and painless.</p>
+          <div class="reveal warm-card p-8 md:p-10 relative">
+            <span class="text-coral text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
+            <p class="text-stone text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial1_text">The site works wonderfully and our customers are quite happy. No one has complained. The integration and transfer was fast and painless.</p>
             <div class="flex items-center gap-3">
-              <div class="w-2 h-2 bg-lime rounded-full"></div>
+              <div class="w-2 h-2 bg-coral rounded-full"></div>
               <span class="font-clash font-semibold text-sm" data-i18n="testimonial1_client">Jetski LMS — Client</span>
             </div>
           </div>
-          <div class="reveal border border-white/10 p-8 md:p-10 relative">
-            <span class="text-lime text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
-            <p class="text-concrete text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial2_text">I was surprised how fast the site was delivered. I especially appreciated being involved throughout the process. Every system, even the complicated certificate generation, was well done and working perfectly.</p>
+          <div class="reveal warm-card p-8 md:p-10 relative">
+            <span class="text-coral text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
+            <p class="text-stone text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial2_text">I was surprised how fast the site was delivered. I especially appreciated being involved throughout the process. Every system, even the complicated certificate generation, was well done and working perfectly.</p>
             <div class="flex items-center gap-3">
-              <div class="w-2 h-2 bg-lime rounded-full"></div>
+              <div class="w-2 h-2 bg-coral rounded-full"></div>
               <span class="font-clash font-semibold text-sm" data-i18n="testimonial2_client">MGB Truck LMS — Client</span>
             </div>
           </div>
@@ -594,27 +627,48 @@
     </section>
 
     <!-- ── CTA / Footer ── -->
-    <section class="px-6 md:px-12 py-32 border-t border-white/5">
+    <section class="px-6 md:px-12 py-32">
       <div class="max-w-7xl mx-auto text-center">
-        <p class="reveal text-concrete text-sm tracking-[0.3em] uppercase mb-8" data-i18n="cta_label">/// The Next Step</p>
+        <p class="reveal text-stone text-sm tracking-[0.3em] uppercase mb-8" data-i18n="cta_label">/// The Next Step</p>
         <h2 class="reveal font-clash font-bold text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight mb-12">
           LET'S BUILD<br/>
-          <span class="text-transparent" style="-webkit-text-stroke: 1.5px #F3F3F3;">SOMETHING GREAT</span>
+          <span class="text-coral">SOMETHING GREAT</span>
         </h2>
         <div class="reveal">
-          <a href="#" onclick="openContact(); return false;" class="magnetic-btn hoverable inline-block px-10 py-5 bg-lime text-void font-clash font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-phantom">
+          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-10 py-5 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg">
             <span data-i18n="start_a_project">Start a Project</span>
           </a>
         </div>
       </div>
     </section>
 
-    <footer class="px-6 md:px-12 py-8 border-t border-white/5">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <span class="text-concrete text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2025 Mustafa Sahin. Bergen, Norway.</span>
-        <div class="flex gap-6">
-          <a href="https://www.linkedin.com/in/mustafa-sahin-3a18521b3/" target="_blank" rel="noopener" class="hoverable text-concrete text-xs tracking-widest uppercase hover:text-lime transition-colors">LinkedIn</a>
-          <a href="https://github.com/Mosse-hiof" target="_blank" rel="noopener" class="hoverable text-concrete text-xs tracking-widest uppercase hover:text-lime transition-colors">GitHub</a>
+    <footer class="px-6 md:px-12 py-12 border-t border-ink/8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="inline-flex items-center justify-center w-7 h-7 bg-coral text-white rounded-lg text-[10px] font-bold">SD</span>
+              <span class="font-clash font-bold tracking-tight">SAHIN DIGITAL<span class="text-coral">.</span></span>
+            </div>
+            <p class="text-stone text-sm leading-relaxed" data-i18n="footer_about">A boutique development studio in Bergen, Norway. Websites, web apps, mobile apps, AI, and the support to keep it all running.</p>
+          </div>
+          <div>
+            <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_contact">Contact</span>
+            <a href="mailto:mosse01_@hotmail.com" class="text-stone text-sm hover:text-coral transition-colors block mb-1">mosse01_@hotmail.com</a>
+            <span class="text-stone text-sm block" data-i18n="footer_location">Bergen, Norway</span>
+          </div>
+          <div>
+            <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_company">Company</span>
+            <span class="text-stone text-sm block mb-1">Sahin Digital</span>
+            <span class="text-stone text-sm block" data-i18n="footer_orgnr">Org. nr 937 535 260</span>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-ink/8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span class="text-stone text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2026 Sahin Digital. All rights reserved.</span>
+          <div class="flex gap-6">
+            <a href="https://www.linkedin.com/in/mustafa-sahin-3a18521b3/" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">LinkedIn</a>
+            <a href="https://github.com/Mosse-hiof" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">GitHub</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -631,22 +685,22 @@
           class="about-portrait w-full h-full object-cover object-top"
         />
         <div class="absolute bottom-8 left-8 flex items-end gap-4">
-          <div class="w-24 h-32 rounded-sm overflow-hidden border-2 border-void/50 shadow-lg">
+          <div class="w-24 h-32 rounded-xl overflow-hidden border-2 border-white/50 shadow-lg">
             <img src="image1.jpg" alt="Mustafa Sahin" class="w-full h-full object-cover object-top" />
           </div>
-          <span class="bg-lime text-void text-xs font-bold tracking-widest uppercase px-4 py-2">Bergen, Norway</span>
+          <span class="bg-coral text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-lg">Bergen, Norway</span>
         </div>
       </div>
 
       <!-- Right: Scrollable Content -->
       <div class="w-full md:w-1/2 px-8 md:px-16 py-16 md:py-32">
-        <p class="reveal text-lime text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about_label">/// Who I Am</p>
+        <p class="reveal text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about_label">/// Who I Am</p>
         <h2 class="reveal font-clash font-bold text-[8vw] md:text-[3.5vw] leading-[1.05] tracking-tight mb-4">
           Mustafa Sahin
         </h2>
-        <p class="reveal text-concrete text-sm tracking-wider mb-12" data-i18n="about_subtitle">Fullstack Developer &mdash; b. 22.03.92 &mdash; Bergen, Norway</p>
+        <p class="reveal text-stone text-sm tracking-wider mb-12" data-i18n="about_subtitle">Fullstack Developer &mdash; b. 22.03.92 &mdash; Bergen, Norway</p>
 
-        <div class="space-y-8 text-lg leading-relaxed text-concrete">
+        <div class="space-y-8 text-lg leading-relaxed text-stone">
           <p class="reveal" data-i18n="about_bio1">
             Fullstack developer with a bachelor's degree in Information Systems, specializing in software development. I have hands-on experience building web and mobile applications using Python, Java, Kotlin, Flutter, .NET, and JavaScript.
           </p>
@@ -657,7 +711,7 @@
             I have experience with Docker, API integration, process automation (reducing manual tasks by up to 40%), and understand the full lifecycle of AI models &mdash; from datasets and GPU-accelerated training to deployment. I'm a fast learner with technologies like Azure, and thrive on finding sustainable, user-friendly solutions to complex problems.
           </p>
           <p class="reveal" data-i18n="about_bio4">
-            <span class="text-phantom font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I'm looking for opportunities where I can apply my expertise to meaningful work in technology.
+            <span class="text-ink font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I'm looking for opportunities where I can apply my expertise to meaningful work in technology.
           </p>
         </div>
 
@@ -666,34 +720,34 @@
           <h3 class="font-clash font-semibold text-2xl mb-8" data-i18n="exp_title">Experience</h3>
           <div class="space-y-8">
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">Jul 2025 &mdash; Mar 2026</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Jul 2025 &mdash; Mar 2026</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp1_title">Freelance Fullstack Developer</h4>
-              <p class="text-concrete text-sm" data-i18n="exp1_loc">Bergen / Remote</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="exp1_desc">Built multiple e-learning platforms from scratch with full CRUD functionality for courses. Integrated with WordPress through REST API. Currently in production with real users and positive feedback. Deployed via Laravel Forge on DigitalOcean.</p>
+              <p class="text-stone text-sm" data-i18n="exp1_loc">Bergen / Remote</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp1_desc">Built multiple e-learning platforms from scratch with full CRUD functionality for courses. Integrated with WordPress through REST API. Currently in production with real users and positive feedback. Deployed via Laravel Forge on DigitalOcean.</p>
             </div>
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">Jan 2025 &mdash; Aug 2025</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Jan 2025 &mdash; Aug 2025</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp2_title">AI Agent Development & Training</h4>
-              <p class="text-concrete text-sm" data-i18n="exp2_loc">Høyskolen i Østfold, Halden</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="exp2_desc">Developed and trained AI agents in MuJoCo simulations including complex scenarios like air hockey. Built virtual environments, developed reinforcement learning algorithms, and achieved measurable performance improvements.</p>
+              <p class="text-stone text-sm" data-i18n="exp2_loc">Høyskolen i Østfold, Halden</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp2_desc">Developed and trained AI agents in MuJoCo simulations including complex scenarios like air hockey. Built virtual environments, developed reinforcement learning algorithms, and achieved measurable performance improvements.</p>
             </div>
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">Aug 2022 &mdash; Jan 2025</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Aug 2022 &mdash; Jan 2025</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp3_title">Software & Web Development Projects</h4>
-              <p class="text-concrete text-sm" data-i18n="exp3_loc">Høyskolen i Østfold, Halden</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="exp3_desc">Developed and launched web applications in Python and Java with responsive design. Built APIs, published Android applications, and automated processes that reduced manual tasks by up to 40%.</p>
+              <p class="text-stone text-sm" data-i18n="exp3_loc">Høyskolen i Østfold, Halden</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp3_desc">Developed and launched web applications in Python and Java with responsive design. Built APIs, published Android applications, and automated processes that reduced manual tasks by up to 40%.</p>
             </div>
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">Feb 2020 &mdash; Sep 2022</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Feb 2020 &mdash; Sep 2022</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp4_title">Freelance Web Designer / Developer</h4>
-              <p class="text-concrete text-sm" data-i18n="exp4_loc">Halden</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="exp4_desc">Delivered custom, responsive websites for small businesses with HTML, CSS, and JavaScript. Strengthened clients' digital presence and online visibility.</p>
+              <p class="text-stone text-sm" data-i18n="exp4_loc">Halden</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp4_desc">Delivered custom, responsive websites for small businesses with HTML, CSS, and JavaScript. Strengthened clients' digital presence and online visibility.</p>
             </div>
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">May 2012 &mdash; Jun 2019</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">May 2012 &mdash; Jun 2019</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp5_title">Previous Experience</h4>
-              <p class="text-concrete text-sm" data-i18n="exp5_loc">Bergen</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="exp5_desc">Manager at Mama Rosa Restaurant &mdash; led a team of six employees with responsibility for purchasing, budgeting, and operations. Sales associate at 7-Eleven.</p>
+              <p class="text-stone text-sm" data-i18n="exp5_loc">Bergen</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp5_desc">Manager at Mama Rosa Restaurant &mdash; led a team of six employees with responsibility for purchasing, budgeting, and operations. Sales associate at 7-Eleven.</p>
             </div>
           </div>
         </div>
@@ -703,51 +757,51 @@
           <h3 class="font-clash font-semibold text-2xl mb-8" data-i18n="edu_title">Education</h3>
           <div class="space-y-8">
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1" data-i18n="edu1_year">Graduated 2025</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1" data-i18n="edu1_year">Graduated 2025</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="edu1_title">Bachelor in Information Systems</h4>
-              <p class="text-concrete text-sm" data-i18n="edu1_loc">Høgskolen i Østfold, Halden</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="edu1_desc">Specialization in software development. Achieved highest grade on bachelor thesis: AI solutions for simulation and reinforcement learning.</p>
+              <p class="text-stone text-sm" data-i18n="edu1_loc">Høgskolen i Østfold, Halden</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="edu1_desc">Specialization in software development. Achieved highest grade on bachelor thesis: AI solutions for simulation and reinforcement learning.</p>
             </div>
             <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-lime block mb-1">2019</span>
+              <span class="text-xs tracking-widest uppercase text-coral block mb-1">2019</span>
               <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="edu2_title">Annual Studies in Economics</h4>
-              <p class="text-concrete text-sm" data-i18n="edu2_loc">Høgskolen i Vestlandet, Haugesund</p>
-              <p class="text-concrete text-sm mt-2 leading-relaxed" data-i18n="edu2_desc">Macro and microeconomics with focus on economic models.</p>
+              <p class="text-stone text-sm" data-i18n="edu2_loc">Høgskolen i Vestlandet, Haugesund</p>
+              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="edu2_desc">Macro and microeconomics with focus on economic models.</p>
             </div>
           </div>
         </div>
 
         <!-- Tech Stack Grid -->
         <div class="grid grid-cols-2 gap-6 mt-20">
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_lang">Languages</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_lang">Languages</span>
             <span class="font-clash font-semibold text-base">Python, Java, JavaScript, C#, C, Kotlin, SQL</span>
           </div>
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_web">Web</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_web">Web</span>
             <span class="font-clash font-semibold text-base">React, Laravel, .NET, Django, WordPress, HTML5, CSS</span>
           </div>
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_mobile">Mobile</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_mobile">Mobile</span>
             <span class="font-clash font-semibold text-base">Flutter, Kotlin, Android</span>
           </div>
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_cloud">Cloud & DevOps</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_cloud">Cloud & DevOps</span>
             <span class="font-clash font-semibold text-base">Docker, DigitalOcean, Laravel Forge, Azure, Git, Linux, CI/CD</span>
           </div>
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_ai">AI & Data</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_ai">AI & Data</span>
             <span class="font-clash font-semibold text-base">TensorFlow, PyTorch, ML, RL</span>
           </div>
-          <div class="reveal border border-white/10 p-6">
-            <span class="text-xs tracking-widest uppercase text-concrete block mb-3" data-i18n="tech_spoken">Languages Spoken</span>
+          <div class="reveal warm-card p-6">
+            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_spoken">Languages Spoken</span>
             <span class="font-clash font-semibold text-base" data-i18n="tech_spoken_val">Norwegian, English, Turkish, Swedish</span>
           </div>
         </div>
 
         <!-- CTA -->
         <div class="mt-20 reveal text-center md:text-left">
-          <a href="#" onclick="openContact(); return false;" class="magnetic-btn hoverable inline-block px-10 py-5 bg-lime text-void font-clash font-semibold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-phantom" data-i18n="get_in_touch">
+          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-10 py-5 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg" data-i18n="get_in_touch">
             Get in Touch
           </a>
         </div>
@@ -771,7 +825,7 @@
       // Update active nav link
       const navKey = viewId === 'home-view' ? 'home' : 'about';
       document.querySelectorAll('[data-nav]').forEach(link => {
-        link.classList.toggle('text-lime', link.dataset.nav === navKey);
+        link.classList.toggle('text-coral', link.dataset.nav === navKey);
       });
     }
 
@@ -797,7 +851,7 @@
       const message = data.get('message');
       const subject = encodeURIComponent('Project Inquiry from ' + name);
       const body = encodeURIComponent('From: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      window.location.href = 'mailto:mosse08_@hotmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:mosse01_@hotmail.com?subject=' + subject + '&body=' + body;
 
       // Show success state
       form.classList.add('hidden');
@@ -821,55 +875,6 @@
       const hasInput = Array.from(form.elements).some(el => el.value && el.value.trim() !== '');
       if (!hasInput) closeContact();
     });
-
-    // ── Custom Cursor ──
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-    let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.left = mouseX + 'px';
-      cursorDot.style.top = mouseY + 'px';
-      cursorDot.style.transform = 'translate(-50%, -50%)';
-    });
-
-    function animateCursor() {
-      outlineX += (mouseX - outlineX) * 0.12;
-      outlineY += (mouseY - outlineY) * 0.12;
-      cursorOutline.style.left = outlineX + 'px';
-      cursorOutline.style.top = outlineY + 'px';
-      cursorOutline.style.transform = 'translate(-50%, -50%)';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Cursor hover scaling
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('.hoverable, a, button')) {
-        cursorOutline.classList.add('hovering');
-        cursorDot.classList.add('hovering');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('.hoverable, a, button')) {
-        cursorOutline.classList.remove('hovering');
-        cursorDot.classList.remove('hovering');
-      }
-    });
-
-    // ── Hero Image Slider ──
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentSlide = 0;
-
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-    setInterval(nextSlide, 5000);
 
     // ── Vertical Text Scroller (seamless loop) ──
     const scroller = document.getElementById('textScroller');
@@ -925,13 +930,6 @@
       });
     });
 
-    // ── Hide cursor on mobile / touch ──
-    if ('ontouchstart' in window) {
-      cursorDot.style.display = 'none';
-      cursorOutline.style.display = 'none';
-      document.body.style.cursor = 'auto';
-    }
-
     // ── Internationalization (EN / NO) ──
     const translations = {
       en: {
@@ -943,14 +941,16 @@
         hero_sub: 'Fullstack developer from Bergen, Norway. I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.',
         start_project: 'Start Project',
         scroll: 'Scroll',
-        expertise_title: 'Expertise',
-        expertise_sub: '01 // What I Do',
-        card1_title: 'Frontend & Mobile',
-        card1_desc: 'Responsive web applications with React, .NET and modern CSS. Native mobile experiences in Flutter and Kotlin for Android & iOS. From design to deployment.',
-        card2_title: 'Backend & Infrastructure',
-        card2_desc: 'Scalable server architectures with Python, Java, PHP/Laravel, and .NET. Production deployments via Laravel Forge and DigitalOcean. Docker, API integrations, and automated pipelines that cut manual work by 40%.',
-        card3_title: 'AI & Machine Learning',
-        card3_desc: 'Custom AI algorithms, reinforcement learning agents trained in simulated environments (MuJoCo), and real-time human-AI interaction. Experience with TensorFlow, PyTorch, and GPU-accelerated training pipelines.',
+        expertise_title: 'Services',
+        expertise_sub: '01 // What I Offer',
+        card1_title: 'Websites & Web Applications',
+        card1_desc: 'Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems I run in production. Built with Laravel, React, .NET, and WordPress when it fits.',
+        card2_title: 'Mobile Apps & Custom Software',
+        card2_desc: 'Cross-platform mobile apps with Flutter and native Android with Kotlin. Desktop tools and internal software built with Python, Java, and .NET — shaped around how your team actually works.',
+        card3_title: 'AI Solutions & Automation',
+        card3_desc: "Smart automation, AI integrations, and custom ML models. I've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.",
+        card4_title: 'Maintenance, Support & Consulting',
+        card4_desc: "Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — I'm here for the long run.",
         work_title: 'Selected Work',
         work_sub: '02 // Projects',
         proj1_title: 'E-Learning Platform — Jetski',
@@ -964,11 +964,16 @@
         testimonial1_client: 'Jetski LMS — Client',
         testimonial2_text: 'I was surprised how fast the site was delivered. I especially appreciated being involved throughout the process. Every system, even the complicated certificate generation, was well done and working perfectly.',
         testimonial2_client: 'MGB Truck LMS — Client',
-        open_for_work: '<span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span> Open for Work',
+        open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Accepting New Projects',
         nav_cv: 'CV',
         cta_label: '/// The Next Step',
         start_a_project: 'Start a Project',
-        footer_copy: '&copy; 2025 Mustafa Sahin. Bergen, Norway.',
+        footer_copy: '&copy; 2026 Sahin Digital. All rights reserved.',
+        footer_about: 'A boutique development studio in Bergen, Norway. Websites, web apps, mobile apps, AI, and the support to keep it all running.',
+        footer_contact: 'Contact',
+        footer_location: 'Bergen, Norway',
+        footer_company: 'Company',
+        footer_orgnr: 'Org. nr 937 535 260',
         contact_title: 'Start a Project',
         form_name: 'Your Name',
         form_email: 'Email Address',
@@ -982,7 +987,7 @@
         about_bio1: "Fullstack developer with a bachelor's degree in Information Systems, specializing in software development. I have hands-on experience building web and mobile applications using Python, Java, Kotlin, Flutter, .NET, and JavaScript.",
         about_bio2: "I've developed custom AI algorithms, trained agents in simulated environments like MuJoCo, and enabled real-time human-AI interaction &mdash; including speech recognition in Android apps. My bachelor thesis on reinforcement learning achieved the highest grade.",
         about_bio3: "I have experience with Docker, API integration, process automation (reducing manual tasks by up to 40%), and understand the full lifecycle of AI models &mdash; from datasets and GPU-accelerated training to deployment. I'm a fast learner with technologies like Azure, and thrive on finding sustainable, user-friendly solutions to complex problems.",
-        about_bio4: '<span class="text-phantom font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I\'m looking for opportunities where I can apply my expertise to meaningful work in technology.',
+        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I\'m looking for opportunities where I can apply my expertise to meaningful work in technology.',
         about_bio4_highlight: 'High technological curiosity, strong execution, and solid teamwork skills',
         exp_title: 'Experience',
         exp1_title: 'Freelance Fullstack Developer',
@@ -1029,14 +1034,16 @@
         hero_sub: 'Fullstack-utvikler fra Bergen, Norge. Jeg bygger høytytende web-, mobil- og skrivebordsapplikasjoner med moderne teknologi og AI-drevne løsninger.',
         start_project: 'Start Prosjekt',
         scroll: 'Scroll',
-        expertise_title: 'Ekspertise',
-        expertise_sub: '01 // Hva Jeg Gjør',
-        card1_title: 'Frontend & Mobil',
-        card1_desc: 'Responsive webapplikasjoner med React, .NET og moderne CSS. Native mobilopplevelser i Flutter og Kotlin for Android & iOS. Fra design til produksjon.',
-        card2_title: 'Backend & Infrastruktur',
-        card2_desc: 'Skalerbare serverarkitekturer med Python, Java, PHP/Laravel og .NET. Produksjonsdeploy via Laravel Forge og DigitalOcean. Docker, API-integrasjoner og automatiserte pipelines som reduserte manuelt arbeid med 40%.',
-        card3_title: 'AI & Maskinlæring',
-        card3_desc: 'Egenutviklede AI-algoritmer, forsterkende læringsagenter trent i simulerte miljøer (MuJoCo), og sanntids menneske-AI-interaksjon. Erfaring med TensorFlow, PyTorch og GPU-akselererte treningspipelines.',
+        expertise_title: 'Tjenester',
+        expertise_sub: '01 // Hva Jeg Tilbyr',
+        card1_title: 'Nettsider & Webapplikasjoner',
+        card1_desc: 'Skreddersydde nettsider, nettbutikker og komplette webapplikasjoner — fra landingssider til komplekse plattformer som e-læringssystemene jeg har i produksjon. Bygget med Laravel, React, .NET og WordPress når det passer.',
+        card2_title: 'Mobilapper & Skreddersydd Programvare',
+        card2_desc: 'Kryssplattform mobilapper med Flutter og native Android med Kotlin. Skrivebordsverktøy og intern programvare bygget med Python, Java og .NET — formet etter hvordan teamet ditt faktisk jobber.',
+        card3_title: 'AI-løsninger & Automatisering',
+        card3_desc: 'Smart automatisering, AI-integrasjoner og skreddersydde ML-modeller. Jeg har trent forsterkende læringsagenter i MuJoCo og automatisert prosesser som reduserte manuelt arbeid med 40%. Praktisk AI, ikke hype.',
+        card4_title: 'Vedlikehold, Support & Rådgivning',
+        card4_desc: 'Løpende vedlikehold av nettsider og apper, teknisk support når ting bryter sammen, og rådgivning før du bygger. Enten du har arvet en gammel kodebase eller trenger råd om hva du bør bygge videre — jeg er her for den lange veien.',
         work_title: 'Utvalgte Prosjekter',
         work_sub: '02 // Prosjekter',
         proj1_title: 'E-læringsplattform — Jetski',
@@ -1050,11 +1057,16 @@
         testimonial1_client: 'Jetski LMS — Kunde',
         testimonial2_text: 'Jeg ble overrasket over hvor raskt nettsiden ble levert. Jeg satte spesielt pris på å bli involvert gjennom hele prosessen. Hvert system, selv den kompliserte sertifikatgenereringen, var godt gjennomført og fungerte perfekt.',
         testimonial2_client: 'MGB Truck LMS — Kunde',
-        open_for_work: '<span class="w-2 h-2 bg-lime rounded-full animate-pulse"></span> Ledig for Oppdrag',
+        open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Tar Imot Nye Prosjekter',
         nav_cv: 'CV',
         cta_label: '/// Neste Steg',
         start_a_project: 'Start et Prosjekt',
-        footer_copy: '&copy; 2025 Mustafa Sahin. Bergen, Norge.',
+        footer_copy: '&copy; 2026 Sahin Digital. Alle rettigheter forbeholdt.',
+        footer_about: 'Et lite utviklingsstudio i Bergen. Nettsider, webapplikasjoner, mobilapper, AI og supporten som holder alt i gang.',
+        footer_contact: 'Kontakt',
+        footer_location: 'Bergen, Norge',
+        footer_company: 'Selskap',
+        footer_orgnr: 'Org. nr 937 535 260',
         contact_title: 'Start et Prosjekt',
         form_name: 'Ditt Navn',
         form_email: 'E-postadresse',
@@ -1068,7 +1080,7 @@
         about_bio1: 'Fullstack-utvikler med bachelorgrad i informasjonssystemer, med spesialisering innen programvareutvikling. Jeg har praktisk erfaring med å bygge web- og mobilapplikasjoner med Python, Java, Kotlin, Flutter, .NET og JavaScript.',
         about_bio2: 'Jeg har utviklet egne AI-algoritmer, trent agenter i simulerte miljøer som MuJoCo, og muliggjort sanntids menneske-AI-interaksjon &mdash; inkludert talegjenkjenning i Android-apper. Bacheloroppgaven min om forsterkende læring oppnådde høyeste karakter.',
         about_bio3: 'Jeg har erfaring med Docker, API-integrasjon, prosessautomatisering (reduserte manuelle oppgaver med opptil 40%), og forstår hele livssyklusen til AI-modeller &mdash; fra datasett og GPU-akselerert trening til distribusjon. Jeg er en rask lærende med teknologier som Azure, og trives med å finne bærekraftige, brukervennlige løsninger på komplekse problemer.',
-        about_bio4: '<span class="text-phantom font-medium" data-i18n="about_bio4_highlight">Høy teknologisk nysgjerrighet, sterk gjennomføringsevne og gode samarbeidsegenskaper</span> &mdash; jeg søker muligheter der jeg kan bruke min kompetanse til meningsfylt arbeid innen teknologi.',
+        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Høy teknologisk nysgjerrighet, sterk gjennomføringsevne og gode samarbeidsegenskaper</span> &mdash; jeg søker muligheter der jeg kan bruke min kompetanse til meningsfylt arbeid innen teknologi.',
         about_bio4_highlight: 'Høy teknologisk nysgjerrighet, sterk gjennomføringsevne og gode samarbeidsegenskaper',
         exp_title: 'Erfaring',
         exp1_title: 'Frilanser Fullstack-utvikler',
