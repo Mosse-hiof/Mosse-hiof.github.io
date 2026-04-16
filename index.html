@@ -8,9 +8,81 @@
   <meta property="og:title" content="Sahin Digital — Development Studio in Bergen" />
   <meta property="og:description" content="Websites, web apps, mobile apps, AI solutions, and ongoing support — built by a Norwegian developer who cares." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://mosse-hiof.github.io/image2.jpg" />
+  <meta property="og:image" content="https://mosse-hiof.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://mosse-hiof.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://mosse-hiof.github.io/" />
+
+  <!-- Structured Data: Organization + LocalBusiness + Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mosse-hiof.github.io/#organization",
+        "name": "Sahin Digital",
+        "alternateName": "Sahin Digital AS",
+        "url": "https://mosse-hiof.github.io/",
+        "logo": "https://mosse-hiof.github.io/og-image.png",
+        "foundingDate": "2025",
+        "founder": { "@id": "https://mosse-hiof.github.io/#person" },
+        "taxID": "937 535 260",
+        "vatID": "NO937535260",
+        "email": "mosse01_@hotmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen",
+          "addressCountry": "NO"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/mustafa-sahin-3a18521b3/",
+          "https://github.com/Mosse-hiof"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://mosse-hiof.github.io/#localbusiness",
+        "name": "Sahin Digital",
+        "image": "https://mosse-hiof.github.io/og-image.png",
+        "url": "https://mosse-hiof.github.io/",
+        "email": "mosse01_@hotmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen",
+          "addressCountry": "NO"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Norway" },
+          { "@type": "Place", "name": "Remote / Worldwide" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://mosse-hiof.github.io/#person",
+        "name": "Mustafa Sahin",
+        "jobTitle": "Fullstack Developer & Founder",
+        "worksFor": { "@id": "https://mosse-hiof.github.io/#organization" },
+        "url": "https://mosse-hiof.github.io/",
+        "sameAs": [
+          "https://www.linkedin.com/in/mustafa-sahin-3a18521b3/",
+          "https://github.com/Mosse-hiof"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mosse-hiof.github.io/#website",
+        "url": "https://mosse-hiof.github.io/",
+        "name": "Sahin Digital",
+        "publisher": { "@id": "https://mosse-hiof.github.io/#organization" },
+        "inLanguage": ["en", "no"]
+      }
+    ]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E07A5F'/><text x='50' y='66' font-size='42' font-weight='700' text-anchor='middle' fill='%23FFFAF5' font-family='sans-serif' letter-spacing='-2'>SD</text></svg>" />
@@ -288,6 +360,94 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
+
+    /* ── FAQ Accordion ── */
+    .faq-item {
+      border-bottom: 1px solid rgba(42,37,32,0.08);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: color 0.2s ease;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary:hover { color: #E07A5F; }
+
+    .faq-item .faq-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(42,37,32,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      color: #2A2520;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+      background: #E07A5F;
+      border-color: #E07A5F;
+      color: white;
+    }
+
+    .faq-item .faq-body {
+      padding: 0 0 28px 0;
+      max-width: 780px;
+      color: #6B6259;
+      line-height: 1.7;
+    }
+
+    /* ── Mobile Nav ── */
+    .mobile-nav-toggle { display: none; }
+
+    @media (max-width: 768px) {
+      .desktop-nav { display: none !important; }
+      .mobile-nav-toggle { display: flex !important; }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: #FFFAF5;
+        z-index: 45;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .mobile-menu.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .mobile-menu a {
+        font-family: 'Clash Display', sans-serif;
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: -0.5px;
+      }
+
+      .hero-orb.orb-1 { width: 280px; height: 280px; }
+      .hero-orb.orb-2 { width: 240px; height: 240px; }
+      .hero-orb.orb-3 { width: 200px; height: 200px; }
+
+      nav .brand-text-sd { font-size: 14px; }
+    }
   </style>
 </head>
 
@@ -336,14 +496,31 @@
       <span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span>
       Accepting New Projects
     </span>
-    <div class="flex items-center gap-8">
+    <div class="desktop-nav flex items-center gap-8">
       <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
       <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="about" data-i18n="nav_about">About Me</a>
       <a href="CV_Mustafa.pdf" target="_blank" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-i18n="nav_cv">CV</a>
       <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all duration-300" data-i18n="nav_contact">Contact</a>
       <button onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
     </div>
+
+    <button class="mobile-nav-toggle items-center justify-center w-10 h-10" onclick="toggleMobileMenu()" aria-label="Menu">
+      <svg id="burger-icon" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#" onclick="navigate('home-view'); closeMobileMenu(); return false;" data-i18n="nav_home">Home</a>
+    <a href="#" onclick="navigate('about-view'); closeMobileMenu(); return false;" data-i18n="nav_about">About Me</a>
+    <a href="CV_Mustafa.pdf" target="_blank" onclick="closeMobileMenu()" data-i18n="nav_cv">CV</a>
+    <a href="#" onclick="openContact(); closeMobileMenu(); return false;" data-i18n="nav_contact">Contact</a>
+    <button onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300 mt-4" title="Switch language">
+      <span id="lang-toggle-mobile">EN</span>
+    </button>
+  </div>
 
   <!-- ═══════════════════════════════ HOME VIEW ═══════════════════════════════ -->
   <div id="home-view" class="view-container">
@@ -554,45 +731,53 @@
           <!-- Project 1 -->
           <div class="project-card reveal group">
             <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="lms1.png" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" />
+              <img src="lms1.png" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" loading="lazy" />
             </div>
-            <div>
-              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj1_title">E-Learning Platform — Jetski</h3>
-              <p class="text-stone text-sm tracking-wider uppercase">PHP / Laravel / Forge / DigitalOcean / WordPress API</p>
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj1_title">E-Learning Platform — Jetski</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj1_year">2025 · Live</span>
             </div>
+            <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj1_desc">Full LMS with course CRUD, video lessons, and WordPress REST integration. Delivered end-to-end in production with active paying users.</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Laravel · Forge · DigitalOcean · WordPress API</p>
           </div>
 
           <!-- Project 2 (offset) -->
           <div class="project-card reveal group md:mt-24">
             <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="lms2.png" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" />
+              <img src="lms2.png" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" loading="lazy" />
             </div>
-            <div>
-              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj2_title">E-Learning Platform — MGB Truck</h3>
-              <p class="text-stone text-sm tracking-wider uppercase">PHP / Laravel / Certificate Generation / REST API</p>
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj2_title">E-Learning Platform — MGB Truck</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj2_year">2025 · Live</span>
             </div>
+            <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj2_desc">Training platform with automatic certificate generation on course completion. Custom REST API, PDF generation, and admin dashboard &mdash; all shipped on time.</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Laravel · PDF Generation · REST API · Custom Admin</p>
           </div>
 
           <!-- Project 3 -->
           <div class="project-card reveal group">
             <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="lms3.png" alt="LMS Platform Overview" class="project-img w-full h-full object-cover" />
+              <img src="lms3.png" alt="LMS Platform Overview" class="project-img w-full h-full object-cover" loading="lazy" />
             </div>
-            <div>
-              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj3_title">AI Agent Training Platform</h3>
-              <p class="text-stone text-sm tracking-wider uppercase" data-i18n="proj3_tech">Python / MuJoCo / Reinforcement Learning</p>
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj3_title">AI Agent Training Platform</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj3_year">2025 · Research</span>
             </div>
+            <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj3_desc">Reinforcement-learning agents trained in simulated MuJoCo environments &mdash; including air hockey. Thesis awarded the highest grade.</p>
+            <p class="text-xs tracking-wider uppercase text-coral" data-i18n="proj3_tech">Python · MuJoCo · PyTorch · RL Agents</p>
           </div>
 
           <!-- Project 4 -->
           <div class="project-card reveal group md:mt-24">
             <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps" class="project-img w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile Apps" class="project-img w-full h-full object-cover" loading="lazy" />
             </div>
-            <div>
-              <h3 class="font-clash font-semibold text-xl md:text-2xl mb-1" data-i18n="proj4_title">Cross-Platform Mobile Apps</h3>
-              <p class="text-stone text-sm tracking-wider uppercase">Flutter / Kotlin / Android & iOS</p>
+            <div class="flex items-start justify-between gap-4 mb-2">
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj4_title">Cross-Platform Mobile Apps</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj4_year">2023&ndash;2025</span>
             </div>
+            <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj4_desc">Published Android and cross-platform apps with speech recognition, real-time human-AI interaction, and automated workflows that cut manual work by 40%.</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Flutter · Kotlin · Android · iOS</p>
           </div>
         </div>
       </div>
@@ -622,6 +807,66 @@
               <span class="font-clash font-semibold text-sm" data-i18n="testimonial2_client">MGB Truck LMS — Client</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="px-6 md:px-12 py-24">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-baseline justify-between mb-16 reveal">
+          <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="faq_title">Common Questions</h2>
+          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="faq_sub">04 // FAQ</span>
+        </div>
+
+        <div class="reveal">
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq1_q">How much does a project cost?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq1_a">Every project is different — a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and I'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq2_q">How long does it take?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq2_a">A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. I give you a realistic timeline up front and stick to it.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq3_q">Do you work with clients outside Bergen?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq3_a">Yes &mdash; I work remotely with clients across Norway and internationally. I'm based in Bergen, but most of my current work is delivered remotely with regular video calls and shared project tracking.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq4_q">Can you take over an existing project?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq4_a">Absolutely. I've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let me audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq5_q">What about ongoing support after launch?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq5_a">Launch is the start, not the end. I offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="font-clash font-semibold text-lg md:text-xl">
+              <span data-i18n="faq6_q">Am I working with a team or just you?</span>
+              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            </summary>
+            <div class="faq-body" data-i18n="faq6_a">Just me &mdash; that's a feature. You get direct contact, fast decisions, and no one translating your requirements through three layers of project managers. Sahin Digital is a deliberately small studio so the work stays personal and the quality stays high.</div>
+          </details>
         </div>
       </div>
     </section>
@@ -665,7 +910,8 @@
         </div>
         <div class="pt-8 border-t border-ink/8 flex flex-col md:flex-row items-center justify-between gap-4">
           <span class="text-stone text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2026 Sahin Digital. All rights reserved.</span>
-          <div class="flex gap-6">
+          <div class="flex gap-6 flex-wrap justify-center">
+            <a href="privacy.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="footer_privacy">Privacy</a>
             <a href="https://www.linkedin.com/in/mustafa-sahin-3a18521b3/" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">LinkedIn</a>
             <a href="https://github.com/Mosse-hiof" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">GitHub</a>
           </div>
@@ -811,6 +1057,22 @@
 
   <!-- ═══════════════════════════════ JAVASCRIPT ═══════════════════════════════ -->
   <script>
+    // ── Mobile Menu ──
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('burger-icon');
+      const isOpen = menu.classList.toggle('open');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      icon.innerHTML = isOpen
+        ? '<path d="M5 5L17 17M5 17L17 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'
+        : '<path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>';
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu.classList.contains('open')) toggleMobileMenu();
+    }
+
     // ── Navigation / SPA Routing ──
     function navigate(viewId) {
       closeContact();
@@ -954,10 +1216,18 @@
         work_title: 'Selected Work',
         work_sub: '02 // Projects',
         proj1_title: 'E-Learning Platform — Jetski',
+        proj1_year: '2025 · Live',
+        proj1_desc: 'Full LMS with course CRUD, video lessons, and WordPress REST integration. Delivered end-to-end in production with active paying users.',
         proj2_title: 'E-Learning Platform — MGB Truck',
+        proj2_year: '2025 · Live',
+        proj2_desc: 'Training platform with automatic certificate generation on course completion. Custom REST API, PDF generation, and admin dashboard &mdash; all shipped on time.',
         proj3_title: 'AI Agent Training Platform',
-        proj3_tech: 'Python / MuJoCo / Reinforcement Learning',
+        proj3_year: '2025 · Research',
+        proj3_desc: 'Reinforcement-learning agents trained in simulated MuJoCo environments &mdash; including air hockey. Thesis awarded the highest grade.',
+        proj3_tech: 'Python · MuJoCo · PyTorch · RL Agents',
         proj4_title: 'Cross-Platform Mobile Apps',
+        proj4_year: '2023&ndash;2025',
+        proj4_desc: 'Published Android and cross-platform apps with speech recognition, real-time human-AI interaction, and automated workflows that cut manual work by 40%.',
         testimonials_title: 'Client Feedback',
         testimonials_sub: '03 // Testimonials',
         testimonial1_text: 'The site works wonderfully and our customers are quite happy. No one has complained. The integration and transfer was fast and painless.',
@@ -974,6 +1244,21 @@
         footer_location: 'Bergen, Norway',
         footer_company: 'Company',
         footer_orgnr: 'Org. nr 937 535 260',
+        footer_privacy: 'Privacy',
+        faq_title: 'Common Questions',
+        faq_sub: '04 // FAQ',
+        faq1_q: 'How much does a project cost?',
+        faq1_a: "Every project is different &mdash; a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and I'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.",
+        faq2_q: 'How long does it take?',
+        faq2_a: 'A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. I give you a realistic timeline up front and stick to it.',
+        faq3_q: 'Do you work with clients outside Bergen?',
+        faq3_a: "Yes &mdash; I work remotely with clients across Norway and internationally. I'm based in Bergen, but most of my current work is delivered remotely with regular video calls and shared project tracking.",
+        faq4_q: 'Can you take over an existing project?',
+        faq4_a: "Absolutely. I've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let me audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.",
+        faq5_q: 'What about ongoing support after launch?',
+        faq5_a: 'Launch is the start, not the end. I offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.',
+        faq6_q: 'Am I working with a team or just you?',
+        faq6_a: "Just me &mdash; that's a feature. You get direct contact, fast decisions, and no one translating your requirements through three layers of project managers. Sahin Digital is a deliberately small studio so the work stays personal and the quality stays high.",
         contact_title: 'Start a Project',
         form_name: 'Your Name',
         form_email: 'Email Address',
@@ -1047,10 +1332,18 @@
         work_title: 'Utvalgte Prosjekter',
         work_sub: '02 // Prosjekter',
         proj1_title: 'E-læringsplattform — Jetski',
+        proj1_year: '2025 · I drift',
+        proj1_desc: 'Komplett LMS med kurs-CRUD, videoleksjoner og WordPress REST-integrasjon. Levert ende-til-ende i produksjon med aktive, betalende brukere.',
         proj2_title: 'E-læringsplattform — MGB Truck',
+        proj2_year: '2025 · I drift',
+        proj2_desc: 'Opplæringsplattform med automatisk sertifikatgenerering når kurs fullføres. Skreddersydd REST API, PDF-generering og admin-dashboard &mdash; levert til avtalt tid.',
         proj3_title: 'AI Agent Treningsplattform',
-        proj3_tech: 'Python / MuJoCo / Forsterkende Læring',
+        proj3_year: '2025 · Forskning',
+        proj3_desc: 'Forsterkende læringsagenter trent i simulerte MuJoCo-miljøer &mdash; inkludert air hockey. Bacheloroppgaven oppnådde høyeste karakter.',
+        proj3_tech: 'Python · MuJoCo · PyTorch · RL-Agenter',
         proj4_title: 'Kryssplattform Mobilapper',
+        proj4_year: '2023&ndash;2025',
+        proj4_desc: 'Publiserte Android- og kryssplattform-apper med talegjenkjenning, sanntids menneske-AI-interaksjon, og automatiserte prosesser som reduserte manuelt arbeid med 40%.',
         testimonials_title: 'Tilbakemeldinger',
         testimonials_sub: '03 // Kundeomtaler',
         testimonial1_text: 'Nettsiden fungerer utmerket og kundene er veldig fornøyde. Ingen har klaget. Integrasjonen og overføringen var rask og smertefri.',
@@ -1067,6 +1360,21 @@
         footer_location: 'Bergen, Norge',
         footer_company: 'Selskap',
         footer_orgnr: 'Org. nr 937 535 260',
+        footer_privacy: 'Personvern',
+        faq_title: 'Vanlige Spørsmål',
+        faq_sub: '04 // FAQ',
+        faq1_q: 'Hvor mye koster et prosjekt?',
+        faq1_a: 'Alle prosjekter er forskjellige &mdash; en landingsside og en komplett plattform er totalt forskjellige saker. Ta kontakt med en grov idé om hva du ønsker, så kommer jeg tilbake med en gratis avklaringssamtale og et fast tilbud. Ingen overraskelser, ingen fakturerbare sonderingssamtaler.',
+        faq2_q: 'Hvor lang tid tar det?',
+        faq2_a: 'En enkel markedsføringsside: 2&ndash;3 uker. En skreddersydd webapplikasjon eller LMS-lignende plattform: 6&ndash;12 uker, avhengig av omfang. Mobilapper tar typisk 8&ndash;16 uker. Jeg gir deg en realistisk tidslinje på forhånd og holder den.',
+        faq3_q: 'Jobber du med kunder utenfor Bergen?',
+        faq3_a: 'Ja &mdash; jeg jobber eksternt med kunder over hele Norge og internasjonalt. Jeg er basert i Bergen, men mesteparten av mitt nåværende arbeid leveres eksternt med jevnlige videosamtaler og delt prosjektoppfølging.',
+        faq4_q: 'Kan du overta et eksisterende prosjekt?',
+        faq4_a: 'Absolutt. Jeg har overtatt kodebaser fra andre utviklere og byråer, ryddet opp, og holdt dem i gang. La meg først gjøre en gjennomgang av det du har &mdash; så bestemmer vi om vi skal fortsette, refaktorere eller bygge på nytt.',
+        faq5_q: 'Hva med løpende support etter lansering?',
+        faq5_a: 'Lansering er starten, ikke slutten. Jeg tilbyr månedlige vedlikeholdsavtaler som dekker hosting, oppdateringer, sikkerhetskopier, sikkerhetsoppdateringer og et satt antall support-timer. Eller vi kan jobbe per time når du trenger hjelp &mdash; ditt valg.',
+        faq6_q: 'Jobber jeg med et team eller bare deg?',
+        faq6_a: 'Bare meg &mdash; det er en funksjon, ikke en begrensning. Du får direkte kontakt, raske beslutninger, og ingen som oversetter kravene dine gjennom tre lag med prosjektledere. Sahin Digital er et bevisst lite studio for at arbeidet skal forbli personlig og kvaliteten høy.',
         contact_title: 'Start et Prosjekt',
         form_name: 'Ditt Navn',
         form_email: 'E-postadresse',
@@ -1146,8 +1454,11 @@
       // Update html lang attribute
       document.documentElement.lang = lang === 'no' ? 'no' : 'en';
 
-      // Update toggle button
-      document.getElementById('lang-toggle').textContent = lang === 'no' ? 'NO' : 'EN';
+      // Update toggle buttons (desktop + mobile)
+      const label = lang === 'no' ? 'NO' : 'EN';
+      document.getElementById('lang-toggle').textContent = label;
+      const mobileLabel = document.getElementById('lang-toggle-mobile');
+      if (mobileLabel) mobileLabel.textContent = label;
     }
 
     function toggleLang() {
