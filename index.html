@@ -1303,13 +1303,13 @@
     const CAPTION_EN = 'Just discovered Digitekt — a boutique dev studio in Bergen, Norway. They build websites, web apps, mobile apps, and AI solutions with real craft. If you need something built (or rebuilt), give them a look. ' + SHARE_URL;
     const CAPTION_NO = 'Oppdaget Digitekt — et lite utviklingsstudio i Bergen som lager nettsider, web-apper, mobilapper og AI-løsninger med ekte håndverk. Trenger du noe bygget (eller bygget på nytt), ta en titt. ' + SHARE_URL;
 
-    function currentLang() {
+    function getLang() {
       return (document.documentElement.lang || 'en').toLowerCase().startsWith('no') ? 'no' : 'en';
     }
 
     function shareOn(platform) {
       const url = encodeURIComponent(SHARE_URL);
-      const text = encodeURIComponent(currentLang() === 'no' ? SHARE_TEXT_NO : SHARE_TEXT_EN);
+      const text = encodeURIComponent(getLang() === 'no' ? SHARE_TEXT_NO : SHARE_TEXT_EN);
 
       const targets = {
         facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
@@ -1326,7 +1326,7 @@
 
     function nativeShare() {
       if (!navigator.share) return;
-      const lang = currentLang();
+      const lang = getLang();
       navigator.share({
         title: 'Digitekt',
         text: lang === 'no' ? SHARE_TEXT_NO : SHARE_TEXT_EN,
@@ -1336,7 +1336,7 @@
 
     function showToast(key) {
       const toast = document.getElementById('copy-toast');
-      const t = translations[currentLang()] || translations.en;
+      const t = translations[getLang()] || translations.en;
       toast.textContent = t[key] || t.copy_toast;
       toast.classList.add('show');
       clearTimeout(showToast._t);
@@ -1365,7 +1365,7 @@
     }
 
     function copyCaption() {
-      const caption = currentLang() === 'no' ? CAPTION_NO : CAPTION_EN;
+      const caption = getLang() === 'no' ? CAPTION_NO : CAPTION_EN;
       copyToClipboard(caption).then(() => showToast('caption_toast'));
     }
 
