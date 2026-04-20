@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digitekt — Websites, Web Apps & Software, Crafted in Bergen</title>
-  <meta name="description" content="Digitekt is a development studio in Bergen, Norway. I build websites, web apps, mobile apps, and custom software — with maintenance, support, and consulting along the way." />
+  <meta name="description" content="Digitekt is a development studio in Bergen, Norway. We build websites, web apps, mobile apps, and custom software — with maintenance, support, and consulting along the way." />
   <meta property="og:title" content="Digitekt — Development Studio in Bergen" />
-  <meta property="og:description" content="Websites, web apps, mobile apps, AI solutions, and ongoing support — built by a Norwegian developer who cares." />
+  <meta property="og:description" content="Websites, web apps, mobile apps, AI solutions, and ongoing support — built with real craft in Bergen, Norway." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://digitekt.no/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -32,9 +32,11 @@
         "founder": { "@id": "https://digitekt.no/#person" },
         "taxID": "937 535 260",
         "vatID": "NO937535260",
-        "email": "mosse01_@hotmail.com",
+        "email": "info@digitekt.no",
+        "telephone": "+4746942117",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Klauvsteinen 129",
           "addressLocality": "Bergen",
           "addressCountry": "NO"
         },
@@ -50,10 +52,12 @@
         "legalName": "Sahin Digital",
         "image": "https://digitekt.no/og-image.png",
         "url": "https://digitekt.no/",
-        "email": "mosse01_@hotmail.com",
+        "email": "info@digitekt.no",
+        "telephone": "+4746942117",
         "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Klauvsteinen 129",
           "addressLocality": "Bergen",
           "addressCountry": "NO"
         },
@@ -523,18 +527,18 @@
           <input type="email" name="email" required class="form-input" placeholder="you@company.com" data-i18n-placeholder="ph_email" />
         </div>
         <div>
-          <label class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_message">Tell me about your project</label>
+          <label class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_message">Tell us about your project</label>
           <textarea name="message" rows="5" required class="form-input resize-none" placeholder="I need help with..." data-i18n-placeholder="ph_message"></textarea>
         </div>
         <button type="submit" class="magnetic-btn w-full py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg">
           <span data-i18n="form_send">Send Message</span>
         </button>
-        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">I'll get back to you within 24 hours.</p>
+        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">We'll get back to you within 24 hours.</p>
       </form>
       <div id="form-success" class="hidden text-center py-12">
         <span class="text-coral text-5xl block mb-4">&#10003;</span>
         <h3 class="font-clash font-bold text-2xl mb-2" data-i18n="form_success_title">Message Sent!</h3>
-        <p class="text-stone" data-i18n="form_success_desc">I'll get back to you as soon as possible.</p>
+        <p class="text-stone" data-i18n="form_success_desc">We'll get back to you as soon as possible.</p>
       </div>
     </div>
   </div>
@@ -551,8 +555,7 @@
     </span>
     <div class="desktop-nav flex items-center gap-8">
       <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
-      <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="about" data-i18n="nav_about">About Me</a>
-      <a href="CV_Mustafa.pdf" target="_blank" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-i18n="nav_cv">CV</a>
+      <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="about" data-i18n="nav_about">About</a>
       <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all duration-300" data-i18n="nav_contact">Contact</a>
       <button onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
     </div>
@@ -567,8 +570,7 @@
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu">
     <a href="#" onclick="navigate('home-view'); closeMobileMenu(); return false;" data-i18n="nav_home">Home</a>
-    <a href="#" onclick="navigate('about-view'); closeMobileMenu(); return false;" data-i18n="nav_about">About Me</a>
-    <a href="CV_Mustafa.pdf" target="_blank" onclick="closeMobileMenu()" data-i18n="nav_cv">CV</a>
+    <a href="#" onclick="navigate('about-view'); closeMobileMenu(); return false;" data-i18n="nav_about">About</a>
     <a href="#" onclick="openContact(); closeMobileMenu(); return false;" data-i18n="nav_contact">Contact</a>
     <button onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300 mt-4" title="Switch language">
       <span id="lang-toggle-mobile">EN</span>
@@ -607,7 +609,7 @@
         </h1>
         <div class="md:translate-x-6">
           <p class="reveal max-w-xl mx-auto mt-6 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">
-            Fullstack developer from Bergen, Norway. I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.
+            Development studio from Bergen, Norway. We build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.
           </p>
           <div class="reveal mt-8">
             <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">
@@ -666,7 +668,7 @@
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
           <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="expertise_title">Services</h2>
-          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="expertise_sub">01 // What I Offer</span>
+          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="expertise_sub">01 // What We Offer</span>
         </div>
 
         <div class="relative" style="height: 200vh;">
@@ -678,7 +680,7 @@
                   <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">01</span>
                   <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card1_title">Websites & Web Applications</h3>
                   <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card1_desc">
-                    Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems I run in production. Built with Laravel, React, .NET, and WordPress when it fits.
+                    Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems we run in production. Built with Laravel, React, .NET, and WordPress when it fits.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
                     <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Laravel</span>
@@ -728,7 +730,7 @@
                   <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">03</span>
                   <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card3_title">AI Solutions & Automation</h3>
                   <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card3_desc">
-                    Smart automation, AI integrations, and custom ML models. I've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.
+                    Smart automation, AI integrations, and custom ML models. We've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
                     <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">TensorFlow</span>
@@ -752,7 +754,7 @@
                   <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">04</span>
                   <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card4_title">Maintenance, Support & Consulting</h3>
                   <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card4_desc">
-                    Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — I'm here for the long run.
+                    Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — we're here for the long run.
                   </p>
                   <div class="flex flex-wrap gap-3 mt-6">
                     <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Maintenance</span>
@@ -878,7 +880,7 @@
               <span data-i18n="faq1_q">How much does a project cost?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq1_a">Every project is different — a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and I'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.</div>
+            <div class="faq-body" data-i18n="faq1_a">Every project is different — a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and we'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.</div>
           </details>
 
           <details class="faq-item">
@@ -886,7 +888,7 @@
               <span data-i18n="faq2_q">How long does it take?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq2_a">A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. I give you a realistic timeline up front and stick to it.</div>
+            <div class="faq-body" data-i18n="faq2_a">A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. We give you a realistic timeline up front and stick to it.</div>
           </details>
 
           <details class="faq-item">
@@ -894,7 +896,7 @@
               <span data-i18n="faq3_q">Do you work with clients outside Bergen?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq3_a">Yes &mdash; I work remotely with clients across Norway and internationally. I'm based in Bergen, but most of my current work is delivered remotely with regular video calls and shared project tracking.</div>
+            <div class="faq-body" data-i18n="faq3_a">Yes &mdash; we work remotely with clients across Norway and internationally. We're based in Bergen, but most of our current work is delivered remotely with regular video calls and shared project tracking.</div>
           </details>
 
           <details class="faq-item">
@@ -902,7 +904,7 @@
               <span data-i18n="faq4_q">Can you take over an existing project?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq4_a">Absolutely. I've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let me audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.</div>
+            <div class="faq-body" data-i18n="faq4_a">Absolutely. We've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let us audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.</div>
           </details>
 
           <details class="faq-item">
@@ -910,15 +912,15 @@
               <span data-i18n="faq5_q">What about ongoing support after launch?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq5_a">Launch is the start, not the end. I offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.</div>
+            <div class="faq-body" data-i18n="faq5_a">Launch is the start, not the end. We offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.</div>
           </details>
 
           <details class="faq-item">
             <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq6_q">Am I working with a team or just you?</span>
+              <span data-i18n="faq6_q">Who's behind Digitekt?</span>
               <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
             </summary>
-            <div class="faq-body" data-i18n="faq6_a">Just me &mdash; that's a feature. You get direct contact, fast decisions, and no one translating your requirements through three layers of project managers. Digitekt is a deliberately small studio so the work stays personal and the quality stays high.</div>
+            <div class="faq-body" data-i18n="faq6_a">Digitekt is a small, founder-led studio in Bergen. You work directly with the person building your product &mdash; no handoffs, no account managers, no requirements translated through three layers of project managers. That's deliberate: it keeps the work personal and the quality high.</div>
           </details>
         </div>
       </div>
@@ -989,8 +991,9 @@
           </div>
           <div>
             <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_contact">Contact</span>
-            <a href="mailto:mosse01_@hotmail.com" class="text-stone text-sm hover:text-coral transition-colors block mb-1">mosse01_@hotmail.com</a>
-            <span class="text-stone text-sm block" data-i18n="footer_location">Bergen, Norway</span>
+            <a href="mailto:info@digitekt.no" class="text-stone text-sm hover:text-coral transition-colors block mb-1">info@digitekt.no</a>
+            <a href="tel:+4746942117" class="text-stone text-sm hover:text-coral transition-colors block mb-1">+47 46 94 21 17</a>
+            <span class="text-stone text-sm block" data-i18n="footer_address">Klauvsteinen 129, Bergen, Norway</span>
           </div>
           <div>
             <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_company">Company</span>
@@ -1030,24 +1033,24 @@
 
       <!-- Right: Scrollable Content -->
       <div class="w-full md:w-1/2 px-8 md:px-16 py-16 md:py-32">
-        <p class="reveal text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about_label">/// Who I Am</p>
+        <p class="reveal text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about_label">/// Who We Are</p>
         <h2 class="reveal font-clash font-bold text-[8vw] md:text-[3.5vw] leading-[1.05] tracking-tight mb-4">
           Mustafa Sahin
         </h2>
-        <p class="reveal text-stone text-sm tracking-wider mb-12" data-i18n="about_subtitle">Fullstack Developer &mdash; b. 22.03.92 &mdash; Bergen, Norway</p>
+        <p class="reveal text-stone text-sm tracking-wider mb-12" data-i18n="about_subtitle">Founder &amp; Developer &mdash; Bergen, Norway</p>
 
         <div class="space-y-8 text-lg leading-relaxed text-stone">
           <p class="reveal" data-i18n="about_bio1">
-            Fullstack developer with a bachelor's degree in Information Systems, specializing in software development. I have hands-on experience building web and mobile applications using Python, Java, Kotlin, Flutter, .NET, and JavaScript.
+            Digitekt is a development studio in Bergen, Norway &mdash; small, founder-led, and focused on building real software that ships. We build websites, web apps, mobile apps, and custom software for clients who want craft over templates.
           </p>
           <p class="reveal" data-i18n="about_bio2">
-            I've developed custom AI algorithms, trained agents in simulated environments like MuJoCo, and enabled real-time human-AI interaction &mdash; including speech recognition in Android apps. My bachelor thesis on reinforcement learning achieved the highest grade.
+            Our work spans production LMS platforms serving paying customers, cross-platform mobile apps, and AI integrations that cut manual work by up to 40%. We pick the right stack for the job &mdash; Laravel, React, .NET, Flutter, Python &mdash; rather than forcing every project through one template.
           </p>
           <p class="reveal" data-i18n="about_bio3">
-            I have experience with Docker, API integration, process automation (reducing manual tasks by up to 40%), and understand the full lifecycle of AI models &mdash; from datasets and GPU-accelerated training to deployment. I'm a fast learner with technologies like Azure, and thrive on finding sustainable, user-friendly solutions to complex problems.
+            Being small is a feature, not a limit. It means direct contact, fast decisions, and no requirements translated through three layers of project managers. Every project gets the attention it deserves &mdash; and we stick around after launch with maintenance, support, and consulting.
           </p>
           <p class="reveal" data-i18n="about_bio4">
-            <span class="text-ink font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I'm looking for opportunities where I can apply my expertise to meaningful work in technology.
+            <span class="text-ink font-medium" data-i18n="about_bio4_highlight">Technical depth, honest communication, and a long-run mindset</span> &mdash; we'd rather build fewer projects well than chase volume.
           </p>
         </div>
 
@@ -1227,7 +1230,7 @@
         console.error('Form submission failed:', err);
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnHTML;
-        alert("Sorry — something went wrong sending your message. Please email me directly at mosse01_@hotmail.com.");
+        alert("Sorry — something went wrong sending your message. Please email us directly at info@digitekt.no.");
       });
     }
 
@@ -1379,23 +1382,23 @@
     const translations = {
       en: {
         nav_home: 'Home',
-        nav_about: 'About Me',
+        nav_about: 'About',
         nav_contact: 'Contact',
         hero_make: 'MAKE YOUR',
         hero_vision: 'VISION COME ALIVE',
-        hero_sub: 'Fullstack developer from Bergen, Norway. I build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.',
+        hero_sub: 'Development studio from Bergen, Norway. We build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.',
         start_project: 'Start Project',
         scroll: 'Scroll',
         expertise_title: 'Services',
-        expertise_sub: '01 // What I Offer',
+        expertise_sub: '01 // What We Offer',
         card1_title: 'Websites & Web Applications',
-        card1_desc: 'Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems I run in production. Built with Laravel, React, .NET, and WordPress when it fits.',
+        card1_desc: 'Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems we run in production. Built with Laravel, React, .NET, and WordPress when it fits.',
         card2_title: 'Mobile Apps & Custom Software',
         card2_desc: 'Cross-platform mobile apps with Flutter and native Android with Kotlin. Desktop tools and internal software built with Python, Java, and .NET — shaped around how your team actually works.',
         card3_title: 'AI Solutions & Automation',
-        card3_desc: "Smart automation, AI integrations, and custom ML models. I've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.",
+        card3_desc: "Smart automation, AI integrations, and custom ML models. We've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.",
         card4_title: 'Maintenance, Support & Consulting',
-        card4_desc: "Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — I'm here for the long run.",
+        card4_desc: "Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — we're here for the long run.",
         work_title: 'Selected Work',
         work_sub: '02 // Projects',
         proj1_title: 'E-Learning Platform — Jetski',
@@ -1418,13 +1421,12 @@
         testimonial2_text: 'Delivery was faster than I expected, and I appreciated being kept in the loop throughout the project. Even the trickier parts — like the automatic certificate generation — were built to work flawlessly from day one.',
         testimonial2_client: 'MGB Truck LMS — Client',
         open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Accepting New Projects',
-        nav_cv: 'CV',
         cta_label: '/// The Next Step',
         start_a_project: 'Start a Project',
         footer_copy: '&copy; 2026 Digitekt. All rights reserved.',
         footer_about: 'A development studio in Bergen, Norway. Websites, web apps, mobile apps, AI, and the support to keep it all running.',
         footer_contact: 'Contact',
-        footer_location: 'Bergen, Norway',
+        footer_address: 'Klauvsteinen 129, Bergen, Norway',
         footer_company: 'Company',
         footer_legal: 'Digitekt &mdash; a trade name of Sahin Digital',
         footer_orgnr: 'Org. nr 937 535 260',
@@ -1438,32 +1440,32 @@
         faq_title: 'Common Questions',
         faq_sub: '04 // FAQ',
         faq1_q: 'How much does a project cost?',
-        faq1_a: "Every project is different &mdash; a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and I'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.",
+        faq1_a: "Every project is different &mdash; a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and we'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.",
         faq2_q: 'How long does it take?',
-        faq2_a: 'A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. I give you a realistic timeline up front and stick to it.',
+        faq2_a: 'A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. We give you a realistic timeline up front and stick to it.',
         faq3_q: 'Do you work with clients outside Bergen?',
-        faq3_a: "Yes &mdash; I work remotely with clients across Norway and internationally. I'm based in Bergen, but most of my current work is delivered remotely with regular video calls and shared project tracking.",
+        faq3_a: "Yes &mdash; we work remotely with clients across Norway and internationally. We're based in Bergen, but most of our current work is delivered remotely with regular video calls and shared project tracking.",
         faq4_q: 'Can you take over an existing project?',
-        faq4_a: "Absolutely. I've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let me audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.",
+        faq4_a: "Absolutely. We've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let us audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.",
         faq5_q: 'What about ongoing support after launch?',
-        faq5_a: 'Launch is the start, not the end. I offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.',
-        faq6_q: 'Am I working with a team or just you?',
-        faq6_a: "Just me &mdash; that's a feature. You get direct contact, fast decisions, and no one translating your requirements through three layers of project managers. Digitekt is a deliberately small studio so the work stays personal and the quality stays high.",
+        faq5_a: 'Launch is the start, not the end. We offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.',
+        faq6_q: "Who's behind Digitekt?",
+        faq6_a: "Digitekt is a small, founder-led studio in Bergen. You work directly with the person building your product &mdash; no handoffs, no account managers, no requirements translated through three layers of project managers. That's deliberate: it keeps the work personal and the quality high.",
         contact_title: 'Start a Project',
         form_name: 'Your Name',
         form_email: 'Email Address',
-        form_message: 'Tell me about your project',
+        form_message: 'Tell us about your project',
         form_send: 'Send Message',
-        form_reply: "I'll get back to you within 24 hours.",
+        form_reply: "We'll get back to you within 24 hours.",
         form_success_title: 'Message Sent!',
-        form_success_desc: "I'll get back to you as soon as possible.",
-        about_label: '/// Who I Am',
-        about_subtitle: 'Fullstack Developer &mdash; b. 22.03.92 &mdash; Bergen, Norway',
-        about_bio1: "Fullstack developer with a bachelor's degree in Information Systems, specializing in software development. I have hands-on experience building web and mobile applications using Python, Java, Kotlin, Flutter, .NET, and JavaScript.",
-        about_bio2: "I've developed custom AI algorithms, trained agents in simulated environments like MuJoCo, and enabled real-time human-AI interaction &mdash; including speech recognition in Android apps. My bachelor thesis on reinforcement learning achieved the highest grade.",
-        about_bio3: "I have experience with Docker, API integration, process automation (reducing manual tasks by up to 40%), and understand the full lifecycle of AI models &mdash; from datasets and GPU-accelerated training to deployment. I'm a fast learner with technologies like Azure, and thrive on finding sustainable, user-friendly solutions to complex problems.",
-        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">High technological curiosity, strong execution, and solid teamwork skills</span> &mdash; I\'m looking for opportunities where I can apply my expertise to meaningful work in technology.',
-        about_bio4_highlight: 'High technological curiosity, strong execution, and solid teamwork skills',
+        form_success_desc: "We'll get back to you as soon as possible.",
+        about_label: '/// Who We Are',
+        about_subtitle: 'Founder &amp; Developer &mdash; Bergen, Norway',
+        about_bio1: "Digitekt is a development studio in Bergen, Norway &mdash; small, founder-led, and focused on building real software that ships. We build websites, web apps, mobile apps, and custom software for clients who want craft over templates.",
+        about_bio2: "Our work spans production LMS platforms serving paying customers, cross-platform mobile apps, and AI integrations that cut manual work by up to 40%. We pick the right stack for the job &mdash; Laravel, React, .NET, Flutter, Python &mdash; rather than forcing every project through one template.",
+        about_bio3: "Being small is a feature, not a limit. It means direct contact, fast decisions, and no requirements translated through three layers of project managers. Every project gets the attention it deserves &mdash; and we stick around after launch with maintenance, support, and consulting.",
+        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Technical depth, honest communication, and a long-run mindset</span> &mdash; we\'d rather build fewer projects well than chase volume.',
+        about_bio4_highlight: 'Technical depth, honest communication, and a long-run mindset',
         exp_title: 'Experience',
         exp1_title: 'Freelance Fullstack Developer',
         exp1_loc: 'Bergen / Remote',
@@ -1502,23 +1504,23 @@
       },
       no: {
         nav_home: 'Hjem',
-        nav_about: 'Om Meg',
+        nav_about: 'Om Oss',
         nav_contact: 'Kontakt',
         hero_make: 'GJØ\u0301R DIN',
         hero_vision: 'VISJON TIL VIRKELIGHET',
-        hero_sub: 'Fullstack-utvikler fra Bergen, Norge. Jeg bygger høytytende web-, mobil- og skrivebordsapplikasjoner med moderne teknologi og AI-drevne løsninger.',
+        hero_sub: 'Utviklingsstudio fra Bergen, Norge. Vi bygger høytytende web-, mobil- og skrivebordsapplikasjoner med moderne teknologi og AI-drevne løsninger.',
         start_project: 'Start Prosjekt',
         scroll: 'Scroll',
         expertise_title: 'Tjenester',
-        expertise_sub: '01 // Hva Jeg Tilbyr',
+        expertise_sub: '01 // Hva Vi Tilbyr',
         card1_title: 'Nettsider & Webapplikasjoner',
-        card1_desc: 'Skreddersydde nettsider, nettbutikker og komplette webapplikasjoner — fra landingssider til komplekse plattformer som e-læringssystemene jeg har i produksjon. Bygget med Laravel, React, .NET og WordPress når det passer.',
+        card1_desc: 'Skreddersydde nettsider, nettbutikker og komplette webapplikasjoner — fra landingssider til komplekse plattformer som e-læringssystemene vi har i produksjon. Bygget med Laravel, React, .NET og WordPress når det passer.',
         card2_title: 'Mobilapper & Skreddersydd Programvare',
         card2_desc: 'Kryssplattform mobilapper med Flutter og native Android med Kotlin. Skrivebordsverktøy og intern programvare bygget med Python, Java og .NET — formet etter hvordan teamet ditt faktisk jobber.',
         card3_title: 'AI-løsninger & Automatisering',
-        card3_desc: 'Smart automatisering, AI-integrasjoner og skreddersydde ML-modeller. Jeg har trent forsterkende læringsagenter i MuJoCo og automatisert prosesser som reduserte manuelt arbeid med 40%. Praktisk AI, ikke hype.',
+        card3_desc: 'Smart automatisering, AI-integrasjoner og skreddersydde ML-modeller. Vi har trent forsterkende læringsagenter i MuJoCo og automatisert prosesser som reduserte manuelt arbeid med 40%. Praktisk AI, ikke hype.',
         card4_title: 'Vedlikehold, Support & Rådgivning',
-        card4_desc: 'Løpende vedlikehold av nettsider og apper, teknisk support når ting bryter sammen, og rådgivning før du bygger. Enten du har arvet en gammel kodebase eller trenger råd om hva du bør bygge videre — jeg er her for den lange veien.',
+        card4_desc: 'Løpende vedlikehold av nettsider og apper, teknisk support når ting bryter sammen, og rådgivning før du bygger. Enten du har arvet en gammel kodebase eller trenger råd om hva du bør bygge videre — vi er her for den lange veien.',
         work_title: 'Utvalgte Prosjekter',
         work_sub: '02 // Prosjekter',
         proj1_title: 'E-læringsplattform — Jetski',
@@ -1541,13 +1543,12 @@
         testimonial2_text: 'Leveransen gikk raskere enn jeg forventet, og jeg satte pris på å bli inkludert gjennom hele prosessen. Selv de kompliserte delene — som den automatiske sertifikatgenereringen — ble bygget for å fungere feilfritt fra første dag.',
         testimonial2_client: 'MGB Truck LMS — Kunde',
         open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Tar Imot Nye Prosjekter',
-        nav_cv: 'CV',
         cta_label: '/// Neste Steg',
         start_a_project: 'Start et Prosjekt',
         footer_copy: '&copy; 2026 Digitekt. Alle rettigheter forbeholdt.',
         footer_about: 'Et lite utviklingsstudio i Bergen. Nettsider, webapplikasjoner, mobilapper, AI og supporten som holder alt i gang.',
         footer_contact: 'Kontakt',
-        footer_location: 'Bergen, Norge',
+        footer_address: 'Klauvsteinen 129, Bergen, Norge',
         footer_company: 'Selskap',
         footer_legal: 'Digitekt &mdash; et varemerke for Sahin Digital',
         footer_orgnr: 'Org. nr 937 535 260',
@@ -1561,32 +1562,32 @@
         faq_title: 'Vanlige Spørsmål',
         faq_sub: '04 // FAQ',
         faq1_q: 'Hvor mye koster et prosjekt?',
-        faq1_a: 'Alle prosjekter er forskjellige &mdash; en landingsside og en komplett plattform er totalt forskjellige saker. Ta kontakt med en grov idé om hva du ønsker, så kommer jeg tilbake med en gratis avklaringssamtale og et fast tilbud. Ingen overraskelser, ingen fakturerbare sonderingssamtaler.',
+        faq1_a: 'Alle prosjekter er forskjellige &mdash; en landingsside og en komplett plattform er totalt forskjellige saker. Ta kontakt med en grov idé om hva du ønsker, så kommer vi tilbake med en gratis avklaringssamtale og et fast tilbud. Ingen overraskelser, ingen fakturerbare sonderingssamtaler.',
         faq2_q: 'Hvor lang tid tar det?',
-        faq2_a: 'En enkel markedsføringsside: 2&ndash;3 uker. En skreddersydd webapplikasjon eller LMS-lignende plattform: 6&ndash;12 uker, avhengig av omfang. Mobilapper tar typisk 8&ndash;16 uker. Jeg gir deg en realistisk tidslinje på forhånd og holder den.',
+        faq2_a: 'En enkel markedsføringsside: 2&ndash;3 uker. En skreddersydd webapplikasjon eller LMS-lignende plattform: 6&ndash;12 uker, avhengig av omfang. Mobilapper tar typisk 8&ndash;16 uker. Vi gir deg en realistisk tidslinje på forhånd og holder den.',
         faq3_q: 'Jobber du med kunder utenfor Bergen?',
-        faq3_a: 'Ja &mdash; jeg jobber eksternt med kunder over hele Norge og internasjonalt. Jeg er basert i Bergen, men mesteparten av mitt nåværende arbeid leveres eksternt med jevnlige videosamtaler og delt prosjektoppfølging.',
+        faq3_a: 'Ja &mdash; vi jobber eksternt med kunder over hele Norge og internasjonalt. Vi er basert i Bergen, men mesteparten av vårt nåværende arbeid leveres eksternt med jevnlige videosamtaler og delt prosjektoppfølging.',
         faq4_q: 'Kan du overta et eksisterende prosjekt?',
-        faq4_a: 'Absolutt. Jeg har overtatt kodebaser fra andre utviklere og byråer, ryddet opp, og holdt dem i gang. La meg først gjøre en gjennomgang av det du har &mdash; så bestemmer vi om vi skal fortsette, refaktorere eller bygge på nytt.',
+        faq4_a: 'Absolutt. Vi har overtatt kodebaser fra andre utviklere og byråer, ryddet opp, og holdt dem i gang. La oss først gjøre en gjennomgang av det du har &mdash; så bestemmer vi om vi skal fortsette, refaktorere eller bygge på nytt.',
         faq5_q: 'Hva med løpende support etter lansering?',
-        faq5_a: 'Lansering er starten, ikke slutten. Jeg tilbyr månedlige vedlikeholdsavtaler som dekker hosting, oppdateringer, sikkerhetskopier, sikkerhetsoppdateringer og et satt antall support-timer. Eller vi kan jobbe per time når du trenger hjelp &mdash; ditt valg.',
-        faq6_q: 'Jobber jeg med et team eller bare deg?',
-        faq6_a: 'Bare meg &mdash; det er en funksjon, ikke en begrensning. Du får direkte kontakt, raske beslutninger, og ingen som oversetter kravene dine gjennom tre lag med prosjektledere. Digitekt er et bevisst lite studio for at arbeidet skal forbli personlig og kvaliteten høy.',
+        faq5_a: 'Lansering er starten, ikke slutten. Vi tilbyr månedlige vedlikeholdsavtaler som dekker hosting, oppdateringer, sikkerhetskopier, sikkerhetsoppdateringer og et satt antall support-timer. Eller vi kan jobbe per time når du trenger hjelp &mdash; ditt valg.',
+        faq6_q: 'Hvem står bak Digitekt?',
+        faq6_a: 'Digitekt er et lite, grunnleggerledet studio i Bergen. Du jobber direkte med personen som bygger produktet ditt &mdash; ingen overleveringer, ingen kundeansvarlige, og ingen som oversetter krav gjennom tre lag med prosjektledere. Det er bevisst: det holder arbeidet personlig og kvaliteten høy.',
         contact_title: 'Start et Prosjekt',
         form_name: 'Ditt Navn',
         form_email: 'E-postadresse',
-        form_message: 'Fortell meg om prosjektet ditt',
+        form_message: 'Fortell oss om prosjektet ditt',
         form_send: 'Send Melding',
-        form_reply: 'Jeg svarer deg innen 24 timer.',
+        form_reply: 'Vi svarer deg innen 24 timer.',
         form_success_title: 'Melding Sendt!',
-        form_success_desc: 'Jeg kommer tilbake til deg så snart som mulig.',
-        about_label: '/// Hvem Jeg Er',
-        about_subtitle: 'Fullstack-utvikler &mdash; f. 22.03.92 &mdash; Bergen, Norge',
-        about_bio1: 'Fullstack-utvikler med bachelorgrad i informasjonssystemer, med spesialisering innen programvareutvikling. Jeg har praktisk erfaring med å bygge web- og mobilapplikasjoner med Python, Java, Kotlin, Flutter, .NET og JavaScript.',
-        about_bio2: 'Jeg har utviklet egne AI-algoritmer, trent agenter i simulerte miljøer som MuJoCo, og muliggjort sanntids menneske-AI-interaksjon &mdash; inkludert talegjenkjenning i Android-apper. Bacheloroppgaven min om forsterkende læring oppnådde høyeste karakter.',
-        about_bio3: 'Jeg har erfaring med Docker, API-integrasjon, prosessautomatisering (reduserte manuelle oppgaver med opptil 40%), og forstår hele livssyklusen til AI-modeller &mdash; fra datasett og GPU-akselerert trening til distribusjon. Jeg er en rask lærende med teknologier som Azure, og trives med å finne bærekraftige, brukervennlige løsninger på komplekse problemer.',
-        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Høy teknologisk nysgjerrighet, sterk gjennomføringsevne og gode samarbeidsegenskaper</span> &mdash; jeg søker muligheter der jeg kan bruke min kompetanse til meningsfylt arbeid innen teknologi.',
-        about_bio4_highlight: 'Høy teknologisk nysgjerrighet, sterk gjennomføringsevne og gode samarbeidsegenskaper',
+        form_success_desc: 'Vi kommer tilbake til deg så snart som mulig.',
+        about_label: '/// Hvem Vi Er',
+        about_subtitle: 'Grunnlegger &amp; Utvikler &mdash; Bergen, Norge',
+        about_bio1: 'Digitekt er et utviklingsstudio i Bergen, Norge &mdash; lite, grunnleggerledet, og fokusert på å bygge ekte programvare som leveres. Vi bygger nettsider, webapplikasjoner, mobilapper og skreddersydd programvare for kunder som vil ha håndverk fremfor maler.',
+        about_bio2: 'Arbeidet vårt spenner fra LMS-plattformer i produksjon med betalende kunder, til kryssplattform-mobilapper og AI-integrasjoner som kutter manuelt arbeid med opptil 40%. Vi velger riktig teknologi for jobben &mdash; Laravel, React, .NET, Flutter, Python &mdash; i stedet for å tvinge alle prosjekter gjennom én mal.',
+        about_bio3: 'Å være liten er en funksjon, ikke en begrensning. Det betyr direkte kontakt, raske beslutninger, og ingen som oversetter krav gjennom tre lag med prosjektledere. Hvert prosjekt får oppmerksomheten det fortjener &mdash; og vi er der etter lansering med vedlikehold, support og rådgivning.',
+        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Teknisk dybde, ærlig kommunikasjon, og et langsiktig perspektiv</span> &mdash; vi heller bygger få prosjekter godt enn å jage volum.',
+        about_bio4_highlight: 'Teknisk dybde, ærlig kommunikasjon, og et langsiktig perspektiv',
         exp_title: 'Erfaring',
         exp1_title: 'Frilanser Fullstack-utvikler',
         exp1_loc: 'Bergen / Remote',
