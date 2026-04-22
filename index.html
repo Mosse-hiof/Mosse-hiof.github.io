@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digitekt — Websites, Web Apps & Software, Crafted in Bergen</title>
-  <meta name="description" content="Digitekt is a development studio in Bergen, Norway. We build websites, web apps, mobile apps, and custom software — with maintenance, support, and consulting along the way." />
-  <meta property="og:title" content="Digitekt — Development Studio in Bergen" />
-  <meta property="og:description" content="Websites, web apps, mobile apps, AI solutions, and ongoing support — built with real craft in Bergen, Norway." />
+  <title>Digitekt &mdash; Digital Partner in Bergen</title>
+  <meta name="description" content="Digitekt is a founder-led digital partner in Bergen. We build websites, systems, apps, automation, and digital foundations for small and growing companies." />
+  <meta property="og:title" content="Digitekt &mdash; Digital Partner in Bergen" />
+  <meta property="og:description" content="Websites, systems, apps, AI, design, operations, and support from a founder-led studio in Bergen." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://digitekt.no/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -15,7 +15,6 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://digitekt.no/" />
 
-  <!-- Structured Data: Organization + LocalBusiness + Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,456 +89,23 @@
   }
   </script>
 
-  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E07A5F'/><text x='50' y='72' font-size='62' font-weight='700' text-anchor='middle' fill='%23FFFAF5' font-family='sans-serif'>D</text></svg>" />
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts: Clash Display + General Sans from Fontshare -->
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            cream: '#FFFAF5',
-            sand: '#F5EDE4',
-            peach: '#FBD8C4',
-            apricot: '#F5C5AF',
-            ink: '#2A2520',
-            stone: '#8A8178',
-            coral: '#E07A5F',
-            'coral-dark': '#C4654D',
-          },
-          fontFamily: {
-            clash: ['"Clash Display"', 'sans-serif'],
-            sans: ['"General Sans"', 'sans-serif'],
-          },
-        },
-      },
+          colors: { cream: '#FFFAF5', sand: '#F5EDE4', peach: '#FBD8C4', apricot: '#F5C5AF', ink: '#2A2520', stone: '#8A8178', coral: '#E07A5F', 'coral-dark': '#C4654D' },
+          fontFamily: { clash: ['"Clash Display"', 'sans-serif'], sans: ['"General Sans"', 'sans-serif'] }
+        }
+      }
     };
   </script>
-
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: #FFFAF5;
-      color: #2A2520;
-      font-family: 'General Sans', sans-serif;
-      overflow-x: hidden;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* Accessible focus ring for keyboard users */
-    *:focus-visible {
-      outline: 2px solid #E07A5F;
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-
-    a, button { -webkit-tap-highlight-color: transparent; }
-
-    ::selection {
-      background: #E07A5F;
-      color: #FFFAF5;
-    }
-
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #FFFAF5; }
-    ::-webkit-scrollbar-thumb { background: #D4CBC2; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #E07A5F; }
-
-    /* ── Scroll Reveal ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── Hero Gradient Mesh ── */
-    .hero-mesh {
-      position: absolute;
-      inset: -10%;
-      background:
-        radial-gradient(ellipse 55% 45% at 18% 28%, rgba(224,122,95,0.32), transparent 65%),
-        radial-gradient(ellipse 45% 40% at 82% 22%, rgba(251,216,196,0.55), transparent 65%),
-        radial-gradient(ellipse 65% 55% at 75% 82%, rgba(224,122,95,0.20), transparent 65%),
-        radial-gradient(ellipse 50% 50% at 22% 88%, rgba(245,197,175,0.45), transparent 65%),
-        #FFFAF5;
-      animation: meshDrift 22s ease-in-out infinite alternate;
-      filter: blur(20px);
-    }
-
-    @keyframes meshDrift {
-      0%   { transform: translate(0, 0) scale(1); }
-      50%  { transform: translate(-2%, 1.5%) scale(1.04); }
-      100% { transform: translate(2%, -1.5%) scale(1.02); }
-    }
-
-    /* Subtle grain texture over the mesh for depth */
-    .hero-grain {
-      position: absolute;
-      inset: 0;
-      opacity: 0.25;
-      mix-blend-mode: multiply;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.14 0 0 0 0 0.12 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-    }
-
-    /* Soft floating orbs for extra life */
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.55;
-      animation: orbFloat 14s ease-in-out infinite alternate;
-    }
-    .hero-orb.orb-1 { width: 420px; height: 420px; background: #E07A5F; top: -8%; left: -6%; }
-    .hero-orb.orb-2 { width: 360px; height: 360px; background: #FBD8C4; top: 40%; right: -8%; animation-delay: -4s; animation-duration: 18s; }
-    .hero-orb.orb-3 { width: 300px; height: 300px; background: #F5C5AF; bottom: -6%; left: 35%; animation-delay: -8s; animation-duration: 20s; }
-
-    @keyframes orbFloat {
-      0%   { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, -30px) scale(1.08); }
-    }
-
-    /* ── Marquee ── */
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .marquee-track {
-      animation: marqueeScroll 20s linear infinite;
-    }
-
-    /* ── Vertical Text Scroller ── */
-    .scroller-mask {
-      height: 1.15em;
-      overflow: hidden;
-      display: inline-block;
-      vertical-align: bottom;
-    }
-
-    .scroller-inner {
-      transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-
-    /* ── Page Transitions ── */
-    .view-container {
-      transition: opacity 0.4s ease;
-    }
-
-    .view-container.hidden {
-      display: none !important;
-    }
-
-    /* ── Magnetic Button ── */
-    .magnetic-btn {
-      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    /* ── Project Card Hover ── */
-    .project-img {
-      transition: transform 0.6s ease;
-    }
-
-    .project-card:hover .project-img {
-      transform: scale(1.03);
-    }
-
-    .project-card:hover .project-arrow {
-      transform: rotate(-45deg);
-      color: #E07A5F;
-    }
-
-    .project-arrow {
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    /* ── Warm Cards ── */
-    .warm-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(42,37,32,0.06);
-      border-radius: 16px;
-      box-shadow: 0 2px 20px rgba(42,37,32,0.04);
-      transition: box-shadow 0.4s ease, transform 0.4s ease;
-    }
-
-    .warm-card:hover {
-      box-shadow: 0 8px 40px rgba(224,122,95,0.10);
-      transform: translateY(-2px);
-    }
-
-    /* ── About Image ── */
-    .about-portrait {
-      filter: brightness(0.95) saturate(1.05);
-    }
-
-    /* ── Contact Form ── */
-    .contact-overlay {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.4s ease, visibility 0s linear 0.4s;
-    }
-
-    .contact-overlay.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-      transition-delay: 0s;
-    }
-
-    .contact-panel {
-      transform: translateY(40px);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .contact-overlay.open .contact-panel {
-      transform: translateY(0);
-    }
-
-    .form-input {
-      background: transparent;
-      border: 1px solid rgba(42,37,32,0.12);
-      color: #2A2520;
-      padding: 14px 18px;
-      font-family: 'General Sans', sans-serif;
-      font-size: 15px;
-      width: 100%;
-      border-radius: 10px;
-      transition: border-color 0.3s ease;
-      outline: none;
-    }
-
-    .form-input:focus {
-      border-color: #E07A5F;
-    }
-
-    .form-input::placeholder {
-      color: #B5AEA6;
-    }
-
-    /* ── Timeline ── */
-    .timeline-item {
-      position: relative;
-      padding-left: 28px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 8px;
-      height: 8px;
-      background: #E07A5F;
-      border-radius: 50%;
-    }
-
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 3px;
-      top: 20px;
-      width: 1px;
-      height: calc(100% - 8px);
-      background: rgba(42,37,32,0.08);
-    }
-
-    .timeline-item:last-child::after {
-      display: none;
-    }
-
-    /* ── Nav ── */
-    nav {
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    /* ── Share Buttons ── */
-    .share-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(42,37,32,0.12);
-      background: white;
-      color: #6B6259;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      cursor: pointer;
-    }
-
-    .share-btn:hover {
-      background: #E07A5F;
-      color: white;
-      border-color: #E07A5F;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(224,122,95,0.25);
-    }
-
-    .share-btn svg { width: 18px; height: 18px; }
-
-    .copy-toast {
-      position: fixed;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
-      background: #2A2520;
-      color: #FFFAF5;
-      padding: 12px 24px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      z-index: 100;
-    }
-
-    .copy-toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    /* ── FAQ Accordion ── */
-    .faq-item {
-      border-bottom: 1px solid rgba(42,37,32,0.08);
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 24px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      transition: color 0.2s ease;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-
-    .faq-item summary:hover { color: #E07A5F; }
-
-    .faq-item .faq-icon {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid rgba(42,37,32,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-      color: #2A2520;
-    }
-
-    .faq-item[open] .faq-icon {
-      transform: rotate(45deg);
-      background: #E07A5F;
-      border-color: #E07A5F;
-      color: white;
-    }
-
-    .faq-item .faq-body {
-      padding: 0 0 28px 0;
-      max-width: 780px;
-      color: #6B6259;
-      line-height: 1.7;
-    }
-
-    /* ── Mobile Nav ── */
-    .mobile-nav-toggle { display: none; }
-
-    @media (max-width: 768px) {
-      .desktop-nav { display: none !important; }
-      .mobile-nav-toggle { display: flex !important; }
-
-      .mobile-menu {
-        position: fixed;
-        inset: 0;
-        background: #FFFAF5;
-        z-index: 45;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-      }
-
-      .mobile-menu.open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        transition-delay: 0s;
-      }
-
-      .mobile-menu a {
-        font-family: 'Clash Display', sans-serif;
-        font-weight: 600;
-        font-size: 28px;
-        letter-spacing: -0.5px;
-      }
-
-      .hero-orb.orb-1 { width: 280px; height: 280px; }
-      .hero-orb.orb-2 { width: 240px; height: 240px; }
-      .hero-orb.orb-3 { width: 200px; height: 200px; }
-
-      nav .brand-text-sd { font-size: 14px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 
-<body class="bg-cream text-ink font-sans antialiased">
-
-  <!-- ═══════════════════════════════ CONTACT OVERLAY ═══════════════════════════════ -->
+<body class="bg-cream text-ink font-sans antialiased" data-page="home">
   <div id="contact-overlay" class="contact-overlay fixed inset-0 z-[60] bg-cream/[0.97] flex items-center justify-center px-6" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-hidden="true" inert>
     <div class="contact-panel w-full max-w-lg bg-white border border-ink/5 rounded-2xl p-8 md:p-12 shadow-xl">
       <div class="flex items-center justify-between mb-10">
@@ -548,9 +114,7 @@
       </div>
       <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5" onsubmit="handleSubmit(event)">
         <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden" aria-hidden="true">
-          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-        </p>
+        <p class="hidden" aria-hidden="true"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
         <div>
           <label for="contact-name" class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_name">Your Name</label>
           <input id="contact-name" type="text" name="name" required class="form-input" placeholder="John Doe" data-i18n-placeholder="ph_name" />
@@ -566,56 +130,46 @@
         <button type="submit" class="magnetic-btn w-full py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg">
           <span data-i18n="form_send">Send Message</span>
         </button>
-        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">We'll get back to you within 24 hours.</p>
+        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">We will get back to you within 24 hours.</p>
       </form>
       <div id="form-success" class="hidden text-center py-12">
         <span class="text-coral text-5xl block mb-4">&#10003;</span>
         <h3 class="font-clash font-bold text-2xl mb-2" data-i18n="form_success_title">Message Sent!</h3>
-        <p class="text-stone" data-i18n="form_success_desc">We'll get back to you as soon as possible.</p>
+        <p class="text-stone" data-i18n="form_success_desc">We will get back to you as soon as possible.</p>
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════ NAVIGATION ═══════════════════════════════ -->
   <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between bg-cream/80">
-    <a href="#" onclick="navigate('home-view'); return false;" class="font-clash font-bold text-xl tracking-tight flex items-center gap-2">
+    <a href="index.html" class="font-clash font-bold text-xl tracking-tight flex items-center gap-2">
       <span class="inline-flex items-center justify-center w-8 h-8 bg-coral text-white rounded-lg text-sm font-bold tracking-tight">D</span>
       DIGITEKT<span class="text-coral">.</span>
     </a>
-    <span class="hidden md:inline-flex items-center gap-2 text-xs tracking-widest uppercase text-coral border border-coral/30 px-3 py-1 rounded-full ml-4" data-i18n="open_for_work">
-      <span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span>
-      Accepting New Projects
-    </span>
-    <div class="desktop-nav flex items-center gap-8">
-      <a href="#" onclick="navigate('home-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="home" data-i18n="nav_home">Home</a>
-      <a href="#" onclick="navigate('about-view'); return false;" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors duration-300" data-nav="about" data-i18n="nav_about">About</a>
-      <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all duration-300" data-i18n="nav_contact">Contact</a>
-      <button type="button" onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300" id="lang-toggle" title="Switch language">EN</button>
+    <span class="hidden lg:inline-flex items-center gap-2 text-xs tracking-widest uppercase text-coral border border-coral/30 px-3 py-1 rounded-full ml-4" data-i18n="open_for_work"><span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Accepting New Projects</span>
+    <div class="desktop-nav flex items-center gap-7">
+      <a href="index.html" data-nav="home" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_home">Home</a>
+      <a href="services.html" data-nav="services" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_services">Services</a>
+      <a href="news.html" data-nav="news" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_news">News</a>
+      <a href="about.html" data-nav="about" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_about">About</a>
+      <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all" data-i18n="nav_contact">Contact</a>
+      <button type="button" onclick="toggleLang()" data-lang-toggle class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors" title="Switch language">EN</button>
     </div>
-
     <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle items-center justify-center w-10 h-10" onclick="toggleMobileMenu()" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-      <svg id="burger-icon" width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+      <svg id="burger-icon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
-    <a href="#" onclick="navigate('home-view'); closeMobileMenu(); return false;" data-i18n="nav_home">Home</a>
-    <a href="#" onclick="navigate('about-view'); closeMobileMenu(); return false;" data-i18n="nav_about">About</a>
-    <a href="#" onclick="closeMobileMenu(); openContact(); return false;" data-i18n="nav_contact">Contact</a>
-    <button type="button" onclick="toggleLang()" class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors duration-300 mt-4" title="Switch language">
-      <span id="lang-toggle-mobile">EN</span>
-    </button>
+    <a href="index.html" data-nav="home" data-i18n="nav_home">Home</a>
+    <a href="services.html" data-nav="services" data-i18n="nav_services">Services</a>
+    <a href="news.html" data-nav="news" data-i18n="nav_news">News</a>
+    <a href="about.html" data-nav="about" data-i18n="nav_about">About</a>
+    <a href="#" onclick="openContact(); return false;" data-i18n="nav_contact">Contact</a>
+    <button type="button" onclick="toggleLang()" data-lang-toggle class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors mt-4" title="Switch language">EN</button>
   </div>
 
-  <!-- ═══════════════════════════════ HOME VIEW ═══════════════════════════════ -->
-  <div id="home-view" class="view-container">
-
-    <!-- ── Hero Section ── -->
-    <section class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center pb-20">
-      <!-- Animated Gradient Mesh Background -->
+  <main>
+    <section class="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center pb-20">
       <div class="absolute inset-0 z-0 overflow-hidden">
         <div class="hero-mesh"></div>
         <div class="hero-orb orb-1"></div>
@@ -623,9 +177,7 @@
         <div class="hero-orb orb-3"></div>
         <div class="hero-grain"></div>
       </div>
-
-      <!-- Hero Content -->
-      <div class="relative z-20 text-center px-4">
+      <div class="relative z-20 text-center px-4 pt-28">
         <h1 class="font-clash font-bold text-[11vw] md:text-[7vw] leading-[1.1] tracking-tight">
           <span class="reveal block" data-i18n="hero_make">MAKE YOUR</span>
           <span class="reveal block">
@@ -633,245 +185,119 @@
               <span class="scroller-inner block" id="textScroller">
                 <span class="block text-coral">WEB APP</span>
                 <span class="block text-[#7C6EAF]">MOBILE APP</span>
-                <span class="block text-[#5B9A8B]">DESKTOP APP</span>
+                <span class="block text-[#5B9A8B]">SYSTEM</span>
                 <span class="block text-coral">WEB APP</span>
               </span>
             </span>
           </span>
           <span class="reveal block" data-i18n="hero_vision">VISION COME ALIVE</span>
         </h1>
-        <div class="md:translate-x-6">
-          <p class="reveal max-w-xl mx-auto mt-6 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">
-            Development studio from Bergen, Norway. We build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.
-          </p>
-          <div class="reveal mt-8">
-            <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">
-              Start Project
-            </a>
-          </div>
+        <p class="reveal max-w-2xl mx-auto mt-6 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">Founder-led digital partner from Bergen. We build websites, systems, apps, automation, and digital foundations that help small and growing companies move forward.</p>
+        <div class="reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">Start Project</a>
+          <a href="services.html" class="inline-block px-8 py-4 border border-ink/15 text-ink font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:border-coral hover:text-coral transition-all" data-i18n="home_services_link">Explore Services</a>
         </div>
       </div>
-
-      <!-- Scroll Indicator -->
       <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 reveal">
         <span class="text-[10px] tracking-[0.35em] uppercase text-stone" data-i18n="scroll">Scroll</span>
-        <div class="w-px h-6 bg-stone/40 relative overflow-hidden">
-          <div class="w-full h-1/2 bg-coral animate-bounce"></div>
-        </div>
+        <div class="w-px h-6 bg-stone/40 relative overflow-hidden"><div class="w-full h-1/2 bg-coral animate-bounce"></div></div>
       </div>
     </section>
 
-    <!-- ── Marquee Section ── -->
-    <section class="bg-coral py-4 overflow-hidden relative rounded-none">
+    <section class="bg-coral py-4 overflow-hidden relative">
       <div class="marquee-track flex whitespace-nowrap">
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
-        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span>
-        <span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">DOCKER & DIGITALOCEAN</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">WORDPRESS</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">PYTHON</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">LARAVEL & PHP</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">REACT & .NET</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">FLUTTER & KOTLIN</span><span class="text-white/50 mx-4">&#9670;</span>
+        <span class="text-white font-clash font-bold text-lg md:text-xl tracking-wide mx-4">AI & PYTORCH</span><span class="text-white/50 mx-4">&#9670;</span>
       </div>
     </section>
 
-    <!-- ── Sticky Cards Section (Expertise) ── -->
     <section class="px-6 md:px-12 py-24">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-baseline justify-between mb-20 reveal">
-          <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="expertise_title">Services</h2>
-          <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="expertise_sub">01 // What We Offer</span>
-        </div>
-
-        <div class="relative" style="height: 200vh;">
-          <!-- Card 01 — Websites & Web Applications -->
-          <div class="sticky top-[80px] z-10">
-            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
-              <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
-                <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">01</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card1_title">Websites & Web Applications</h3>
-                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card1_desc">
-                    Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems we run in production. Built with Laravel, React, .NET, and WordPress when it fits.
-                  </p>
-                  <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Laravel</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">React</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">.NET</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">WordPress</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Tailwind</span>
-                  </div>
-                </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
-                  <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80" width="600" height="400" alt="Web development" class="w-full h-full object-cover project-img" loading="lazy" decoding="async" />
-                </div>
-              </div>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+          <div class="reveal">
+            <p class="text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="home_services_label">/// Services</p>
+            <h2 class="font-clash font-bold text-4xl md:text-6xl leading-none tracking-tight mb-6" data-i18n="home_services_title">Digital help without the handoff maze.</h2>
+            <p class="text-stone text-base md:text-lg leading-relaxed mb-8" data-i18n="home_services_desc">Digitekt combines software craft with practical support across web, systems, communication, and operations. You work directly with the person responsible for the work, with trusted specialists brought in when a project needs broader capacity.</p>
+            <a href="services.html" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:bg-coral-dark transition-all" data-i18n="home_services_link">Explore Services</a>
           </div>
-
-          <!-- Card 02 — Mobile & Software -->
-          <div class="sticky top-[100px] z-20">
-            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
-              <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
-                <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">02</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card2_title">Mobile Apps & Custom Software</h3>
-                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card2_desc">
-                    Cross-platform mobile apps with Flutter and native Android with Kotlin. Desktop tools and internal software built with Python, Java, and .NET — shaped around how your team actually works.
-                  </p>
-                  <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Flutter</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Kotlin</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Python</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Java</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">.NET</span>
-                  </div>
-                </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
-                  <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" width="600" height="400" alt="Mobile & software" class="w-full h-full object-cover project-img" loading="lazy" decoding="async" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 03 — AI & Automation -->
-          <div class="sticky top-[120px] z-30">
-            <div class="warm-card reveal p-8 md:p-12 mb-6 max-w-7xl mx-auto">
-              <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
-                <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">03</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card3_title">AI Solutions & Automation</h3>
-                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card3_desc">
-                    Smart automation, AI integrations, and custom ML models. We've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.
-                  </p>
-                  <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">TensorFlow</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">PyTorch</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">OpenAI API</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Automation</span>
-                  </div>
-                </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
-                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" width="600" height="400" alt="AI & automation" class="w-full h-full object-cover project-img" loading="lazy" decoding="async" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 04 — Support & Consulting -->
-          <div class="sticky top-[140px] z-40">
-            <div class="warm-card reveal p-8 md:p-12 max-w-7xl mx-auto">
-              <div class="flex flex-col md:flex-row md:items-start justify-between gap-8">
-                <div class="flex-1">
-                  <span class="font-clash font-bold text-[5vw] md:text-[3vw] text-ink/10 block mb-4">04</span>
-                  <h3 class="font-clash font-semibold text-2xl md:text-4xl mb-4" data-i18n="card4_title">Maintenance, Support & Consulting</h3>
-                  <p class="text-stone leading-relaxed max-w-lg text-base md:text-lg" data-i18n="card4_desc">
-                    Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — we're here for the long run.
-                  </p>
-                  <div class="flex flex-wrap gap-3 mt-6">
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Maintenance</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Support</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Consulting</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">Hosting</span>
-                    <span class="text-xs tracking-wider uppercase border border-ink/10 px-4 py-2 rounded-full text-stone">DevOps</span>
-                  </div>
-                </div>
-                <div class="w-full md:w-80 h-48 overflow-hidden rounded-xl">
-                  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" width="600" height="400" alt="Support & consulting" class="w-full h-full object-cover project-img" loading="lazy" decoding="async" />
-                </div>
-              </div>
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <article class="warm-card reveal p-6">
+              <span class="service-number">01</span>
+              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_web">Web & System Development</h3>
+              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_web_desc">Modern websites, business systems, APIs, and tailored platforms built around real workflows.</p>
+            </article>
+            <article class="warm-card reveal p-6">
+              <span class="service-number">02</span>
+              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_design">Design & Communication</h3>
+              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_design_desc">Clear visual identity, content, interface design, and launch communication that make the product easier to trust.</p>
+            </article>
+            <article class="warm-card reveal p-6">
+              <span class="service-number">03</span>
+              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_ops">Operations & Support</h3>
+              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_ops_desc">Hosting, maintenance, security-minded support, and technical guidance after launch.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Selected Work ── -->
     <section id="work" class="px-6 md:px-12 py-24">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
           <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="work_title">Selected Work</h2>
           <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="work_sub">02 // Projects</span>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <!-- Project 1 -->
           <div class="project-card reveal group">
-            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="lms1.png" width="1903" height="901" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" />
-            </div>
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="lms1.png" width="1903" height="901" alt="E-Learning Platform - Course Dashboard" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
             <div class="flex items-start justify-between gap-4 mb-2">
-              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj1_title">E-Learning Platform — Jetski</h3>
-              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj1_year">2025 · Live</span>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj1_title">E-Learning Platform &mdash; Jetski</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj1_year">2025 &middot; Live</span>
             </div>
             <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj1_desc">Full LMS with course CRUD, video lessons, and WordPress REST integration. Delivered end-to-end in production with active paying users.</p>
-            <p class="text-xs tracking-wider uppercase text-coral">Laravel · Forge · DigitalOcean · WordPress API</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Laravel &middot; Forge &middot; DigitalOcean &middot; WordPress API</p>
           </div>
-
-          <!-- Project 2 (offset) -->
           <div class="project-card reveal group md:mt-24">
-            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80" width="800" height="600" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" />
-            </div>
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="lms2.png" width="1903" height="1083" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
             <div class="flex items-start justify-between gap-4 mb-2">
-              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj2_title">E-Learning Platform — MGB Truck</h3>
-              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj2_year">2025 · Live</span>
+              <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj2_title">E-Learning Platform &mdash; MGB Truck</h3>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj2_year">2025 &middot; Live</span>
             </div>
             <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj2_desc">Training platform with automatic certificate generation on course completion. Custom REST API, PDF generation, and admin dashboard &mdash; all shipped on time.</p>
-            <p class="text-xs tracking-wider uppercase text-coral">Laravel · PDF Generation · REST API · Custom Admin</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Laravel &middot; PDF Generation &middot; REST API &middot; Custom Admin</p>
           </div>
-
-          <!-- Project 3 -->
           <div class="project-card reveal group">
-            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" width="800" height="600" alt="AI Agent Training Platform" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" />
-            </div>
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" width="800" height="600" alt="AI Agent Training Platform" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
             <div class="flex items-start justify-between gap-4 mb-2">
               <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj3_title">AI Agent Training Platform</h3>
-              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj3_year">2025 · Research</span>
+              <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj3_year">2025 &middot; Research</span>
             </div>
             <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj3_desc">Reinforcement-learning agents trained in simulated MuJoCo environments &mdash; including air hockey. Thesis awarded the highest grade.</p>
-            <p class="text-xs tracking-wider uppercase text-coral" data-i18n="proj3_tech">Python · MuJoCo · PyTorch · RL Agents</p>
+            <p class="text-xs tracking-wider uppercase text-coral" data-i18n="proj3_tech">Python &middot; MuJoCo &middot; PyTorch &middot; RL Agents</p>
           </div>
-
-          <!-- Project 4 -->
           <div class="project-card reveal group md:mt-24">
-            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm">
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" width="800" height="600" alt="Mobile Apps" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" />
-            </div>
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" width="800" height="600" alt="Mobile Apps" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
             <div class="flex items-start justify-between gap-4 mb-2">
               <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj4_title">Cross-Platform Mobile Apps</h3>
               <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj4_year">2023&ndash;2025</span>
             </div>
             <p class="text-stone text-sm mb-3 leading-relaxed" data-i18n="proj4_desc">Published Android and cross-platform apps with speech recognition, real-time human-AI interaction, and automated workflows that cut manual work by 40%.</p>
-            <p class="text-xs tracking-wider uppercase text-coral">Flutter · Kotlin · Android · iOS</p>
+            <p class="text-xs tracking-wider uppercase text-coral">Flutter &middot; Kotlin &middot; Android &middot; iOS</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Testimonials ── -->
     <section class="px-6 md:px-12 py-24">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-baseline justify-between mb-20 reveal">
@@ -882,929 +308,94 @@
           <div class="reveal warm-card p-8 md:p-10 relative">
             <span class="text-coral text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
             <p class="text-stone text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial1_text">The platform runs smoothly and our customers are genuinely happy with it. Migration from our old system was fast and painless &mdash; no downtime, no headaches.</p>
-            <div class="flex items-center gap-3">
-              <div class="w-2 h-2 bg-coral rounded-full"></div>
-              <span class="font-clash font-semibold text-sm" data-i18n="testimonial1_client">Jetski LMS — Client</span>
-            </div>
+            <div class="flex items-center gap-3"><div class="w-2 h-2 bg-coral rounded-full"></div><span class="font-clash font-semibold text-sm" data-i18n="testimonial1_client">Jetski LMS &mdash; Client</span></div>
           </div>
           <div class="reveal warm-card p-8 md:p-10 relative">
             <span class="text-coral text-5xl font-clash font-bold absolute top-6 left-8 opacity-20">&ldquo;</span>
             <p class="text-stone text-lg leading-relaxed mt-6 mb-6" data-i18n="testimonial2_text">Delivery was faster than I expected, and I appreciated being kept in the loop throughout the project. Even the trickier parts &mdash; like the automatic certificate generation &mdash; were built to work flawlessly from day one.</p>
-            <div class="flex items-center gap-3">
-              <div class="w-2 h-2 bg-coral rounded-full"></div>
-              <span class="font-clash font-semibold text-sm" data-i18n="testimonial2_client">MGB Truck LMS — Client</span>
-            </div>
+            <div class="flex items-center gap-3"><div class="w-2 h-2 bg-coral rounded-full"></div><span class="font-clash font-semibold text-sm" data-i18n="testimonial2_client">MGB Truck LMS &mdash; Client</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── FAQ ── -->
     <section class="px-6 md:px-12 py-24">
       <div class="max-w-4xl mx-auto">
         <div class="flex items-baseline justify-between mb-16 reveal">
           <h2 class="font-clash font-bold text-[6vw] md:text-[4vw] leading-none tracking-tight" data-i18n="faq_title">Common Questions</h2>
           <span class="text-stone text-sm tracking-widest uppercase hidden md:block" data-i18n="faq_sub">04 // FAQ</span>
         </div>
-
         <div class="reveal">
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq1_q">How much does a project cost?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq1_a">Every project is different — a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and we'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.</div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq2_q">How long does it take?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq2_a">A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. We give you a realistic timeline up front and stick to it.</div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq3_q">Do you work with clients outside Bergen?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq3_a">Yes &mdash; we work remotely with clients across Norway and internationally. We're based in Bergen, but most of our current work is delivered remotely with regular video calls and shared project tracking.</div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq4_q">Can you take over an existing project?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq4_a">Absolutely. We've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let us audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.</div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq5_q">What about ongoing support after launch?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq5_a">Launch is the start, not the end. We offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.</div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="font-clash font-semibold text-lg md:text-xl">
-              <span data-i18n="faq6_q">Who's behind Digitekt?</span>
-              <span class="faq-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            </summary>
-            <div class="faq-body" data-i18n="faq6_a">Digitekt is a small, founder-led studio in Bergen. You work directly with the person building your product &mdash; no handoffs, no account managers, no requirements translated through three layers of project managers. That's deliberate: it keeps the work personal and the quality high.</div>
-          </details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq1_q">How much does a project cost?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq1_a">Every project is different &mdash; a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and we will come back with a free scope call and a fixed quote.</div></details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq2_q">How long does it take?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq2_a">A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks.</div></details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq3_q">Do you work with clients outside Bergen?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq3_a">Yes. We work remotely with clients across Norway and internationally. Bergen is home, but most work is delivered through video calls, shared project tracking, and clear written updates.</div></details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq4_q">Can you take over an existing project?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq4_a">Yes. We can audit what you have, stabilize it, continue development, or advise whether a refactor or rebuild is the better route.</div></details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq5_q">What about ongoing support after launch?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq5_a">Launch is the start, not the end. We offer maintenance, hosting guidance, security updates, backups, and support hours when you need them.</div></details>
+          <details class="faq-item"><summary class="font-clash font-semibold text-lg md:text-xl"><span data-i18n="faq6_q">Who is behind Digitekt?</span><span class="faq-icon">+</span></summary><div class="faq-body" data-i18n="faq6_a">Digitekt is a small, founder-led studio in Bergen. You work directly with Mustafa Sahin, with trusted specialists involved when a project needs broader capacity.</div></details>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA / Footer ── -->
     <section class="px-6 md:px-12 py-32">
       <div class="max-w-7xl mx-auto text-center">
         <p class="reveal text-stone text-sm tracking-[0.3em] uppercase mb-8" data-i18n="cta_label">/// The Next Step</p>
-        <h2 class="reveal font-clash font-bold text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight mb-12">
-          LET'S BUILD<br/>
-          <span class="text-coral">SOMETHING GREAT</span>
-        </h2>
-        <div class="reveal">
-          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-10 py-5 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg">
-            <span data-i18n="start_a_project">Start a Project</span>
-          </a>
-        </div>
+        <h2 class="reveal font-clash font-bold text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight mb-12" data-i18n="cta_title">LET'S BUILD<br/><span class="text-coral">SOMETHING USEFUL</span></h2>
+        <div class="reveal"><a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-10 py-5 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:bg-coral-dark transition-all" data-i18n="start_a_project">Start a Project</a></div>
       </div>
     </section>
 
-    <!-- ── Share ── -->
     <section class="px-6 md:px-12 pb-16">
       <div class="max-w-xl mx-auto text-center reveal">
         <p class="text-stone text-sm tracking-[0.25em] uppercase mb-4" data-i18n="share_label">/// Spread the word</p>
         <h3 class="font-clash font-semibold text-2xl md:text-3xl mb-6" data-i18n="share_title">Enjoyed this? Share Digitekt with your network.</h3>
         <div class="flex items-center justify-center gap-3 flex-wrap">
-          <button onclick="nativeShare()" id="native-share-btn" class="share-btn" aria-label="Share" title="Share" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </button>
-          <button onclick="shareOn('facebook')" class="share-btn" aria-label="Share on Facebook" title="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.2-1.5 1.5-1.5H16.5V4.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.5v3h2.6V21h3.4z"/></svg>
-          </button>
-          <button onclick="shareOn('messenger')" class="share-btn" aria-label="Share on Messenger" title="Messenger">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.4 3.7 7.1v3.4l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1 12.4l-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>
-          </button>
-          <button onclick="shareOn('whatsapp')" class="share-btn" aria-label="Share on WhatsApp" title="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.5-4-3.5-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.4-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.3 4.6 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.2-.6-.4M12 20c-1.7 0-3.3-.5-4.7-1.3l-3.3.9.9-3.2C4 15 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5c2.3 0 4.4.9 6 2.5 1.6 1.6 2.5 3.7 2.5 6 0 4.7-3.8 8.5-8.5 8.5m7.2-15.7C17.3 2.4 14.8 1.3 12 1.3 6.2 1.3 1.5 6 1.5 11.8c0 1.9.5 3.7 1.4 5.3L1.3 22.7l5.8-1.5c1.5.8 3.2 1.2 5 1.2 5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.1-5.4-3.1-7.4"/></svg>
-          </button>
-          <button onclick="shareOn('linkedin')" class="share-btn" aria-label="Share on LinkedIn" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M18.5 18.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-          </button>
-          <button onclick="copyLink()" class="share-btn" aria-label="Copy link" title="Copy link" id="copy-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </button>
+          <button onclick="nativeShare()" id="native-share-btn" class="share-btn" aria-label="Share" title="Share" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+          <button onclick="shareOn('facebook')" class="share-btn" aria-label="Share on Facebook" title="Facebook">f</button>
+          <button onclick="shareOn('messenger')" class="share-btn" aria-label="Share on Messenger" title="Messenger">m</button>
+          <button onclick="shareOn('whatsapp')" class="share-btn" aria-label="Share on WhatsApp" title="WhatsApp">w</button>
+          <button onclick="shareOn('linkedin')" class="share-btn" aria-label="Share on LinkedIn" title="LinkedIn">in</button>
+          <button onclick="copyLink()" class="share-btn" aria-label="Copy link" title="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
         </div>
         <div class="mt-6 flex flex-col items-center gap-2">
-          <p class="text-stone text-xs" data-i18n="share_insta_hint">For Instagram or Facebook posts — grab a ready-to-paste caption.</p>
-          <button onclick="copyCaption()" id="copy-caption-btn" class="text-coral text-xs tracking-[0.25em] uppercase hover:text-coral-dark transition-colors underline underline-offset-4">
-            <span data-i18n="copy_caption_btn">Copy caption &amp; link</span>
-          </button>
+          <p class="text-stone text-xs" data-i18n="share_insta_hint">For Instagram or Facebook posts, grab a ready-to-paste caption.</p>
+          <button onclick="copyCaption()" class="text-coral text-xs tracking-[0.25em] uppercase hover:text-coral-dark transition-colors underline underline-offset-4"><span data-i18n="copy_caption_btn">Copy caption &amp; link</span></button>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- Copy-to-clipboard toast -->
-    <div id="copy-toast" class="copy-toast" data-i18n="copy_toast">Link copied to clipboard</div>
+  <div id="copy-toast" class="copy-toast" data-i18n="copy_toast">Link copied to clipboard</div>
 
-    <footer class="px-6 md:px-12 py-12 border-t border-ink/8">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <span class="inline-flex items-center justify-center w-7 h-7 bg-coral text-white rounded-lg text-xs font-bold">D</span>
-              <span class="font-clash font-bold tracking-tight">DIGITEKT<span class="text-coral">.</span></span>
-            </div>
-            <p class="text-stone text-sm leading-relaxed" data-i18n="footer_about">A development studio in Bergen, Norway. Websites, web apps, mobile apps, AI, and the support to keep it all running.</p>
-          </div>
-          <div>
-            <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_contact">Contact</span>
-            <a href="mailto:info@digitekt.no" class="text-stone text-sm hover:text-coral transition-colors block mb-1">info@digitekt.no</a>
-            <a href="tel:+4746942117" class="text-stone text-sm hover:text-coral transition-colors block mb-1">+47 46 94 21 17</a>
-            <span class="text-stone text-sm block" data-i18n="footer_address">Klauvsteinen 129, Bergen, Norway</span>
-          </div>
-          <div>
-            <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_company">Company</span>
-            <span class="text-stone text-sm block mb-1" data-i18n="footer_legal">Digitekt &mdash; a trade name of Sahin Digital</span>
-            <span class="text-stone text-sm block" data-i18n="footer_orgnr">Org. nr 937 535 260</span>
-          </div>
+  <footer class="px-6 md:px-12 py-12 border-t border-ink/8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <div class="flex items-center gap-2 mb-3"><span class="inline-flex items-center justify-center w-7 h-7 bg-coral text-white rounded-lg text-xs font-bold">D</span><span class="font-clash font-bold tracking-tight">DIGITEKT<span class="text-coral">.</span></span></div>
+          <p class="text-stone text-sm leading-relaxed" data-i18n="footer_about">A founder-led digital partner in Bergen. Websites, systems, apps, AI, design, operations, and support for companies that want practical digital progress.</p>
         </div>
-        <div class="pt-8 border-t border-ink/8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span class="text-stone text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2026 Digitekt. All rights reserved.</span>
-          <div class="flex gap-6 flex-wrap justify-center">
-            <a href="privacy.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="footer_privacy">Privacy</a>
-            <a href="https://www.linkedin.com/in/mustafa-sahin-3a18521b3/" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">LinkedIn</a>
-            <a href="https://github.com/Mosse-hiof" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">GitHub</a>
-          </div>
+        <div>
+          <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_contact">Contact</span>
+          <a href="mailto:info@digitekt.no" class="text-stone text-sm hover:text-coral transition-colors block mb-1">info@digitekt.no</a>
+          <a href="tel:+4746942117" class="text-stone text-sm hover:text-coral transition-colors block mb-1">+47 46 94 21 17</a>
+          <span class="text-stone text-sm block" data-i18n="footer_address">Klauvsteinen 129, Bergen, Norway</span>
+        </div>
+        <div>
+          <span class="text-xs tracking-widest uppercase text-ink font-medium block mb-3" data-i18n="footer_company">Company</span>
+          <span class="text-stone text-sm block mb-1" data-i18n="footer_legal">Digitekt &mdash; a trade name of Sahin Digital</span>
+          <span class="text-stone text-sm block" data-i18n="footer_orgnr">Org. nr 937 535 260</span>
         </div>
       </div>
-    </footer>
-  </div>
-
-  <!-- ═══════════════════════════════ ABOUT VIEW ═══════════════════════════════ -->
-  <div id="about-view" class="view-container hidden">
-    <section class="min-h-screen flex flex-col md:flex-row">
-      <!-- Left: Sticky Portrait -->
-      <div class="relative w-full md:w-1/2 h-[50vh] md:h-screen md:sticky md:top-0 overflow-hidden">
-        <img
-          src="image2.jpg"
-          width="514"
-          height="750"
-          alt="Mustafa Sahin"
-          class="about-portrait w-full h-full object-cover object-top"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="absolute bottom-8 left-8 flex items-end gap-4">
-          <div class="w-24 h-32 rounded-xl overflow-hidden border-2 border-white/50 shadow-lg">
-            <img src="image1.jpg" width="540" height="960" alt="Mustafa Sahin" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
-          </div>
-          <span class="bg-coral text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-lg">Bergen, Norway</span>
+      <div class="pt-8 border-t border-ink/8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <span class="text-stone text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2026 Digitekt. All rights reserved.</span>
+        <div class="flex gap-6 flex-wrap justify-center">
+          <a href="privacy.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="footer_privacy">Privacy</a>
+          <a href="https://www.linkedin.com/in/mustafa-sahin-3a18521b3/" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">LinkedIn</a>
+          <a href="https://github.com/Mosse-hiof" target="_blank" rel="noopener" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">GitHub</a>
         </div>
       </div>
+    </div>
+  </footer>
 
-      <!-- Right: Scrollable Content -->
-      <div class="w-full md:w-1/2 px-8 md:px-16 py-16 md:py-32">
-        <p class="reveal text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="about_label">/// Who We Are</p>
-        <h2 class="reveal font-clash font-bold text-[8vw] md:text-[3.5vw] leading-[1.05] tracking-tight mb-4">
-          Mustafa Sahin
-        </h2>
-        <p class="reveal text-stone text-sm tracking-wider mb-12" data-i18n="about_subtitle">Founder &amp; Developer &mdash; Bergen, Norway</p>
-
-        <div class="space-y-8 text-lg leading-relaxed text-stone">
-          <p class="reveal" data-i18n="about_bio1">
-            Digitekt is a development studio in Bergen, Norway &mdash; small, founder-led, and focused on building real software that ships. We build websites, web apps, mobile apps, and custom software for clients who want craft over templates.
-          </p>
-          <p class="reveal" data-i18n="about_bio2">
-            Our work spans production LMS platforms serving paying customers, cross-platform mobile apps, and AI integrations that cut manual work by up to 40%. We pick the right stack for the job &mdash; Laravel, React, .NET, Flutter, Python &mdash; rather than forcing every project through one template.
-          </p>
-          <p class="reveal" data-i18n="about_bio3">
-            Being small is a feature, not a limit. It means direct contact, fast decisions, and no requirements translated through three layers of project managers. Every project gets the attention it deserves &mdash; and we stick around after launch with maintenance, support, and consulting.
-          </p>
-          <p class="reveal" data-i18n="about_bio4">
-            <span class="text-ink font-medium" data-i18n="about_bio4_highlight">Technical depth, honest communication, and a long-run mindset</span> &mdash; we'd rather build fewer projects well than chase volume.
-          </p>
-        </div>
-
-        <!-- Experience Timeline -->
-        <div class="mt-20 reveal">
-          <h3 class="font-clash font-semibold text-2xl mb-8" data-i18n="exp_title">Experience</h3>
-          <div class="space-y-8">
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Jul 2025 &mdash; Mar 2026</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp1_title">Freelance Fullstack Developer</h4>
-              <p class="text-stone text-sm" data-i18n="exp1_loc">Bergen / Remote</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp1_desc">Built multiple e-learning platforms from scratch with full CRUD functionality for courses. Integrated with WordPress through REST API. Currently in production with real users and positive feedback. Deployed via Laravel Forge on DigitalOcean.</p>
-            </div>
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Jan 2025 &mdash; Aug 2025</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp2_title">AI Agent Development & Training</h4>
-              <p class="text-stone text-sm" data-i18n="exp2_loc">Høyskolen i Østfold, Halden</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp2_desc">Developed and trained AI agents in MuJoCo simulations including complex scenarios like air hockey. Built virtual environments, developed reinforcement learning algorithms, and achieved measurable performance improvements.</p>
-            </div>
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Aug 2022 &mdash; Jan 2025</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp3_title">Software & Web Development Projects</h4>
-              <p class="text-stone text-sm" data-i18n="exp3_loc">Høyskolen i Østfold, Halden</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp3_desc">Developed and launched web applications in Python and Java with responsive design. Built APIs, published Android applications, and automated processes that reduced manual tasks by up to 40%.</p>
-            </div>
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">Feb 2020 &mdash; Sep 2022</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp4_title">Freelance Web Designer / Developer</h4>
-              <p class="text-stone text-sm" data-i18n="exp4_loc">Halden</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp4_desc">Delivered custom, responsive websites for small businesses with HTML, CSS, and JavaScript. Strengthened clients' digital presence and online visibility.</p>
-            </div>
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">May 2012 &mdash; Jun 2019</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="exp5_title">Previous Experience</h4>
-              <p class="text-stone text-sm" data-i18n="exp5_loc">Bergen</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="exp5_desc">Manager at Mama Rosa Restaurant &mdash; led a team of six employees with responsibility for purchasing, budgeting, and operations. Sales associate at 7-Eleven.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="mt-20 reveal">
-          <h3 class="font-clash font-semibold text-2xl mb-8" data-i18n="edu_title">Education</h3>
-          <div class="space-y-8">
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1" data-i18n="edu1_year">Graduated 2025</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="edu1_title">Bachelor in Information Systems</h4>
-              <p class="text-stone text-sm" data-i18n="edu1_loc">Høgskolen i Østfold, Halden</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="edu1_desc">Specialization in software development. Achieved highest grade on bachelor thesis: AI solutions for simulation and reinforcement learning.</p>
-            </div>
-            <div class="timeline-item reveal">
-              <span class="text-xs tracking-widest uppercase text-coral block mb-1">2019</span>
-              <h4 class="font-clash font-semibold text-lg mb-1" data-i18n="edu2_title">Annual Studies in Economics</h4>
-              <p class="text-stone text-sm" data-i18n="edu2_loc">Høgskolen i Vestlandet, Haugesund</p>
-              <p class="text-stone text-sm mt-2 leading-relaxed" data-i18n="edu2_desc">Macro and microeconomics with focus on economic models.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tech Stack Grid -->
-        <div class="grid grid-cols-2 gap-6 mt-20">
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_lang">Languages</span>
-            <span class="font-clash font-semibold text-base">Python, Java, JavaScript, C#, C, Kotlin, SQL</span>
-          </div>
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_web">Web</span>
-            <span class="font-clash font-semibold text-base">React, Laravel, .NET, Django, WordPress, HTML5, CSS</span>
-          </div>
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_mobile">Mobile</span>
-            <span class="font-clash font-semibold text-base">Flutter, Kotlin, Android</span>
-          </div>
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_cloud">Cloud & DevOps</span>
-            <span class="font-clash font-semibold text-base">Docker, DigitalOcean, Laravel Forge, Azure, Git, Linux, CI/CD</span>
-          </div>
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_ai">AI & Data</span>
-            <span class="font-clash font-semibold text-base">TensorFlow, PyTorch, ML, RL</span>
-          </div>
-          <div class="reveal warm-card p-6">
-            <span class="text-xs tracking-widest uppercase text-stone block mb-3" data-i18n="tech_spoken">Languages Spoken</span>
-            <span class="font-clash font-semibold text-base" data-i18n="tech_spoken_val">Norwegian, English, Turkish, Swedish</span>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="mt-20 reveal text-center md:text-left">
-          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-10 py-5 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all duration-300 hover:bg-coral-dark hover:shadow-lg" data-i18n="get_in_touch">
-            Get in Touch
-          </a>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ═══════════════════════════════ JAVASCRIPT ═══════════════════════════════ -->
-  <script>
-    // ── Mobile Menu ──
-    const bodyLocks = new Set();
-    let lastFocusedBeforeContact = null;
-
-    function syncBodyLock() {
-      document.body.style.overflow = bodyLocks.size ? 'hidden' : '';
-    }
-
-    function lockBody(source) {
-      bodyLocks.add(source);
-      syncBodyLock();
-    }
-
-    function unlockBody(source) {
-      bodyLocks.delete(source);
-      syncBodyLock();
-    }
-
-    function getFocusableElements(container) {
-      return Array.from(container.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      )).filter(el => !el.hasAttribute('hidden') && el.getClientRects().length > 0);
-    }
-
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const icon = document.getElementById('burger-icon');
-      const toggle = document.getElementById('mobile-nav-toggle');
-      const isOpen = menu.classList.toggle('open');
-      menu.setAttribute('aria-hidden', String(!isOpen));
-      if (isOpen) {
-        menu.removeAttribute('inert');
-      } else {
-        menu.setAttribute('inert', '');
-      }
-      if (toggle) {
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-      }
-      if (isOpen) {
-        lockBody('mobile-menu');
-      } else {
-        unlockBody('mobile-menu');
-      }
-      icon.innerHTML = isOpen
-        ? '<path d="M5 5L17 17M5 17L17 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'
-        : '<path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>';
-    }
-
-    function closeMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      if (menu.classList.contains('open')) toggleMobileMenu();
-    }
-
-    // ── Navigation / SPA Routing ──
-    function navigate(viewId) {
-      closeContact();
-      const views = document.querySelectorAll('.view-container');
-      views.forEach(v => v.classList.add('hidden'));
-      const target = document.getElementById(viewId);
-      if (target) {
-        target.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'auto' });
-        initRevealObserver();
-      }
-      // Update active nav link
-      const navKey = viewId === 'home-view' ? 'home' : 'about';
-      document.querySelectorAll('[data-nav]').forEach(link => {
-        link.classList.toggle('text-coral', link.dataset.nav === navKey);
-      });
-    }
-
-    // ── Contact Form ──
-    function openContact() {
-      const overlay = document.getElementById('contact-overlay');
-      lastFocusedBeforeContact = document.activeElement;
-      overlay.classList.add('open');
-      overlay.setAttribute('aria-hidden', 'false');
-      overlay.removeAttribute('inert');
-      lockBody('contact');
-      setTimeout(() => {
-        const firstFocusable = getFocusableElements(overlay)[0];
-        if (firstFocusable) firstFocusable.focus();
-      }, 0);
-    }
-
-    function closeContact() {
-      const overlay = document.getElementById('contact-overlay');
-      if (!overlay.classList.contains('open')) return;
-
-      overlay.classList.remove('open');
-      overlay.setAttribute('aria-hidden', 'true');
-      overlay.setAttribute('inert', '');
-      unlockBody('contact');
-
-      if (
-        lastFocusedBeforeContact &&
-        typeof lastFocusedBeforeContact.focus === 'function' &&
-        document.contains(lastFocusedBeforeContact) &&
-        lastFocusedBeforeContact.getClientRects().length > 0
-      ) {
-        lastFocusedBeforeContact.focus({ preventScroll: true });
-      }
-      lastFocusedBeforeContact = null;
-    }
-
-    function formHasUserInput(form) {
-      return Array.from(form.elements).some((el) => {
-        if (!el.name || el.type === 'hidden' || el.type === 'submit' || el.name === 'bot-field') return false;
-        return typeof el.value === 'string' && el.value.trim() !== '';
-      });
-    }
-
-    function trapContactFocus(e) {
-      const overlay = document.getElementById('contact-overlay');
-      if (!overlay.classList.contains('open')) return;
-
-      const focusable = getFocusableElements(overlay);
-      if (!focusable.length) return;
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('contact-form');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnHTML = submitBtn.innerHTML;
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = getLang() === 'no' ? 'Sender...' : 'Sending...';
-
-      const formData = new FormData(form);
-      const params = new URLSearchParams();
-      formData.forEach((value, key) => params.append(key, value));
-
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
-      })
-      .then((response) => {
-        if (!response.ok) throw new Error('Network response was not ok');
-        form.classList.add('hidden');
-        document.getElementById('form-success').classList.remove('hidden');
-        setTimeout(() => {
-          form.classList.remove('hidden');
-          document.getElementById('form-success').classList.add('hidden');
-          form.reset();
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnHTML;
-          closeContact();
-        }, 3500);
-      })
-      .catch((err) => {
-        console.error('Form submission failed:', err);
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHTML;
-        alert("Sorry - something went wrong sending your message. Please email us directly at info@digitekt.no.");
-      });
-    }
-
-    // Close on Escape or click outside
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const overlay = document.getElementById('contact-overlay');
-        if (overlay.classList.contains('open')) {
-          closeContact();
-        } else {
-          closeMobileMenu();
-        }
-      }
-
-      if (e.key === 'Tab') {
-        trapContactFocus(e);
-      }
-    });
-    document.getElementById('contact-overlay').addEventListener('click', (e) => {
-      if (e.target !== e.currentTarget) return;
-      const form = document.getElementById('contact-form');
-      if (!formHasUserInput(form)) closeContact();
-    });
-
-    // ── Vertical Text Scroller (seamless loop) ──
-    const scroller = document.getElementById('textScroller');
-    const totalItems = 3; // actual unique items
-    let scrollerIndex = 0;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function cycleScroller() {
-      scrollerIndex++;
-      scroller.style.transition = 'transform 0.4s cubic-bezier(0.76, 0, 0.24, 1)';
-      scroller.style.transform = 'translateY(-' + (scrollerIndex * 25) + '%)';
-
-      // After reaching the duplicate 4th item (clone of #1), snap back invisibly
-      if (scrollerIndex >= totalItems) {
-        setTimeout(function() {
-          scroller.style.transition = 'none';
-          scroller.style.transform = 'translateY(0)';
-          scrollerIndex = 0;
-        }, 450);
-      }
-    }
-    if (scroller && !prefersReducedMotion) setInterval(cycleScroller, 2000);
-
-    // ── Scroll Reveal (IntersectionObserver) ──
-    function initRevealObserver() {
-      const reveals = document.querySelectorAll('.reveal:not(.active)');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      reveals.forEach(el => observer.observe(el));
-    }
-    initRevealObserver();
-
-    // ── Magnetic Button Effect ──
-    document.querySelectorAll('.magnetic-btn').forEach(btn => {
-      btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px)';
-      });
-
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translate(0, 0)';
-      });
-    });
-
-    // ── Social Share ──
-    const SHARE_URL = 'https://digitekt.no/';
-    const SHARE_TEXT_EN = 'Check out Digitekt — websites, web apps & software, crafted in Bergen.';
-    const SHARE_TEXT_NO = 'Sjekk ut Digitekt — nettsider, web-apper og programvare, laget i Bergen.';
-    const CAPTION_EN = 'Just discovered Digitekt — a dev studio in Bergen, Norway. They build websites, web apps, mobile apps, and AI solutions with real craft. If you need something built (or rebuilt), give them a look. ' + SHARE_URL;
-    const CAPTION_NO = 'Oppdaget Digitekt — et lite utviklingsstudio i Bergen som lager nettsider, web-apper, mobilapper og AI-løsninger med ekte håndverk. Trenger du noe bygget (eller bygget på nytt), ta en titt. ' + SHARE_URL;
-
-    function getLang() {
-      return (document.documentElement.lang || 'en').toLowerCase().startsWith('no') ? 'no' : 'en';
-    }
-
-    function shareOn(platform) {
-      const url = encodeURIComponent(SHARE_URL);
-      const text = encodeURIComponent(getLang() === 'no' ? SHARE_TEXT_NO : SHARE_TEXT_EN);
-
-      const targets = {
-        facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
-        messenger: 'https://www.facebook.com/dialog/send?app_id=140586622674265&link=' + url + '&redirect_uri=' + url,
-        whatsapp: 'https://wa.me/?text=' + text + '%20' + url,
-        linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
-      };
-
-      const shareUrl = targets[platform];
-      if (!shareUrl) return;
-
-      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=500');
-    }
-
-    function nativeShare() {
-      if (!navigator.share) return;
-      const lang = getLang();
-      navigator.share({
-        title: 'Digitekt',
-        text: lang === 'no' ? SHARE_TEXT_NO : SHARE_TEXT_EN,
-        url: SHARE_URL,
-      }).catch(() => { /* user cancelled or not allowed */ });
-    }
-
-    function showToast(key) {
-      const toast = document.getElementById('copy-toast');
-      const t = translations[getLang()] || translations.en;
-      toast.textContent = t[key] || t.copy_toast;
-      toast.classList.add('show');
-      clearTimeout(showToast._t);
-      showToast._t = setTimeout(() => toast.classList.remove('show'), 2200);
-    }
-
-    function copyToClipboard(value) {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(value);
-      }
-      return new Promise((resolve) => {
-        const ta = document.createElement('textarea');
-        ta.value = value;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); } catch (e) { /* ignore */ }
-        document.body.removeChild(ta);
-        resolve();
-      });
-    }
-
-    function copyLink() {
-      copyToClipboard(SHARE_URL).then(() => showToast('copy_toast'));
-    }
-
-    function copyCaption() {
-      const caption = getLang() === 'no' ? CAPTION_NO : CAPTION_EN;
-      copyToClipboard(caption).then(() => showToast('caption_toast'));
-    }
-
-    // Show native share button where supported (mostly mobile)
-    if (navigator.share) {
-      const btn = document.getElementById('native-share-btn');
-      if (btn) btn.style.display = 'inline-flex';
-    }
-
-    // ── Internationalization (EN / NO) ──
-    const translations = {
-      en: {
-        nav_home: 'Home',
-        nav_about: 'About',
-        nav_contact: 'Contact',
-        hero_make: 'MAKE YOUR',
-        hero_vision: 'VISION COME ALIVE',
-        hero_sub: 'Development studio from Bergen, Norway. We build high-performance web, mobile & desktop applications with modern tech stacks and AI-driven solutions.',
-        start_project: 'Start Project',
-        scroll: 'Scroll',
-        expertise_title: 'Services',
-        expertise_sub: '01 // What We Offer',
-        card1_title: 'Websites & Web Applications',
-        card1_desc: 'Custom websites, e-commerce, and full web applications — from landing pages to complex platforms like the LMS systems we run in production. Built with Laravel, React, .NET, and WordPress when it fits.',
-        card2_title: 'Mobile Apps & Custom Software',
-        card2_desc: 'Cross-platform mobile apps with Flutter and native Android with Kotlin. Desktop tools and internal software built with Python, Java, and .NET — shaped around how your team actually works.',
-        card3_title: 'AI Solutions & Automation',
-        card3_desc: "Smart automation, AI integrations, and custom ML models. We've trained reinforcement-learning agents in MuJoCo and automated pipelines that cut manual work by 40%. Practical AI, not hype.",
-        card4_title: 'Maintenance, Support & Consulting',
-        card4_desc: "Ongoing maintenance for sites and apps, technical support when things break, and consulting before you build. Whether you inherited an old codebase or need advice on what to build next — we're here for the long run.",
-        work_title: 'Selected Work',
-        work_sub: '02 // Projects',
-        proj1_title: 'E-Learning Platform — Jetski',
-        proj1_year: '2025 · Live',
-        proj1_desc: 'Full LMS with course CRUD, video lessons, and WordPress REST integration. Delivered end-to-end in production with active paying users.',
-        proj2_title: 'E-Learning Platform — MGB Truck',
-        proj2_year: '2025 · Live',
-        proj2_desc: 'Training platform with automatic certificate generation on course completion. Custom REST API, PDF generation, and admin dashboard &mdash; all shipped on time.',
-        proj3_title: 'AI Agent Training Platform',
-        proj3_year: '2025 · Research',
-        proj3_desc: 'Reinforcement-learning agents trained in simulated MuJoCo environments &mdash; including air hockey. Thesis awarded the highest grade.',
-        proj3_tech: 'Python · MuJoCo · PyTorch · RL Agents',
-        proj4_title: 'Cross-Platform Mobile Apps',
-        proj4_year: '2023&ndash;2025',
-        proj4_desc: 'Published Android and cross-platform apps with speech recognition, real-time human-AI interaction, and automated workflows that cut manual work by 40%.',
-        testimonials_title: 'Client Feedback',
-        testimonials_sub: '03 // Testimonials',
-        testimonial1_text: 'The platform runs smoothly and our customers are genuinely happy with it. Migration from our old system was fast and painless — no downtime, no headaches.',
-        testimonial1_client: 'Jetski LMS — Client',
-        testimonial2_text: 'Delivery was faster than I expected, and I appreciated being kept in the loop throughout the project. Even the trickier parts — like the automatic certificate generation — were built to work flawlessly from day one.',
-        testimonial2_client: 'MGB Truck LMS — Client',
-        open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Accepting New Projects',
-        cta_label: '/// The Next Step',
-        start_a_project: 'Start a Project',
-        footer_copy: '&copy; 2026 Digitekt. All rights reserved.',
-        footer_about: 'A development studio in Bergen, Norway. Websites, web apps, mobile apps, AI, and the support to keep it all running.',
-        footer_contact: 'Contact',
-        footer_address: 'Klauvsteinen 129, Bergen, Norway',
-        footer_company: 'Company',
-        footer_legal: 'Digitekt &mdash; a trade name of Sahin Digital',
-        footer_orgnr: 'Org. nr 937 535 260',
-        footer_privacy: 'Privacy',
-        share_label: '/// Spread the word',
-        share_title: 'Enjoyed this? Share Digitekt with your network.',
-        share_insta_hint: 'For Instagram or Facebook posts — grab a ready-to-paste caption.',
-        copy_caption_btn: 'Copy caption & link',
-        copy_toast: 'Link copied to clipboard',
-        caption_toast: 'Caption copied — paste it anywhere',
-        faq_title: 'Common Questions',
-        faq_sub: '04 // FAQ',
-        faq1_q: 'How much does a project cost?',
-        faq1_a: "Every project is different &mdash; a landing page and a full platform are worlds apart. Reach out with a rough idea of what you want and we'll come back with a free scope call and a fixed quote. No surprises, no billable discovery calls.",
-        faq2_q: 'How long does it take?',
-        faq2_a: 'A simple marketing site: 2&ndash;3 weeks. A custom web app or LMS-style platform: 6&ndash;12 weeks, depending on scope. Mobile apps typically 8&ndash;16 weeks. We give you a realistic timeline up front and stick to it.',
-        faq3_q: 'Do you work with clients outside Bergen?',
-        faq3_a: "Yes &mdash; we work remotely with clients across Norway and internationally. We're based in Bergen, but most of our current work is delivered remotely with regular video calls and shared project tracking.",
-        faq4_q: 'Can you take over an existing project?',
-        faq4_a: "Absolutely. We've inherited codebases from other developers and agencies, cleaned them up, and kept them running. Let us audit what you have first &mdash; then we decide whether to continue, refactor, or rebuild.",
-        faq5_q: 'What about ongoing support after launch?',
-        faq5_a: 'Launch is the start, not the end. We offer monthly maintenance plans that cover hosting, updates, backups, security patches, and a set number of support hours. Or we can work hourly when you need help &mdash; your call.',
-        faq6_q: "Who's behind Digitekt?",
-        faq6_a: "Digitekt is a small, founder-led studio in Bergen. You work directly with the person building your product &mdash; no handoffs, no account managers, no requirements translated through three layers of project managers. That's deliberate: it keeps the work personal and the quality high.",
-        contact_title: 'Start a Project',
-        form_name: 'Your Name',
-        form_email: 'Email Address',
-        form_message: 'Tell us about your project',
-        form_send: 'Send Message',
-        form_reply: "We'll get back to you within 24 hours.",
-        form_success_title: 'Message Sent!',
-        form_success_desc: "We'll get back to you as soon as possible.",
-        about_label: '/// Who We Are',
-        about_subtitle: 'Founder &amp; Developer &mdash; Bergen, Norway',
-        about_bio1: "Digitekt is a development studio in Bergen, Norway &mdash; small, founder-led, and focused on building real software that ships. We build websites, web apps, mobile apps, and custom software for clients who want craft over templates.",
-        about_bio2: "Our work spans production LMS platforms serving paying customers, cross-platform mobile apps, and AI integrations that cut manual work by up to 40%. We pick the right stack for the job &mdash; Laravel, React, .NET, Flutter, Python &mdash; rather than forcing every project through one template.",
-        about_bio3: "Being small is a feature, not a limit. It means direct contact, fast decisions, and no requirements translated through three layers of project managers. Every project gets the attention it deserves &mdash; and we stick around after launch with maintenance, support, and consulting.",
-        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Technical depth, honest communication, and a long-run mindset</span> &mdash; we\'d rather build fewer projects well than chase volume.',
-        about_bio4_highlight: 'Technical depth, honest communication, and a long-run mindset',
-        exp_title: 'Experience',
-        exp1_title: 'Freelance Fullstack Developer',
-        exp1_loc: 'Bergen / Remote',
-        exp1_desc: 'Built multiple e-learning platforms from scratch with full CRUD functionality for courses. Integrated with WordPress through REST API. Currently in production with real users and positive feedback. Deployed via Laravel Forge on DigitalOcean.',
-        exp2_title: 'AI Agent Development & Training',
-        exp2_loc: 'Høyskolen i Østfold, Halden',
-        exp2_desc: 'Developed and trained AI agents in MuJoCo simulations including complex scenarios like air hockey. Built virtual environments, developed reinforcement learning algorithms, and achieved measurable performance improvements.',
-        exp3_title: 'Software & Web Development Projects',
-        exp3_loc: 'Høyskolen i Østfold, Halden',
-        exp3_desc: 'Developed and launched web applications in Python and Java with responsive design. Built APIs, published Android applications, and automated processes that reduced manual tasks by up to 40%.',
-        exp4_title: 'Freelance Web Designer / Developer',
-        exp4_loc: 'Halden',
-        exp4_desc: 'Delivered custom, responsive websites for small businesses with HTML, CSS, and JavaScript. Strengthened clients\' digital presence and online visibility.',
-        exp5_title: 'Previous Experience',
-        exp5_loc: 'Bergen',
-        exp5_desc: 'Manager at Mama Rosa Restaurant &mdash; led a team of six employees with responsibility for purchasing, budgeting, and operations. Sales associate at 7-Eleven.',
-        edu_title: 'Education',
-        edu1_year: 'Graduated 2025',
-        edu1_title: 'Bachelor in Information Systems',
-        edu1_loc: 'Høgskolen i Østfold, Halden',
-        edu1_desc: 'Specialization in software development. Achieved highest grade on bachelor thesis: AI solutions for simulation and reinforcement learning.',
-        edu2_title: 'Annual Studies in Economics',
-        edu2_loc: 'Høgskolen i Vestlandet, Haugesund',
-        edu2_desc: 'Macro and microeconomics with focus on economic models.',
-        tech_lang: 'Languages',
-        tech_web: 'Web',
-        tech_mobile: 'Mobile',
-        tech_cloud: 'Cloud & DevOps',
-        tech_ai: 'AI & Data',
-        tech_spoken: 'Languages Spoken',
-        tech_spoken_val: 'Norwegian, English, Turkish, Swedish',
-        get_in_touch: 'Get in Touch',
-        ph_name: 'John Doe',
-        ph_email: 'you@company.com',
-        ph_message: 'I need help with...',
-      },
-      no: {
-        nav_home: 'Hjem',
-        nav_about: 'Om Oss',
-        nav_contact: 'Kontakt',
-        hero_make: 'GJØR DIN',
-        hero_vision: 'VISJON TIL VIRKELIGHET',
-        hero_sub: 'Utviklingsstudio fra Bergen, Norge. Vi bygger høytytende web-, mobil- og skrivebordsapplikasjoner med moderne teknologi og AI-drevne løsninger.',
-        start_project: 'Start Prosjekt',
-        scroll: 'Scroll',
-        expertise_title: 'Tjenester',
-        expertise_sub: '01 // Hva Vi Tilbyr',
-        card1_title: 'Nettsider & Webapplikasjoner',
-        card1_desc: 'Skreddersydde nettsider, nettbutikker og komplette webapplikasjoner — fra landingssider til komplekse plattformer som e-læringssystemene vi har i produksjon. Bygget med Laravel, React, .NET og WordPress når det passer.',
-        card2_title: 'Mobilapper & Skreddersydd Programvare',
-        card2_desc: 'Kryssplattform mobilapper med Flutter og native Android med Kotlin. Skrivebordsverktøy og intern programvare bygget med Python, Java og .NET — formet etter hvordan teamet ditt faktisk jobber.',
-        card3_title: 'AI-løsninger & Automatisering',
-        card3_desc: 'Smart automatisering, AI-integrasjoner og skreddersydde ML-modeller. Vi har trent forsterkende læringsagenter i MuJoCo og automatisert prosesser som reduserte manuelt arbeid med 40%. Praktisk AI, ikke hype.',
-        card4_title: 'Vedlikehold, Support & Rådgivning',
-        card4_desc: 'Løpende vedlikehold av nettsider og apper, teknisk support når ting bryter sammen, og rådgivning før du bygger. Enten du har arvet en gammel kodebase eller trenger råd om hva du bør bygge videre — vi er her for den lange veien.',
-        work_title: 'Utvalgte Prosjekter',
-        work_sub: '02 // Prosjekter',
-        proj1_title: 'E-læringsplattform — Jetski',
-        proj1_year: '2025 · I drift',
-        proj1_desc: 'Komplett LMS med kurs-CRUD, videoleksjoner og WordPress REST-integrasjon. Levert ende-til-ende i produksjon med aktive, betalende brukere.',
-        proj2_title: 'E-læringsplattform — MGB Truck',
-        proj2_year: '2025 · I drift',
-        proj2_desc: 'Opplæringsplattform med automatisk sertifikatgenerering når kurs fullføres. Skreddersydd REST API, PDF-generering og admin-dashboard &mdash; levert til avtalt tid.',
-        proj3_title: 'AI Agent Treningsplattform',
-        proj3_year: '2025 · Forskning',
-        proj3_desc: 'Forsterkende læringsagenter trent i simulerte MuJoCo-miljøer &mdash; inkludert air hockey. Bacheloroppgaven oppnådde høyeste karakter.',
-        proj3_tech: 'Python · MuJoCo · PyTorch · RL-Agenter',
-        proj4_title: 'Kryssplattform Mobilapper',
-        proj4_year: '2023&ndash;2025',
-        proj4_desc: 'Publiserte Android- og kryssplattform-apper med talegjenkjenning, sanntids menneske-AI-interaksjon, og automatiserte prosesser som reduserte manuelt arbeid med 40%.',
-        testimonials_title: 'Tilbakemeldinger',
-        testimonials_sub: '03 // Kundeomtaler',
-        testimonial1_text: 'Plattformen fungerer problemfritt og kundene våre er virkelig fornøyde. Migreringen fra det gamle systemet var rask og smertefri — ingen nedetid, ingen hodebry.',
-        testimonial1_client: 'Jetski LMS — Kunde',
-        testimonial2_text: 'Leveransen gikk raskere enn jeg forventet, og jeg satte pris på å bli inkludert gjennom hele prosessen. Selv de kompliserte delene — som den automatiske sertifikatgenereringen — ble bygget for å fungere feilfritt fra første dag.',
-        testimonial2_client: 'MGB Truck LMS — Kunde',
-        open_for_work: '<span class="w-2 h-2 bg-coral rounded-full animate-pulse"></span> Tar Imot Nye Prosjekter',
-        cta_label: '/// Neste Steg',
-        start_a_project: 'Start et Prosjekt',
-        footer_copy: '&copy; 2026 Digitekt. Alle rettigheter forbeholdt.',
-        footer_about: 'Et lite utviklingsstudio i Bergen. Nettsider, webapplikasjoner, mobilapper, AI og supporten som holder alt i gang.',
-        footer_contact: 'Kontakt',
-        footer_address: 'Klauvsteinen 129, Bergen, Norge',
-        footer_company: 'Selskap',
-        footer_legal: 'Digitekt &mdash; et varemerke for Sahin Digital',
-        footer_orgnr: 'Org. nr 937 535 260',
-        footer_privacy: 'Personvern',
-        share_label: '/// Spre ordet',
-        share_title: 'Likte du det du så? Del Digitekt med nettverket ditt.',
-        share_insta_hint: 'For Instagram- eller Facebook-innlegg — hent en ferdig bildetekst.',
-        copy_caption_btn: 'Kopier bildetekst og lenke',
-        copy_toast: 'Lenke kopiert til utklippstavle',
-        caption_toast: 'Bildetekst kopiert — lim den inn hvor du vil',
-        faq_title: 'Vanlige Spørsmål',
-        faq_sub: '04 // FAQ',
-        faq1_q: 'Hvor mye koster et prosjekt?',
-        faq1_a: 'Alle prosjekter er forskjellige &mdash; en landingsside og en komplett plattform er totalt forskjellige saker. Ta kontakt med en grov idé om hva du ønsker, så kommer vi tilbake med en gratis avklaringssamtale og et fast tilbud. Ingen overraskelser, ingen fakturerbare sonderingssamtaler.',
-        faq2_q: 'Hvor lang tid tar det?',
-        faq2_a: 'En enkel markedsføringsside: 2&ndash;3 uker. En skreddersydd webapplikasjon eller LMS-lignende plattform: 6&ndash;12 uker, avhengig av omfang. Mobilapper tar typisk 8&ndash;16 uker. Vi gir deg en realistisk tidslinje på forhånd og holder den.',
-        faq3_q: 'Jobber du med kunder utenfor Bergen?',
-        faq3_a: 'Ja &mdash; vi jobber eksternt med kunder over hele Norge og internasjonalt. Vi er basert i Bergen, men mesteparten av vårt nåværende arbeid leveres eksternt med jevnlige videosamtaler og delt prosjektoppfølging.',
-        faq4_q: 'Kan du overta et eksisterende prosjekt?',
-        faq4_a: 'Absolutt. Vi har overtatt kodebaser fra andre utviklere og byråer, ryddet opp, og holdt dem i gang. La oss først gjøre en gjennomgang av det du har &mdash; så bestemmer vi om vi skal fortsette, refaktorere eller bygge på nytt.',
-        faq5_q: 'Hva med løpende support etter lansering?',
-        faq5_a: 'Lansering er starten, ikke slutten. Vi tilbyr månedlige vedlikeholdsavtaler som dekker hosting, oppdateringer, sikkerhetskopier, sikkerhetsoppdateringer og et satt antall support-timer. Eller vi kan jobbe per time når du trenger hjelp &mdash; ditt valg.',
-        faq6_q: 'Hvem står bak Digitekt?',
-        faq6_a: 'Digitekt er et lite, grunnleggerledet studio i Bergen. Du jobber direkte med personen som bygger produktet ditt &mdash; ingen overleveringer, ingen kundeansvarlige, og ingen som oversetter krav gjennom tre lag med prosjektledere. Det er bevisst: det holder arbeidet personlig og kvaliteten høy.',
-        contact_title: 'Start et Prosjekt',
-        form_name: 'Ditt Navn',
-        form_email: 'E-postadresse',
-        form_message: 'Fortell oss om prosjektet ditt',
-        form_send: 'Send Melding',
-        form_reply: 'Vi svarer deg innen 24 timer.',
-        form_success_title: 'Melding Sendt!',
-        form_success_desc: 'Vi kommer tilbake til deg så snart som mulig.',
-        about_label: '/// Hvem Vi Er',
-        about_subtitle: 'Grunnlegger &amp; Utvikler &mdash; Bergen, Norge',
-        about_bio1: 'Digitekt er et utviklingsstudio i Bergen, Norge &mdash; lite, grunnleggerledet, og fokusert på å bygge ekte programvare som leveres. Vi bygger nettsider, webapplikasjoner, mobilapper og skreddersydd programvare for kunder som vil ha håndverk fremfor maler.',
-        about_bio2: 'Arbeidet vårt spenner fra LMS-plattformer i produksjon med betalende kunder, til kryssplattform-mobilapper og AI-integrasjoner som kutter manuelt arbeid med opptil 40%. Vi velger riktig teknologi for jobben &mdash; Laravel, React, .NET, Flutter, Python &mdash; i stedet for å tvinge alle prosjekter gjennom én mal.',
-        about_bio3: 'Å være liten er en funksjon, ikke en begrensning. Det betyr direkte kontakt, raske beslutninger, og ingen som oversetter krav gjennom tre lag med prosjektledere. Hvert prosjekt får oppmerksomheten det fortjener &mdash; og vi er der etter lansering med vedlikehold, support og rådgivning.',
-        about_bio4: '<span class="text-ink font-medium" data-i18n="about_bio4_highlight">Teknisk dybde, ærlig kommunikasjon, og et langsiktig perspektiv</span> &mdash; vi heller bygger få prosjekter godt enn å jage volum.',
-        about_bio4_highlight: 'Teknisk dybde, ærlig kommunikasjon, og et langsiktig perspektiv',
-        exp_title: 'Erfaring',
-        exp1_title: 'Frilanser Fullstack-utvikler',
-        exp1_loc: 'Bergen / Remote',
-        exp1_desc: 'Bygget flere e-læringsplattformer fra bunnen med full CRUD-funksjonalitet for kurs. Integrert med WordPress gjennom REST API. I produksjon med ekte brukere og positive tilbakemeldinger. Deployet via Laravel Forge på DigitalOcean.',
-        exp2_title: 'AI Agent Utvikling & Trening',
-        exp2_loc: 'Høyskolen i Østfold, Halden',
-        exp2_desc: 'Utviklet og trente AI-agenter i MuJoCo-simuleringer inkludert komplekse scenarier som air hockey. Bygget virtuelle miljøer, utviklet forsterkende læringsalgoritmer og oppnådde målbare ytelsesforbedringer.',
-        exp3_title: 'Programvare- & Webutviklingsprosjekter',
-        exp3_loc: 'Høyskolen i Østfold, Halden',
-        exp3_desc: 'Utviklet og lanserte webapplikasjoner i Python og Java med responsivt design. Bygget APIer, publiserte Android-applikasjoner og automatiserte prosesser som reduserte manuelle oppgaver med opptil 40%.',
-        exp4_title: 'Frilanser Webdesigner / Utvikler',
-        exp4_loc: 'Halden',
-        exp4_desc: 'Leverte skreddersydde, responsive nettsider for små bedrifter med HTML, CSS og JavaScript. Styrket kundenes digitale tilstedeværelse og synlighet på nett.',
-        exp5_title: 'Tidligere Erfaring',
-        exp5_loc: 'Bergen',
-        exp5_desc: 'Daglig leder hos Mama Rosa Restaurant &mdash; ledet et team på seks ansatte med ansvar for innkjøp, budsjettering og drift. Salgsmedarbeider hos 7-Eleven.',
-        edu_title: 'Utdanning',
-        edu1_year: 'Uteksaminert 2025',
-        edu1_title: 'Bachelor i Informasjonssystemer',
-        edu1_loc: 'Høgskolen i Østfold, Halden',
-        edu1_desc: 'Spesialisering innen programvareutvikling. Oppnådde høyeste karakter på bacheloroppgave: AI-løsninger for simulering og forsterkende læring.',
-        edu2_title: 'Årsstudium i Økonomi',
-        edu2_loc: 'Høgskolen i Vestlandet, Haugesund',
-        edu2_desc: 'Makro- og mikroøkonomi med fokus på økonomiske modeller.',
-        tech_lang: 'Språk',
-        tech_web: 'Web',
-        tech_mobile: 'Mobil',
-        tech_cloud: 'Sky & DevOps',
-        tech_ai: 'AI & Data',
-        tech_spoken: 'Talte Språk',
-        tech_spoken_val: 'Norsk, Engelsk, Tyrkisk, Svensk',
-        get_in_touch: 'Ta Kontakt',
-        ph_name: 'Ola Nordmann',
-        ph_email: 'deg@firma.no',
-        ph_message: 'Jeg trenger hjelp med...',
-      }
-    };
-
-    let currentLang = 'en';
-
-    function setLang(lang) {
-      currentLang = lang;
-      const t = translations[lang];
-      if (!t) return;
-
-      // Update text content
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (t[key] !== undefined) {
-          el.innerHTML = t[key];
-        }
-      });
-
-      // Update placeholders
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.dataset.i18nPlaceholder;
-        if (t[key] !== undefined) {
-          el.placeholder = t[key];
-        }
-      });
-
-      // Update html lang attribute
-      document.documentElement.lang = lang === 'no' ? 'no' : 'en';
-
-      // Update toggle buttons (desktop + mobile)
-      const label = lang === 'no' ? 'NO' : 'EN';
-      document.getElementById('lang-toggle').textContent = label;
-      const mobileLabel = document.getElementById('lang-toggle-mobile');
-      if (mobileLabel) mobileLabel.textContent = label;
-    }
-
-    function toggleLang() {
-      setLang(currentLang === 'en' ? 'no' : 'en');
-    }
-
-    // Auto-detect Norwegian browser
-    (function() {
-      const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      if (browserLang.startsWith('no') || browserLang.startsWith('nb') || browserLang.startsWith('nn')) {
-        setLang('no');
-      }
-    })();
-  </script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

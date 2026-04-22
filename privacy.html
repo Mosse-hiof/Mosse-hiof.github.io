@@ -3,127 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Digitekt</title>
+  <title>Privacy Policy &mdash; Digitekt</title>
   <meta name="description" content="Privacy policy and data handling practices for Digitekt (Sahin Digital)." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://digitekt.no/privacy.html" />
-
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E07A5F'/><text x='50' y='72' font-size='62' font-weight='700' text-anchor='middle' fill='%23FFFAF5' font-family='sans-serif'>D</text></svg>" />
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@300,400,500,600&display=swap" rel="stylesheet" />
-
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet" />
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            cream: '#FFFAF5',
-            ink: '#2A2520',
-            stone: '#8A8178',
-            coral: '#E07A5F',
-            'coral-dark': '#C4654D',
-          },
-          fontFamily: {
-            clash: ['"Clash Display"', 'sans-serif'],
-            sans: ['"General Sans"', 'sans-serif'],
-          },
-        },
-      },
-    };
+    tailwind.config = { theme: { extend: { colors: { cream: '#FFFAF5', sand: '#F5EDE4', peach: '#FBD8C4', apricot: '#F5C5AF', ink: '#2A2520', stone: '#8A8178', coral: '#E07A5F', 'coral-dark': '#C4654D' }, fontFamily: { clash: ['"Clash Display"', 'sans-serif'], sans: ['"General Sans"', 'sans-serif'] } } } };
   </script>
-
-  <style>
-    body { background: #FFFAF5; color: #2A2520; font-family: 'General Sans', sans-serif; line-height: 1.7; }
-    *:focus-visible { outline: 2px solid #E07A5F; outline-offset: 3px; border-radius: 4px; }
-    h2 { font-family: 'Clash Display', sans-serif; font-weight: 600; font-size: 1.5rem; margin: 2.5rem 0 1rem; color: #2A2520; }
-    p { margin-bottom: 1rem; color: #6B6259; }
-    a { color: #E07A5F; text-decoration: underline; text-underline-offset: 3px; }
-    ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #6B6259; }
-    li { margin-bottom: 0.5rem; }
-  </style>
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
+<body class="bg-cream text-ink font-sans antialiased" data-page="privacy">
+  <div id="contact-overlay" class="contact-overlay fixed inset-0 z-[60] bg-cream/[0.97] flex items-center justify-center px-6" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-hidden="true" inert>
+    <div class="contact-panel w-full max-w-lg bg-white border border-ink/5 rounded-2xl p-8 md:p-12 shadow-xl">
+      <div class="flex items-center justify-between mb-10"><h2 id="contact-title" class="font-clash font-bold text-3xl md:text-4xl" data-i18n="contact_title">Start a Project</h2><button type="button" onclick="closeContact()" class="text-stone hover:text-coral transition-colors text-2xl leading-none" aria-label="Close contact form">&times;</button></div>
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-5" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden" aria-hidden="true"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p>
+        <div><label for="contact-name" class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_name">Your Name</label><input id="contact-name" type="text" name="name" required class="form-input" placeholder="John Doe" data-i18n-placeholder="ph_name" /></div>
+        <div><label for="contact-email" class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_email">Email Address</label><input id="contact-email" type="email" name="email" required class="form-input" placeholder="you@company.com" data-i18n-placeholder="ph_email" /></div>
+        <div><label for="contact-message" class="text-xs tracking-widest uppercase text-stone block mb-2" data-i18n="form_message">Tell us about your project</label><textarea id="contact-message" name="message" rows="5" required class="form-input resize-none" placeholder="I need help with..." data-i18n-placeholder="ph_message"></textarea></div>
+        <button type="submit" class="magnetic-btn w-full py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:bg-coral-dark transition-all"><span data-i18n="form_send">Send Message</span></button>
+        <p class="text-stone text-xs text-center mt-4" data-i18n="form_reply">We will get back to you within 24 hours.</p>
+      </form>
+      <div id="form-success" class="hidden text-center py-12"><span class="text-coral text-5xl block mb-4">&#10003;</span><h3 class="font-clash font-bold text-2xl mb-2" data-i18n="form_success_title">Message Sent!</h3><p class="text-stone" data-i18n="form_success_desc">We will get back to you as soon as possible.</p></div>
+    </div>
+  </div>
 
-<body>
-  <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between bg-cream/80 backdrop-blur-lg">
-    <a href="/" class="font-clash font-bold text-xl tracking-tight flex items-center gap-2">
-      <span class="inline-flex items-center justify-center w-8 h-8 bg-coral text-white rounded-lg text-sm font-bold tracking-tight">D</span>
-      DIGITEKT<span class="text-coral">.</span>
-    </a>
-    <a href="/" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors">&larr; Back to Home</a>
+  <nav class="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex items-center justify-between bg-cream/80">
+    <a href="index.html" class="font-clash font-bold text-xl tracking-tight flex items-center gap-2"><span class="inline-flex items-center justify-center w-8 h-8 bg-coral text-white rounded-lg text-sm font-bold tracking-tight">D</span>DIGITEKT<span class="text-coral">.</span></a>
+    <div class="desktop-nav flex items-center gap-7">
+      <a href="index.html" data-nav="home" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_home">Home</a>
+      <a href="services.html" data-nav="services" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_services">Services</a>
+      <a href="news.html" data-nav="news" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_news">News</a>
+      <a href="about.html" data-nav="about" class="text-sm font-medium tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_about">About</a>
+      <a href="#" onclick="openContact(); return false;" class="text-sm font-medium tracking-widest uppercase border border-ink/15 px-5 py-2 rounded-full hover:bg-coral hover:text-white hover:border-coral transition-all" data-i18n="nav_contact">Contact</a>
+      <button type="button" onclick="toggleLang()" data-lang-toggle class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors" title="Switch language">EN</button>
+    </div>
+    <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle items-center justify-center w-10 h-10" onclick="toggleMobileMenu()" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><svg id="burger-icon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 7H19M3 15H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
   </nav>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true" inert>
+    <a href="index.html" data-nav="home" data-i18n="nav_home">Home</a><a href="services.html" data-nav="services" data-i18n="nav_services">Services</a><a href="news.html" data-nav="news" data-i18n="nav_news">News</a><a href="about.html" data-nav="about" data-i18n="nav_about">About</a><a href="#" onclick="openContact(); return false;" data-i18n="nav_contact">Contact</a><button type="button" onclick="toggleLang()" data-lang-toggle class="text-xs font-medium tracking-widest uppercase text-stone hover:text-coral transition-colors mt-4" title="Switch language">EN</button>
+  </div>
 
   <main class="max-w-3xl mx-auto px-6 md:px-12 pt-32 pb-20">
-    <p class="text-coral text-sm tracking-[0.3em] uppercase mb-4">/// Legal</p>
-    <h1 class="font-clash font-bold text-4xl md:text-6xl leading-tight tracking-tight mb-4">Privacy Policy</h1>
-    <p class="text-stone text-sm mb-12">Last updated: April 2026</p>
-
-    <p>Digitekt ("we", "I", "us") is a trade name of Sahin Digital, a sole-operated development studio registered in Norway. We respect your privacy and are committed to handling your personal data transparently and in accordance with the EU General Data Protection Regulation (GDPR) and Norwegian data protection law.</p>
-
-    <h2>1. Who we are</h2>
-    <p>Digitekt is the trade name under which Sahin Digital operates.</p>
-    <ul>
-      <li><strong>Trade name:</strong> Digitekt</li>
-      <li><strong>Registered business name:</strong> Sahin Digital</li>
-      <li><strong>Organization number:</strong> 937 535 260</li>
-      <li><strong>Location:</strong> Bergen, Norway</li>
-      <li><strong>Contact:</strong> <a href="mailto:info@digitekt.no">info@digitekt.no</a></li>
-    </ul>
-
-    <h2>2. What data we collect</h2>
-    <p>We only collect personal data you actively provide:</p>
-    <ul>
-      <li><strong>Contact form submissions:</strong> name, email address, and the content of your message.</li>
-      <li><strong>Email correspondence:</strong> any information you choose to share when contacting us directly.</li>
-      <li><strong>Project delivery:</strong> for active clients, we process information necessary to deliver the agreed services (e.g. account credentials, content, assets).</li>
-    </ul>
-    <p>We do <strong>not</strong> use third-party advertising cookies, profiling, or marketing trackers on this site.</p>
-
-    <h2>3. How we use your data</h2>
-    <p>Your data is used only to:</p>
-    <ul>
-      <li>Respond to your inquiries and project requests;</li>
-      <li>Deliver and support services you have engaged us for;</li>
-      <li>Fulfill legal obligations such as bookkeeping and invoicing.</li>
-    </ul>
-
-    <h2>4. Legal basis</h2>
-    <p>Processing is based on your consent (when you send a message), the performance of a contract (when you become a client), or a legitimate interest in responding to legitimate business inquiries.</p>
-
-    <h2>5. Data sharing</h2>
-    <p>We do not sell, rent, or share your personal data with third parties for marketing purposes. Data may be processed by service providers strictly necessary for our work, including:</p>
-    <ul>
-      <li>Email service (currently Microsoft Outlook / Hotmail);</li>
-      <li>Hosting and infrastructure providers (Netlify);</li>
-      <li>Accounting / invoicing services as required by Norwegian law.</li>
-    </ul>
-
-    <h2>6. Data retention</h2>
-    <p>We keep contact inquiries only as long as necessary to respond and maintain a reasonable record. Financial and contractual records are retained for at least 5 years as required by Norwegian bookkeeping law.</p>
-
-    <h2>7. Your rights</h2>
-    <p>Under GDPR you have the right to:</p>
-    <ul>
-      <li>Access the personal data we hold about you;</li>
-      <li>Request correction of inaccurate data;</li>
-      <li>Request deletion of your data (where legal obligations allow);</li>
-      <li>Object to or restrict processing;</li>
-      <li>Lodge a complaint with <a href="https://www.datatilsynet.no/" target="_blank" rel="noopener">Datatilsynet</a> (the Norwegian Data Protection Authority).</li>
-    </ul>
-    <p>To exercise any of these rights, contact us at <a href="mailto:info@digitekt.no">info@digitekt.no</a>.</p>
-
-    <h2>8. Cookies</h2>
-    <p>This site currently does not use tracking cookies. If analytics are added in the future (e.g. privacy-friendly tools like Plausible or Vercel Analytics), this policy will be updated to reflect that change.</p>
-
-    <h2>9. Changes to this policy</h2>
-    <p>We may update this privacy policy from time to time. The "Last updated" date at the top of this page will always reflect the most recent version.</p>
+    <p class="text-coral text-sm tracking-[0.3em] uppercase mb-4" data-i18n="privacy_label">/// Legal</p>
+    <h1 class="font-clash font-bold text-4xl md:text-6xl leading-tight tracking-tight mb-4" data-i18n="privacy_title">Privacy Policy</h1>
+    <p class="text-stone text-sm mb-12" data-i18n="privacy_updated">Last updated: April 2026</p>
+    <div class="space-y-6 text-stone leading-relaxed" data-i18n="privacy_body">
+      <p>Digitekt ("we", "I", "us") is a trade name of Sahin Digital, a sole-operated development studio registered in Norway. We respect your privacy and handle personal data transparently in accordance with GDPR and Norwegian data protection law.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">1. Who we are</h2>
+      <ul class="list-disc pl-6 space-y-2"><li><strong>Trade name:</strong> Digitekt</li><li><strong>Registered business name:</strong> Sahin Digital</li><li><strong>Organization number:</strong> 937 535 260</li><li><strong>Location:</strong> Bergen, Norway</li><li><strong>Contact:</strong> <a class="text-coral underline underline-offset-4" href="mailto:info@digitekt.no">info@digitekt.no</a></li></ul>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">2. What data we collect</h2>
+      <p>We collect personal data you actively provide: contact form submissions, email correspondence, and project delivery information necessary to deliver agreed services.</p>
+      <p>We do not use third-party advertising cookies, profiling, or marketing trackers on this site.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">3. How we use your data</h2>
+      <p>Your data is used to respond to inquiries, deliver and support services, and fulfill legal obligations such as bookkeeping and invoicing.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">4. Legal basis</h2>
+      <p>Processing is based on consent, performance of a contract, or a legitimate interest in responding to legitimate business inquiries.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">5. Data sharing</h2>
+      <p>We do not sell or rent personal data. Data may be processed by necessary providers, including email service providers, Netlify hosting, and accounting or invoicing services required by Norwegian law.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">6. Data retention</h2>
+      <p>We keep contact inquiries only as long as necessary. Financial and contractual records are retained for at least 5 years as required by Norwegian bookkeeping law.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">7. Your rights</h2>
+      <p>Under GDPR you can request access, correction, deletion, restriction, objection, or lodge a complaint with <a class="text-coral underline underline-offset-4" href="https://www.datatilsynet.no/" target="_blank" rel="noopener">Datatilsynet</a>. Contact <a class="text-coral underline underline-offset-4" href="mailto:info@digitekt.no">info@digitekt.no</a>.</p>
+      <h2 class="font-clash font-semibold text-2xl text-ink pt-8">8. Cookies</h2>
+      <p>This site currently does not use tracking cookies. If analytics are added in the future, this policy will be updated.</p>
+    </div>
   </main>
 
-  <footer class="px-6 md:px-12 py-8 border-t border-ink/8">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <span class="text-stone text-xs tracking-widest uppercase">&copy; 2026 Digitekt. All rights reserved.</span>
-      <a href="/" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors">&larr; Back to Home</a>
+  <footer class="px-6 md:px-12 py-12 border-t border-ink/8">
+    <div class="max-w-7xl mx-auto pt-2 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="text-stone text-xs tracking-widest uppercase" data-i18n="footer_copy">&copy; 2026 Digitekt. All rights reserved.</span>
+      <div class="flex gap-6 flex-wrap justify-center"><a href="index.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_home">Home</a><a href="services.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_services">Services</a><a href="about.html" class="text-stone text-xs tracking-widest uppercase hover:text-coral transition-colors" data-i18n="nav_about">About</a></div>
     </div>
   </footer>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
