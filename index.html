@@ -96,7 +96,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { cream: '#FFFAF5', sand: '#F5EDE4', peach: '#FBD8C4', apricot: '#F5C5AF', ink: '#2A2520', stone: '#8A8178', coral: '#E07A5F', 'coral-dark': '#C4654D' },
+          colors: { cream: '#EAE0D5', sand: '#DCCFC3', peach: '#E8BCA9', apricot: '#DFA18D', ink: '#2B2520', stone: '#6D6259', coral: '#E07A5F', 'coral-dark': '#B95A45' },
           fontFamily: { clash: ['"Clash Display"', 'sans-serif'], sans: ['"General Sans"', 'sans-serif'] }
         }
       }
@@ -169,7 +169,7 @@
   </div>
 
   <main>
-    <section class="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center pb-20">
+    <section class="home-hero relative min-h-screen w-full overflow-hidden flex items-center px-6 md:px-12 pt-32 pb-20">
       <div class="absolute inset-0 z-0 overflow-hidden">
         <div class="hero-mesh"></div>
         <div class="hero-orb orb-1"></div>
@@ -177,28 +177,54 @@
         <div class="hero-orb orb-3"></div>
         <div class="hero-grain"></div>
       </div>
-      <div class="relative z-20 text-center px-4 pt-28">
-        <h1 class="font-clash font-bold text-[11vw] md:text-[7vw] leading-[1.1] tracking-tight">
-          <span class="reveal block" data-i18n="hero_make">MAKE YOUR</span>
-          <span class="reveal block">
-            <span class="scroller-mask">
-              <span class="scroller-inner block" id="textScroller">
-                <span class="block text-coral">WEB APP</span>
-                <span class="block text-[#7C6EAF]">MOBILE APP</span>
-                <span class="block text-[#5B9A8B]">SYSTEM</span>
-                <span class="block text-coral">WEB APP</span>
+      <div class="relative z-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[0.95fr_0.88fr] gap-14 lg:gap-20 items-center">
+        <div class="home-hero-copy">
+          <p class="reveal text-coral text-sm tracking-[0.3em] uppercase mb-5" data-i18n="home_hero_label">/// Founder-led studio in Bergen</p>
+          <h1 class="home-hero-title font-clash font-bold leading-[0.98] tracking-tight">
+            <span class="reveal block" data-i18n="hero_make">MAKE YOUR</span>
+            <span class="reveal block">
+              <span class="scroller-mask">
+                <span class="scroller-inner block" id="textScroller">
+                  <span class="block text-coral">WEB APP</span>
+                  <span class="block text-[#7460A8]">MOBILE APP</span>
+                  <span class="block text-[#457F73]">SYSTEM</span>
+                  <span class="block text-coral">WEB APP</span>
+                </span>
               </span>
             </span>
-          </span>
-          <span class="reveal block" data-i18n="hero_vision">VISION COME ALIVE</span>
-        </h1>
-        <p class="reveal max-w-2xl mx-auto mt-6 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">Founder-led digital partner from Bergen. We build websites, systems, apps, automation, and digital foundations that help small and growing companies move forward.</p>
-        <div class="reveal mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">Start Project</a>
-          <a href="services.html" class="inline-block px-8 py-4 border border-ink/15 text-ink font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:border-coral hover:text-coral transition-all" data-i18n="home_services_link">Explore Services</a>
+            <span class="reveal block" data-i18n="hero_vision">VISION COME ALIVE</span>
+          </h1>
+          <p class="reveal max-w-2xl mt-7 text-stone text-base md:text-lg leading-relaxed" data-i18n="hero_sub">Founder-led digital partner from Bergen. We build websites, systems, apps, automation, and digital foundations that help small and growing companies move forward.</p>
+          <div class="reveal mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a href="#" onclick="openContact(); return false;" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl transition-all hover:bg-coral-dark hover:shadow-lg" data-i18n="start_project">Start Project</a>
+            <a href="services.html" class="inline-block px-8 py-4 border border-ink/20 text-ink font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:border-coral hover:text-coral transition-all" data-i18n="home_services_link">Explore Services</a>
+          </div>
+          <div class="home-proof-grid reveal" aria-label="Digitekt proof points">
+            <div class="home-proof-item"><strong>2+</strong><span data-i18n="proof_lms">Live LMS platforms</span></div>
+            <div class="home-proof-item"><strong>2025</strong><span data-i18n="proof_degree">Information systems degree</span></div>
+            <div class="home-proof-item"><strong>AI</strong><span data-i18n="proof_ai">Automation and research</span></div>
+            <div class="home-proof-item"><strong>NO</strong><span data-i18n="proof_remote">Bergen based, remote ready</span></div>
+          </div>
+        </div>
+        <div class="home-showcase reveal" aria-label="Project preview">
+          <div class="home-showcase-main">
+            <img src="lms1.png" width="1903" height="901" alt="Jetski LMS dashboard screenshot" loading="eager" decoding="async" />
+          </div>
+          <div class="home-showcase-secondary">
+            <img src="lms2.png" width="1903" height="1083" alt="MGB Truck LMS dashboard screenshot" loading="lazy" decoding="async" />
+          </div>
+          <div class="home-showcase-portrait">
+            <img src="image2.jpg" width="514" height="750" alt="Mustafa Sahin" loading="lazy" decoding="async" />
+          </div>
+          <div class="showcase-badge showcase-badge-top">
+            <span data-i18n="hero_badge_stack">Laravel, WordPress REST, dashboards</span>
+          </div>
+          <div class="showcase-badge showcase-badge-bottom">
+            <span data-i18n="hero_badge_ai">AI, automation, support after launch</span>
+          </div>
         </div>
       </div>
-      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 reveal">
+      <div class="home-scroll-cue absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 reveal">
         <span class="text-[10px] tracking-[0.35em] uppercase text-stone" data-i18n="scroll">Scroll</span>
         <div class="w-px h-6 bg-stone/40 relative overflow-hidden"><div class="w-full h-1/2 bg-coral animate-bounce"></div></div>
       </div>
@@ -231,20 +257,29 @@
             <a href="services.html" class="magnetic-btn inline-block px-8 py-4 bg-coral text-white font-clash font-semibold text-sm tracking-widest uppercase rounded-xl hover:bg-coral-dark transition-all" data-i18n="home_services_link">Explore Services</a>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <article class="warm-card reveal p-6">
-              <span class="service-number">01</span>
-              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_web">Web & System Development</h3>
-              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_web_desc">Modern websites, business systems, APIs, and tailored platforms built around real workflows.</p>
+            <article class="service-preview-card warm-card reveal overflow-hidden">
+              <div class="service-preview-media"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80" width="700" height="438" alt="Code editor and web development workspace" loading="lazy" decoding="async" /></div>
+              <div class="p-6">
+                <span class="service-number">01</span>
+                <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_web">Web & System Development</h3>
+                <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_web_desc">Modern websites, business systems, APIs, and tailored platforms built around real workflows.</p>
+              </div>
             </article>
-            <article class="warm-card reveal p-6">
-              <span class="service-number">02</span>
-              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_design">Design & Communication</h3>
-              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_design_desc">Clear visual identity, content, interface design, and launch communication that make the product easier to trust.</p>
+            <article class="service-preview-card warm-card reveal overflow-hidden">
+              <div class="service-preview-media"><img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=700&q=80" width="700" height="438" alt="Design sketches and digital interface planning" loading="lazy" decoding="async" /></div>
+              <div class="p-6">
+                <span class="service-number">02</span>
+                <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_design">Design & Communication</h3>
+                <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_design_desc">Clear visual identity, content, interface design, and launch communication that make the product easier to trust.</p>
+              </div>
             </article>
-            <article class="warm-card reveal p-6">
-              <span class="service-number">03</span>
-              <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_ops">Operations & Support</h3>
-              <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_ops_desc">Hosting, maintenance, security-minded support, and technical guidance after launch.</p>
+            <article class="service-preview-card warm-card reveal overflow-hidden">
+              <div class="service-preview-media"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80" width="700" height="438" alt="Server racks and infrastructure equipment" loading="lazy" decoding="async" /></div>
+              <div class="p-6">
+                <span class="service-number">03</span>
+                <h3 class="font-clash font-semibold text-xl mb-3" data-i18n="service_preview_ops">Operations & Support</h3>
+                <p class="text-stone text-sm leading-relaxed" data-i18n="service_preview_ops_desc">Hosting, maintenance, security-minded support, and technical guidance after launch.</p>
+              </div>
             </article>
           </div>
         </div>
@@ -268,7 +303,7 @@
             <p class="text-xs tracking-wider uppercase text-coral">Laravel &middot; Forge &middot; DigitalOcean &middot; WordPress API</p>
           </div>
           <div class="project-card reveal group md:mt-24">
-            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="lms2.png" width="1903" height="1083" alt="E-Learning Platform - MGB Truck" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+            <div class="overflow-hidden rounded-2xl mb-6 aspect-[4/3] shadow-sm"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80" width="900" height="675" alt="Truck driver training and logistics workspace" class="project-img w-full h-full object-cover" loading="lazy" decoding="async" /></div>
             <div class="flex items-start justify-between gap-4 mb-2">
               <h3 class="font-clash font-semibold text-xl md:text-2xl" data-i18n="proj2_title">E-Learning Platform &mdash; MGB Truck</h3>
               <span class="text-xs tracking-widest uppercase text-stone whitespace-nowrap pt-2" data-i18n="proj2_year">2025 &middot; Live</span>

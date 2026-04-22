@@ -37,7 +37,7 @@ Public content is bilingual through the existing `data-i18n` pattern:
 
 Current public pages:
 
-- Home: hero, compact services preview, selected work, testimonials, FAQ, CTA, and sharing.
+- Home: darker warm visual hero with project screenshots/founder image, proof counters, image-backed services preview, selected work, testimonials, FAQ, CTA, and sharing.
 - Services: dedicated service hub with six service groups, editorial hero image, process section, capacity note, contact CTA, and expanded service SEO.
 - About: founder-led Digitekt story, Bergen roots, history, values, founder context, experience, education, and technical background.
 - News: curated external reads for AI, web development, and SEO, plus category placeholders for future Digitekt posts.
@@ -50,9 +50,49 @@ Important conventions for future agents:
 - Keep the Netlify contact form name `contact`, existing fields, honeypot, hidden `form-name`, and POST target behavior.
 - Do not add fake Digitekt news posts. Use curated external reads or real authored content only.
 - Remote Unsplash imagery is currently acceptable as placeholder stock imagery and can be replaced later with local/client assets.
+- The current visual direction uses a warmer taupe/sand palette instead of the original bright cream background.
 - The repeated header/contact/footer markup is intentional for now because there is no static-site generator or build process.
 
 ## Change Log
+
+### 2026-04-22 - Homepage Visual Refresh
+
+Goal: make Digitekt feel more eye-catching and premium while keeping it warmer and easier on the eyes than the original bright cream design. Inspired by the energy and proof-heavy structure of similar agency sites, but kept positioned as a founder-led technical partner rather than a large marketing agency.
+
+Files changed:
+
+- `index.html`
+- `assets/css/site.css`
+- `assets/js/site.js`
+- `404.html`
+- `about.html`
+- `news.html`
+- `privacy.html`
+- `services.html`
+- `og-image.html`
+- `README.md`
+
+Changes made:
+
+- Shifted the global Tailwind/theme palette from bright cream to a darker warm taupe/sand palette.
+- Updated shared CSS colors, cards, overlays, navigation treatment, scrollbars, hero mesh, and Open Graph template colors to match the warmer visual direction.
+- Rebuilt the home hero into a split layout with large rotating product words, project screenshot collage, founder image, floating capability badges, and stronger visual depth.
+- Added proof counters to the home hero for live LMS platforms, education, AI/automation, and Bergen/remote capability.
+- Reworked the home services preview into image-backed cards with stronger hover treatment.
+- Added more depth to selected-work cards.
+- Replaced the temporary `E-Learning Platform — MGB Truck` selected-work screenshot with a logistics/training stock image until a real screenshot is available.
+- Improved the rotating hero word scroller so it measures rendered word height, avoids vertical bleed, and has enough horizontal room for `MOBILE APP`.
+- Added EN/NO translations for the new visible hero/proof/badge strings.
+
+Verification run after this pass:
+
+- `git diff --check`
+- `assets/js/site.js` syntax check with Node
+- JSON-LD parse check across HTML pages
+- EN/NO i18n key coverage check
+- Local reference check for internal `href` and `src` values
+- Image attribute check for `src`, `alt`, `width`, `height`, and `decoding`
+- `rg -n "Digit[e]c|digit[e]x|mosse01[_]" .`
 
 ### 2026-04-22 - Services/News Polish and Curated Reads
 

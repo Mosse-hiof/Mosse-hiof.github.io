@@ -32,9 +32,16 @@ const translations = {
     read_more: "Read More",
     scroll: "Scroll",
 
+    home_hero_label: "/// Founder-led studio in Bergen",
     hero_make: "MAKE YOUR",
     hero_vision: "VISION COME ALIVE",
     hero_sub: "Founder-led digital partner from Bergen. We build websites, systems, apps, automation, and digital foundations that help small and growing companies move forward.",
+    proof_lms: "Live LMS platforms",
+    proof_degree: "Information systems degree",
+    proof_ai: "Automation and research",
+    proof_remote: "Bergen based, remote ready",
+    hero_badge_stack: "Laravel, WordPress REST, dashboards",
+    hero_badge_ai: "AI, automation, support after launch",
     home_services_label: "/// Services",
     home_services_title: "Digital help without the handoff maze.",
     home_services_desc: "Digitekt combines software craft with practical support across web, systems, communication, and operations. You work directly with the person responsible for the work, with trusted specialists brought in when a project needs broader capacity.",
@@ -264,9 +271,16 @@ const translations = {
     read_more: "Les mer",
     scroll: "Scroll",
 
+    home_hero_label: "/// Grunnleggerledet studio i Bergen",
     hero_make: "GJ&Oslash;R DIN",
     hero_vision: "VISJON TIL VIRKELIGHET",
     hero_sub: "Grunnleggerledet digital partner fra Bergen. Vi bygger nettsider, systemer, apper, automatisering og digitale grunnmurer som hjelper sm&aring; og voksende bedrifter videre.",
+    proof_lms: "LMS-plattformer i drift",
+    proof_degree: "Bachelor i informasjonssystemer",
+    proof_ai: "Automatisering og forskning",
+    proof_remote: "Bergen-basert, klar for remote",
+    hero_badge_stack: "Laravel, WordPress REST, dashbord",
+    hero_badge_ai: "AI, automatisering, support etter lansering",
     home_services_label: "/// Tjenester",
     home_services_title: "Digital hjelp uten lange mellomledd.",
     home_services_desc: "Digitekt kombinerer programvareh&aring;ndverk med praktisk support innen web, systemer, kommunikasjon og drift. Du jobber direkte med personen som har ansvar for arbeidet, med betrodde spesialister n&aring;r prosjektet trenger bredere kapasitet.",
@@ -708,10 +722,23 @@ function initHeroScroller() {
 
   const totalItems = 3;
   let scrollerIndex = 0;
+  let step = 0;
+
+  const measureStep = () => {
+    const firstItem = scroller.querySelector("span");
+    step = firstItem ? firstItem.getBoundingClientRect().height : 0;
+    scroller.style.transform = "translateY(-" + (scrollerIndex * step) + "px)";
+  };
+
+  measureStep();
+  window.addEventListener("resize", measureStep, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureStep);
+
   setInterval(() => {
     scrollerIndex++;
+    if (!step) measureStep();
     scroller.style.transition = "transform 0.4s cubic-bezier(0.76, 0, 0.24, 1)";
-    scroller.style.transform = "translateY(-" + (scrollerIndex * 25) + "%)";
+    scroller.style.transform = "translateY(-" + (scrollerIndex * step) + "px)";
 
     if (scrollerIndex >= totalItems) {
       setTimeout(() => {
